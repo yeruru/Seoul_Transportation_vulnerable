@@ -1,0 +1,41 @@
+@charset "UTF-8";
+* { margin:0; padding:0;}
+body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); height: 1000px;}
+a { text-decoration: none; color: var(--c-text);}
+img { width: 100%;}
+button { cursor: pointer;}
+.warp { max-width: 700px; margin: 0 auto;}
+li{list-style:none;}
+
+/* color */
+body {
+  --c-bg: rgba(255, 255, 255, 1);
+  --c-content: rgba(247, 249, 251, 1);
+  --c-text: rgb(31, 31, 31);
+  --c-tour: rgba(13, 153, 255, 1);
+  --c-subway: rgba(246, 151, 21, 1);
+  --gray: rgba(152, 152, 157, 1);
+  --gray2: rgba(99, 99, 102, 1);
+  --gray3: rgba(72, 72, 74, 1);
+  --gray4: rgba(58, 58, 60, 1);
+  --gray5: rgba(44, 44, 46, 1);
+  --gray6: rgba(28, 28, 30, 1);
+  
+}
+
+body.dark {
+  --c-bg: rgba(30, 30, 32, 1);
+  --c-text: rgba(244, 244, 244);
+  --c-tour: rgba(56, 60, 69, 1);
+  --c-subway: rgba(56, 60, 69, 1);
+  --c-content: rgba(41, 42, 44, 1);
+  --gray: rgba(142, 142, 147, 1);
+  --gray2: rgba(174, 174, 178, 1);
+  --gray3: rgba(199, 199, 204, 1);
+  --gray4: rgba(209, 209, 214, 1);
+  --gray5: rgba(229, 229, 234, 1);
+  --gray6: rgba(242, 242, 247, 1);
+  
+}
+
+body {background-color: var(--c-bg);}
