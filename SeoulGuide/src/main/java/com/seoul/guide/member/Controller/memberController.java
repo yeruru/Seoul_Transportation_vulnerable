@@ -9,7 +9,7 @@ public class memberController {
 	
 	@RequestMapping(value = "loginform", method = RequestMethod.GET)
 	public String login() {
-		return "login";
+		return "member/login";
 	}
 	
 }
