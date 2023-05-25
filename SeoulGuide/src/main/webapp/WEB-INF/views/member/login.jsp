@@ -12,11 +12,17 @@
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<section class = "content-wrap" id="loginpage">
-		<div class="input"><input type="text" name="email"></div>
-		<div class="input"><input type="password" name="password"></div>
-		<div class="button">
-             <input type="submit" value="로그인">
-        </div>
+		<div class = "loginbackground">
+			<p>로그인</p>
+			<div><input type="text" class = "email" name="email" placeholder=" Email"></div>
+			<div><input type="password" class = "password" name="password" placeholder=" password"></div>
+			<div >
+	             <input  class="button1" type="submit" value="로그인">
+	        </div>
+	        <div >
+	             <input  class="button2" type="submit" value="회원가입">
+	        </div>
+		</div>
 	</section>
 </body>
 </html>
