@@ -28,16 +28,25 @@ function close() {
 // 메뉴
 menuBtn = document.querySelector('.menu')
 menu = document.querySelector('.gnb')
+menubg = document.querySelector('.menu-bg')
 
 menuBtn.addEventListener('click', function() {
   if(menuBtn.classList.contains('close')) {
-    menuBtn.classList.remove('close')
-    menu.classList.remove('open')
+    menuShow()
   }else {
-    menuBtn.classList.add('close')
-    
-    menu.classList.add('open')
+    menuClose()
   }
 })
+
+function menuShow() {
+  menuBtn.classList.remove('close')
+    menu.classList.remove('open')
+    menubg.classList.remove('show')
+}
+function menuClose() {
+  menuBtn.classList.add('close')
+    menu.classList.add('open')
+    menubg.classList.add('show')
+}
 
 
