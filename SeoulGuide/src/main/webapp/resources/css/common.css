@@ -1,6 +1,6 @@
 @charset "UTF-8";
 * { margin:0; padding:0;}
-body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); height: 1000px;}
+body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); overflow-x: hidden}
 a { text-decoration: none; color: var(--c-text);}
 img { width: 100%;}
 button { cursor: pointer;}
