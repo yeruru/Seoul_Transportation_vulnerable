@@ -1,18 +1,20 @@
 @charset "UTF-8";
 * { margin:0; padding:0;}
-body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); overflow-x: hidden}
+body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); height: 1000px;}
 a { text-decoration: none; color: var(--c-text);}
 img { width: 100%;}
 button { cursor: pointer;}
-.warp { max-width: 700px; margin: 0 auto;}
-.content-wrap { padding-top: 50px; max-width: 700px; margin: 0 auto;} 
+.wrap { max-width: 700px; margin: 0 auto;}
+.content-wrap { padding-top: 50px; max-width: 580px; margin: 0 auto;} 
 li{list-style:none;}
 
 /* color */
 body {
   --c-bg: rgba(255, 255, 255, 1);
+  --c-bg-sub: rgba(255, 255, 255, 1);
   --c-content: rgba(247, 249, 251, 1);
   --c-text: rgb(31, 31, 31);
+  --c-white-text: rgb(255, 255, 255);
   --c-tour: rgba(13, 153, 255, 1);
   --c-subway: rgba(246, 151, 21, 1);
   --gray: rgba(152, 152, 157, 1);
@@ -26,7 +28,9 @@ body {
 
 body.dark {
   --c-bg: rgba(30, 30, 32, 1);
+  --c-bg-sub: rgb(53, 52, 57);
   --c-text: rgba(244, 244, 244);
+  --c-white-text: rgb(0, 0, 0);
   --c-tour: rgba(56, 60, 69, 1);
   --c-subway: rgba(56, 60, 69, 1);
   --c-content: rgba(41, 42, 44, 1);
