@@ -13,6 +13,7 @@ body {
   --c-bg: rgba(255, 255, 255, 1);
   --c-bg-sub: rgba(255, 255, 255, 1);
   --c-content: rgba(247, 249, 251, 1);
+  --c-white-text: rgb(255, 255, 255);
   --c-text: rgb(31, 31, 31);
   --c-white-text: rgb(255, 255, 255);
   --c-tour: rgba(13, 153, 255, 1);
