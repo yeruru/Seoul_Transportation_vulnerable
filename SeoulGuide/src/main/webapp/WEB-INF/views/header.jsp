@@ -37,7 +37,7 @@
              </span>
            </div>
            <div class="popup-con"><a href="#;" class="btn">다크모드</a></div>
-           <div class="not"><a href="#;" class="close">✕</a></div>
+           <div class="not"><a href="#;" class="close">✕x</a></div>
          </div>
        </div>
      </div> 

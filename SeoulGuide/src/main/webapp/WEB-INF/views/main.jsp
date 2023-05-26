@@ -7,7 +7,7 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
-	
+	<link rel="stylesheet" href="<c:url value="/resources/css/main.css"/>">
 	<link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 </head>
 <body class="body">
@@ -16,7 +16,7 @@
 		<div class="content">
 			<p>교통약자를 위한<br>서울시 장애물 없는 관광</p>
 			<h2>서울, 함께 가는 길</h2>
-			<img src="<c:url value="/resources/img/main-img.png"/>" alt="메인이미지">
+			<img src="<c:url value="/resources/img/main-img.svg"/>" alt="메인이미지">
 			<div class="link">
 				<ul>
 					<li><a href="#">관광지 간편 검색</a></li>
