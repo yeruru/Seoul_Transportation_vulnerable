@@ -5,11 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class memberController {
+public class main {
 	
-	@RequestMapping(value = "loginform", method = RequestMethod.GET)
-	public String login() {
-		return "login";
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String main() {
+		return "main";
 	}
 	
 }

@@ -1,0 +1,15 @@
+.signupbackground{
+    /* border: 2px solid var(--c-text); */
+    border-radius: 3px;
+    width: 100vw;
+    height: 100vh;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(0, -5%);
+}
