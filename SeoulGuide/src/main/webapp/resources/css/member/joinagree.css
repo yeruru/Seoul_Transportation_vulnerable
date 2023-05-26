@@ -1,6 +1,4 @@
-body{
-	
-}
+
 .contract {
     width: 350px;
     margin : 50px auto; height : 600px;
@@ -35,10 +33,7 @@ body{
 }
 
 .joinbackground{
-	position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 50%;
+    width: 100%;
+    top: 0;
     left: 0;
-    transform: translate(0, -35%);
 }

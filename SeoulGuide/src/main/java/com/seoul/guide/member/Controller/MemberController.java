@@ -5,6 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.seoul.guide.member.DTO.MemberDTO;
@@ -32,10 +34,10 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value = "join", method = RequestMethod.POST)
-	public ModelAndView join(@ModelAttribute MemberDTO member) {
+	public ModelAndView join(@ModelAttribute MemberDTO member ,@RequestPart(value="file",required=false) MultipartFile file) {
 		ModelAndView mav = new ModelAndView();
 		try {
-			memeberservice.join(member);
+			memeberservice.join(member, file);
 			mav.setViewName("member/login");
 		}catch(Exception e) {
 			e.printStackTrace();
