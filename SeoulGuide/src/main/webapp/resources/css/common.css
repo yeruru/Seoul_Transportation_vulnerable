@@ -12,6 +12,7 @@ li{list-style:none;}
 body {
   --c-bg: rgba(255, 255, 255, 1);
   --c-content: rgba(247, 249, 251, 1);
+  --c-white-text: rgb(255, 255, 255);
   --c-text: rgb(31, 31, 31);
   --c-tour: rgba(13, 153, 255, 1);
   --c-subway: rgba(246, 151, 21, 1);
@@ -27,6 +28,7 @@ body {
 body.dark {
   --c-bg: rgba(30, 30, 32, 1);
   --c-text: rgba(244, 244, 244);
+  --c-white-text: rgb(0, 0, 0);
   --c-tour: rgba(56, 60, 69, 1);
   --c-subway: rgba(56, 60, 69, 1);
   --c-content: rgba(41, 42, 44, 1);

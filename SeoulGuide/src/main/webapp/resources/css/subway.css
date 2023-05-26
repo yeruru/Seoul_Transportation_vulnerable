@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+
+.subway {
+	padding-top: 50px;
+	}
+
+/*subway-head  */
+.subway-wrap {
+	max-width: 700px;
+	margin: 0 auto;
+	color: var(--c-bg);
+}
+
+.subway-head {
+	height: 300px;
+	background-color: var(--c-subway);
+}
+
+.subway-form {
+	margin: 0 auto;
+	width: 700px;
+	height: 300px;
+	border: 1px solid black;
+	background-color: var(--bg);
+}
