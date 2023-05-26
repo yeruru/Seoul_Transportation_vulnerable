@@ -4,6 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -13,5 +14,22 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public void insertMember(MemberDTO member) throws Exception {
 		sqlSession.insert("MemberMapper.memberAdd", member);
+	}
+	
+	@Override
+	public void insertFile(FileVO file) throws Exception {
+	    sqlSession.insert("file.mapper.insertFile", file);
+	}
+
+	@Override
+	public Integer newFileId() throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public FileVO selectFile(Integer id) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
