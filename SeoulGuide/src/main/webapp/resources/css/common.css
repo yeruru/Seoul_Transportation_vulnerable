@@ -1,6 +1,6 @@
 @charset "UTF-8";
 * { margin:0; padding:0;}
-body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); height: 1000px;}
+body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text);}
 a { text-decoration: none; color: var(--c-text);}
 img { width: 100%;}
 button { cursor: pointer;}
@@ -17,6 +17,7 @@ body {
   --c-white-text: rgb(255, 255, 255);
   --c-tour: rgba(13, 153, 255, 1);
   --c-subway: rgba(246, 151, 21, 1);
+  --c-dens: rgba(75, 75, 75, 1);
   --gray: rgba(152, 152, 157, 1);
   --gray2: rgba(99, 99, 102, 1);
   --gray3: rgba(72, 72, 74, 1);
@@ -33,6 +34,7 @@ body.dark {
   --c-white-text: rgb(0, 0, 0);
   --c-tour: rgba(56, 60, 69, 1);
   --c-subway: rgba(56, 60, 69, 1);
+  --c-dens: rgba(56, 60, 69, 1);
   --c-content: rgba(41, 42, 44, 1);
   --gray: rgba(142, 142, 147, 1);
   --gray2: rgba(174, 174, 178, 1);
