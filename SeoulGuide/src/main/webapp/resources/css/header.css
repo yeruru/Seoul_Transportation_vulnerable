@@ -13,15 +13,21 @@ body.dark #header { box-shadow:0px 0px 5px 1px rgb(55, 55, 57);}
 body.dark #header .logo-dark { opacity: 1;}
 
 /* access */
-#header .accbtn { border-radius: 50%; width : 40px; height: 40px; border: 0; background-color: var(--c-bg); cursor: pointer; z-index : 10000;}
-#header .access { position : relative; width : 100%; height : 100%;}
-#header .background { display : none; position: fixed; left: 0; width: 0; height: 0; z-index: -1; opacity: 0;}
-#header .popup { position : absolute; top: 100px; left : 150px; width: 250px; height: 250px; background-color: var(--c-bg); box-shadow: 0 2px 7px rgba(61, 62, 80, 0.3); transform: translate(-50%, -40%); border-radius : 20px;}
-#header .background .show {  width: 100%; height: 100vh; opacity: 1; z-index: 1000; transition: all .5s;}
-#header .show .popup { transform: translate(-50%, -50%);}
-#header .btn { background-color: var(--c-bg); color: var(--c-text); border-color : blue; width : 200px; height :  50px; margin : 0 auto;}
-#header #close{ border: 0; background-color: var(--c-bg); color: var(--c-text); margin-left : 40px;}
-.accesstitle { display : flex; text-align: center; margin: 25px; font-size : 15px;}
+#header .accbtn { width : 40px; border: 0; display: inline-block;}
+#header .bg {  position: fixed;  background-color: #000; opacity: .6;  width: 100vw; height: 100vh; top: 0; left: 0; z-index: 1;}
+#header .access { position: absolute; top: calc(100% + 10px); width: 250px; height: 290px; border-radius: 10px; padding: 15px; box-sizing: border-box;  box-shadow: 0px 0px 10px 3px rgba(38, 47, 124, 0.15); background-color: var(--c-bg-sub); visibility: hidden; opacity: 0; transition: all .3s;}
+#header .access.show {visibility: visible; opacity: 1;}
+#header .access h3 { font-size: 16px; font-weight: 700;}
+#header .popup  { position: relative;}
+#header .popup .close { position: absolute; top: 0; right: 0;}
+#header .popup-con { border-radius: 10px; border: 1px solid var(--c-tour); width: 200px; height: 60px; margin: 20px auto;}
+#header .popup-con:hover { background-color: var(--c-tour); color: var(--c-white-text);}
+#header .popup-con:hover a { color: var(--c-white-text);}
+#header .zoom a > img { width: 30px;}
+#header .popup-con em { display: block; text-align: center; padding-top: 10px; font-size: 14px;}
+.zoom { padding-top: 2px; display: flex; justify-content: space-evenly; align-items: center} 
+#header .popup-con > a { width: 100%; line-height: 60px; display: block; text-align: center;}
+
 /* menu */
 /* menu button */
 #header > .header-wrap > ul > li:last-child { position: relative;}
@@ -38,7 +44,7 @@ text-indent: -999px; transition: all 0.3s; border-radius: 10px;}
 
 /* menu */
 /* gnb */
-#gnb { overflow: auto; position: absolute; width: 700px; height: 100vh; top: 100%; left: 200px; visibility: hidden; transition: left .5s ease-in-out; background-color: var(--c-bg);}
+#gnb { overflow: auto; position: absolute; width: 700px; height: 100vh; top: calc(100% + 1px); left: 200px; visibility: hidden; transition: left .5s ease-in-out; background-color: var(--c-bg);}
 #gnb.open { visibility: visible; left: 0;}
 #gnb .gnb-box { padding-top: 20px; box-sizing: border-box; width: 400px; margin: 0 auto; height: 100%;}
 #gnb .gnb-box > li { font-size: 16px; font-weight: 700; position: relative;}
@@ -52,7 +58,7 @@ text-indent: -999px; transition: all 0.3s; border-radius: 10px;}
 #gnb .gnb-box > li > ul > li:first-child{ padding-top: 15px;}
 #gnb .gnb-box > li > ul > li { font-size: 14px; font-weight: 400;}
 #gnb .gnb-box > li > ul > li > a { display: block; padding-left: 10px; padding-bottom: 10px; position: relative;} 
-.menu-bg { position: absolute; top: 100%; width: 100vw; height: 100vh; background-color: var(--c-bg);  display: none;}
+.menu-bg { position: absolute; top: calc(100% + 1px); width: 100vw; height: 100vh; background-color: var(--c-bg);  display: none;}
 .menu-bg.show { display: block;}
 
 
