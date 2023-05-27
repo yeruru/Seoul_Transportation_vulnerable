@@ -33,7 +33,8 @@ body.dark #header .logo-dark { opacity: 1;}
 #header > .header-wrap > ul > li:last-child { position: relative;}
 #header a.menu {position: relative; width: 24px; height: 16px; display: inline-block;}
 #header a.menu::before {content: ''; position: absolute; left: 50%; top: 0; transform: translate(-50%, 0); width: 100%; height: 3px; background-color: var(--gray5); transition: all 0.3s; border-radius: 10px;}
-#header a.menu span {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; height: 3px; background-color: var(--gray5); overflow: hidden;
+#header a.menu span {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; height: 3px; background-color: var(--gray5); 
+overflow: hidden;
 text-indent: -999px; transition: all 0.3s; border-radius: 10px;}
 #header a.menu::after {content: ''; position: absolute; left: 50%; bottom: 0; transform: translate(-50%, 0); width: 100%; height: 3px; background-color: var(--gray5); transition: all 0.3s; border-radius: 10px;}
 #header a.menu.close::before {transform: translate(-50%, -50%) rotate(30deg); top: 50%; width: 120%;} 

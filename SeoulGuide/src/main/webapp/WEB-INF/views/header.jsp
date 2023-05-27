@@ -25,7 +25,7 @@
        <div class="access">
          <div class ="popup">
            <h3>접근성</h3>
-           <div class="popup-con"><a href="#skip-nav">본문 바로가기</a></div>
+           <div class="popup-con"><a href="#skip-nav" onclick="handleLinkClick(event)">본문 바로가기</a></div>
            <div class="popup-con">
              <em>화면크기</em>
              <span class="zoom">
@@ -37,7 +37,7 @@
              </span>
            </div>
            <div class="popup-con"><a href="#;" class="btn">다크모드</a></div>
-           <div class="not"><a href="#;" class="close">✕x</a></div>
+           <div class="not"><a href="#;" class="close"><span class="material-symbols-outlined">close</span></a></div>
          </div>
        </div>
      </div> 

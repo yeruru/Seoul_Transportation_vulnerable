@@ -46,6 +46,19 @@ function hideBasket() {
   accEl.classList.remove('show')
 }
 
+function handleLinkClick(event) {
+  hideBasket();
+
+  // 링크의 href 속성값을 가져와서 이동합니다
+  const href = event.target.getAttribute('href');
+  window.location.href = href;
+
+  // 기본 동작을 막기 위해 preventDefault()를 호출합니다
+  event.preventDefault();
+}
+
+
+
 //화면확대축소
 let nowZoom = 100;
 const zoomBtn = document.querySelector('.zoom-text > a');

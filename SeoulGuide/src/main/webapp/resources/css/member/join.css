@@ -1,0 +1,102 @@
+.signupbackground {
+    /* border: 2px solid var(--c-text); */
+    border-radius: 3px;
+    width: 100%;
+    /* margin: 0 auto; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* position: fixed; */
+    top: 40%;
+    left: 0;
+
+}
+
+.signupform input{
+	width : 300px;
+	height : 40px;
+	margin : 5px 0 5px 0;
+	border-radius : 3px;
+	border: 1px solid #dddddd;
+	padding :  0 5px;
+	box-sizing : border-box;	
+}
+
+.signupform input:focus{
+	outline : 2px solid #02b4fc;
+	border : 0;
+}
+.signupbackground p{
+	font-size : 25px;
+	margin-bottom : 30px;
+	font-weight : 900;
+	font-family: sans-serif;
+}
+
+.nickname{
+	display:flex;
+	align-items: center;
+}
+#checkId{
+	margin-left : 10px;
+	width : 100px;
+	height : 40px;
+}
+.profileImage {
+	
+}
+
+.profileImage img { 
+	width : 200px;
+	display : flex;
+	margin : 0 auto;
+}
+.profileImage input{
+	width : 100px;
+	height : 40px;
+}
+
+.filebox{
+	display:flex;
+}
+
+.filebox .upload-name {
+    display: inline-block;
+    height: 40px;
+    padding: 0 10px;
+    vertical-align: middle;
+    border: 1px solid #dddddd;
+    width : 280px;
+    color: #999999;
+    border-radius : 3px;
+}
+
+.filebox label {
+    display: inline-block;
+    padding: 15px 20px;
+    color: #fff;
+    vertical-align: middle;
+    background-color: #999999;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius : 5px;
+    height : 13px;
+}
+
+.filebox input[type="file"] {
+    position: absolute;
+    width: 0;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+}
+
+.submitbutton {
+	width : 400px;
+	height : 40px;
+	background-color : black;
+	border-radius : 4px;
+	color : white;
+}
