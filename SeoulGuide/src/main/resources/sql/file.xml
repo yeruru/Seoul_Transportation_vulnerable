@@ -5,9 +5,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="file.mapper">
 	<insert id="insertFile" parameterType="com.seoul.guide.member.DTO.FileVO">
 		<![CDATA[
-			insert into fileVO values (#{id},#{directory},#{name},#{size},#{contenttype},#{uploaddate})	
+			insert into fileVO values (#{id},#{directory},#{name},#{size},#{contenttype},#{uploaddate},#{data})	
 		]]>		
 	</insert>
+	
+	<select id="selectFile" parameterType="Integer" resultType="com.seoul.guide.member.DTO.FileVO">
+		<![CDATA[
+			select * from fileVO where id=#{id} 
+		]]>				
+	</select>
 </mapper>
 
 	
