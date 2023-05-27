@@ -1,0 +1,30 @@
+@charset "EUC-KR";
+
+.toastui-editor-main .toastui-editor-md-splitter {
+    background-color: #000;
+    
+    
+}
+
+.toastui-editor-main .toastui-editor-md-vertical-style .toastui-editor-md-splitter {
+    display: block
+}
+
+.toastui-editor-ww-container {
+    background-color: #000;
+    display: none;
+    height: inherit;
+    overflow: hidden
+}
+
+.auto-height .toastui-editor-main-container {
+    position: relative
+}
+
+.toastui-editor-main-container {
+    color: #fff;
+    height: inherit;
+    line-height: 1;
+    position: absolute;
+    width: 100%
+}
