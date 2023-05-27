@@ -15,6 +15,14 @@ public class MemberDAOImpl implements MemberDAO {
 	public void insertMember(MemberDTO member) throws Exception {
 		sqlSession.insert("MemberMapper.memberAdd", member);
 	}
+
+    @Override
+	public MemberDTO selectmember(String email) throws Exception {
+		return sqlSession.selectOne("MemberMapper.memberselect", email);
+	}
+	
+	
+	
 	
 	@Override
 	public void insertFile(FileVO file) throws Exception {
@@ -29,7 +37,9 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public FileVO selectFile(Integer id) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("file.mapper.selectFile", id);
 	}
+
+	
+	
 }
