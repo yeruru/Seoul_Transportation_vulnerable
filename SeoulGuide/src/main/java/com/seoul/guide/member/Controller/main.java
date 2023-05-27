@@ -12,4 +12,9 @@ public class main {
 		return "main";
 	}
 	
+//	@RequestMapping(value = "/subway", method = RequestMethod.GET) 
+//	public String subway() {
+//		return "subway";
+//	}
+	
 }

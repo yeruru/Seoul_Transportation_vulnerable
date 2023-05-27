@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>  
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 	<link rel="stylesheet" href="<c:url value="/resources/css/main.css"/>">
@@ -14,16 +14,16 @@
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<section id="main" class="content-wrap">
 		<div class="content">
-			<p>±³Åë¾àÀÚ¸¦ À§ÇÑ<br>¼­¿ï½Ã Àå¾Ö¹° ¾ø´Â °ü±¤</p>
-			<h2>¼­¿ï, ÇÔ²² °¡´Â ±æ</h2>
-			<img src="<c:url value="/resources/img/main-img.svg"/>" alt="¸ÞÀÎÀÌ¹ÌÁö">
+			<p>êµí†µì•½ìžë¥¼ ìœ„í•œ<br>ì„œìš¸ì‹œ ìž¥ì• ë¬¼ ì—†ëŠ” ê´€ê´‘</p>
+			<h2>ì„œìš¸, í•¨ê»˜ ê°€ëŠ” ê¸¸</h2>
+			<img src="<c:url value="/resources/img/main-img.svg"/>" alt="ë©”ì¸ì´ë¯¸ì§€">
 			<div class="link">
 				<ul>
-					<li><a href="#">°ü±¤Áö °£Æí °Ë»ö</a></li>
-					<li><a href="#">ÁöÇÏÃ¶ °£Æí °Ë»ö</a></li>
-					<li><a href="#">·Î±×ÀÎ</a></li>
+					<li><a href="#">ê´€ê´‘ì§€ ê°„íŽ¸ ê²€ìƒ‰</a></li>
+					<li><a href="subway">ì§€í•˜ì²  ê°„íŽ¸ ê²€ìƒ‰</a></li>
+					<li><a href="#">ë¡œê·¸ì¸</a></li>
 				</ul>
-				<a href="#">°èÁ¤ÀÌ ¾øÀ¸½Å°¡¿ä?</a>
+				<a href="#">ê³„ì •ì´ ì—†ìœ¼ì‹ ê°€ìš”?</a>
 			</div>
 		</div>
 	</section>
