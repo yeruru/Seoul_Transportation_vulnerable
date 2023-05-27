@@ -5,6 +5,9 @@ a { text-decoration: none; color: var(--c-text);}
 em{ font: inherit; vertical-align: baseline;} 
 img { width: 100%;}
 button { cursor: pointer;}
+.wrap { max-width: 700px; margin: 0 auto;}
+.content-wrap { padding-top: 50px; max-width: 580px; margin: 0 auto;} 
+.box-wrap { max-width: 580px; margin: 0 auto;}
 li{list-style:none;}
 
 /* color */

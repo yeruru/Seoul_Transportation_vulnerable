@@ -14,12 +14,17 @@ public class main {
 	HttpSession session;
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String main() {
+	public String Main() {
 
 		return "main";
 		
 	}
 	
-	
+
+//	@RequestMapping(value = "/subway", method = RequestMethod.GET) 
+//	public String subway() {
+//		return "subway";
+//	}
+
 	
 }
