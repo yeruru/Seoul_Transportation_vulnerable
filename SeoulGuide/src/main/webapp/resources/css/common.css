@@ -2,10 +2,9 @@
 * { margin:0; padding:0;}
 body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text);}
 a { text-decoration: none; color: var(--c-text);}
+em{ font: inherit; vertical-align: baseline;} 
 img { width: 100%;}
 button { cursor: pointer;}
-.wrap { max-width: 700px; margin: 0 auto;}
-.content-wrap { padding-top: 50px; max-width: 580px; margin: 0 auto;} 
 li{list-style:none;}
 
 /* color */
@@ -24,7 +23,6 @@ body {
   --gray4: rgba(58, 58, 60, 1);
   --gray5: rgba(44, 44, 46, 1);
   --gray6: rgba(28, 28, 30, 1);
-  
 }
 
 body.dark {
@@ -42,7 +40,35 @@ body.dark {
   --gray4: rgba(209, 209, 214, 1);
   --gray5: rgba(229, 229, 234, 1);
   --gray6: rgba(242, 242, 247, 1);
-  
 }
 
 body {background-color: var(--c-bg);}
+
+.wrap { max-width: 700px; margin: 0 auto;}
+.content-wrap { padding-top: 50px; max-width: 580px; margin: 0 auto;} 
+
+/* login-popup 공통 스타일 */
+.shadow-bg {  position: fixed;  background-color: #000; opacity: .6;  width: 100vw; height: 100vh; top: 0; left: 0; z-index: 1; visibility: hidden; opacity: 0; transition: all .3s;}
+.shadow-bg.show {visibility: visible; opacity: 1;}
+.login-popup-content { position: fixed; z-index: 2; background-color: aliceblue; width: 200px; height: 100px; padding: 20px; border-radius: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); visibility: hidden; opacity: 0; transition: all .3s;}
+.login-popup-content.show { visibility: visible; opacity: 1;}
+.login-popup-content em { font-size: 15px; line-height: 19px; background-color: #F5F5F5;}
+.login-popup-content p {  font-size: 8px; color: #8D8D8D; padding: 15px 0;}
+.login-popup-content a { background-color: #4B4B4B; width: 100px; height: 25px; display: flex; justify-content: center; align-items: center; margin: 0 auto; border-radius: 30px; color: #fff; font-size: 10px; transition: all .3s;}
+.login-popup-content a:hover { background-color: var(--c-tour); }
+.login-popup-content span { position: absolute; top: 10px; right: 10px; color: #4B4B4B; cursor: pointer;}
+
+/* login-popup 공통 html
+
+<div class="login-popup">
+    <div class="shadow-bg"></div>
+    <div class="login-popup-content">
+      <em>로그인이 필요한<br>서비스 입니다.</em>
+      <p>로그인 하시겠습니까?</p>
+      <a href="#">로그인</a>
+      <span class="material-symbols-outlined">close</span>
+    </div>
+  </div>
+
+ */
+
