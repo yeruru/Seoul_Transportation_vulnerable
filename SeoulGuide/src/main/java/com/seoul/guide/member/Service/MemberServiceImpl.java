@@ -57,6 +57,13 @@ public class MemberServiceImpl implements MemberService {
 			throw new Exception("비밀번호 오류");
 		}
 	}
+
+	@Override
+	public int nicknameCheck(String nickname) throws Exception {
+		int count = memberDAO.nicknameCheck(nickname);
+		System.out.println(count);
+		return count;
+	}
 	
 	
 

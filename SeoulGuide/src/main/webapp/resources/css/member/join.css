@@ -38,7 +38,7 @@
 	display:flex;
 	align-items: center;
 }
-#checkId{
+#checknickname{
 	margin-left : 10px;
 	width : 100px;
 	height : 40px;
@@ -99,4 +99,8 @@
 	background-color : black;
 	border-radius : 4px;
 	color : white;
+}
+
+#passwordMessage{
+	margin-left : 10px;
 }

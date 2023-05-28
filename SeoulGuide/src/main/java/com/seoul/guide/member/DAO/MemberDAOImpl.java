@@ -20,6 +20,11 @@ public class MemberDAOImpl implements MemberDAO {
 	public MemberDTO selectmember(String email) throws Exception {
 		return sqlSession.selectOne("MemberMapper.memberselect", email);
 	}
+    
+	@Override
+	public int nicknameCheck(String nickname) throws Exception {
+		return sqlSession.selectOne("MemberMapper.nicknameCheck", nickname);
+	}
 	
 	
 	
@@ -39,6 +44,7 @@ public class MemberDAOImpl implements MemberDAO {
 	public FileVO selectFile(Integer id) throws Exception {
 		return sqlSession.selectOne("file.mapper.selectFile", id);
 	}
+
 
 	
 	

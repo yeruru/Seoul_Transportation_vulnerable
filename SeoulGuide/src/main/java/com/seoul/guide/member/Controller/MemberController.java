@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -67,5 +68,22 @@ public class MemberController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value="/nicknameCheck", produces = "text/plain;charset=UTF-8")
+	@ResponseBody 
+	public String nickanmeCheck(@RequestParam("nickname") String nickname, @RequestParam("pw") String pw) {
+		int result = 0;
+		try {
+			result = memeberservice.nicknameCheck(nickname);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} 
+		String mesg = "사용가능";
+		if(result==1) {
+			mesg = "사용불가";
+		}
+		return mesg;		
+	}
+	
 	
 }

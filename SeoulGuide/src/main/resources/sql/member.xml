@@ -16,5 +16,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	     ]]>
 	</select>
 	
+	<select id="nicknameCheck" parameterType="String" resultType="Integer">
+		 <![CDATA[
+	     	select count(*) from member where nickname = #{nickname}
+	     ]]>
+	</select>
+	
 
 </mapper>
