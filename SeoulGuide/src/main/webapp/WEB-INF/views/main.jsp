@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>서울, 함께 가는 길</title>
+	<meta charset="EUC-KR">
+	<title>서울, 함께 가는 길</title>
 	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 	<link rel="stylesheet" href="<c:url value="/resources/css/main.css"/>">
-
 </head>
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>

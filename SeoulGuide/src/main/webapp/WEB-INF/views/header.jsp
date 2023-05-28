@@ -12,15 +12,12 @@
 
 <div class="header-wrap">
 
-
-
 	<!-- 접근성 -->
 	<div>
-	
        <a href="#;" class="accbtn">
        	<img src="<c:url value="/resources/img/accessicon.png"/>" alt="접근성 버튼">
        </a>
-       
+      
        <!-- 접근성 팝업 -->
        <div class="access">
          <div class ="popup">

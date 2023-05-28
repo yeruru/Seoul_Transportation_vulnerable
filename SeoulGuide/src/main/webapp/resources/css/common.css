@@ -1,6 +1,6 @@
 @charset "UTF-8";
 * { margin:0; padding:0;}
-body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text);}
+body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); overflow-x: hidden;}
 a { text-decoration: none; color: var(--c-text);}
 em{ font: inherit; vertical-align: baseline;} 
 img { width: 100%;}
@@ -46,6 +46,7 @@ body.dark {
 body {background-color: var(--c-bg);}
 
 .wrap { max-width: 700px; margin: 0 auto;}
+.box-wrap { max-width: 580px; margin: 0 auto;}
 .content-wrap { padding-top: 50px; max-width: 580px; margin: 0 auto;} 
 
 /* login-popup 공통 스타일 */
