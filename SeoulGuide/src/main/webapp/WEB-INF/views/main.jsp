@@ -1,38 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="EUC-KR"%>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>¼­¿ï, ÇÔ²² °¡´Â ±æ</title>
+	<meta charset="EUC-KR">
+	<title>ï¿½ï¿½ï¿½ï¿½, ï¿½Ô²ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½</title>
 	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 	<link rel="stylesheet" href="<c:url value="/resources/css/main.css"/>">
-
 </head>
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<section id="main" class="content-wrap">
 		<div id="skip-nav" class="content">
-			<p>±³Åë¾àÀÚ¸¦ À§ÇÑ<br>¼­¿ï½Ã Àå¾Ö¹° ¾ø´Â °ü±¤</p>
-			<h2>¼­¿ï, ÇÔ²² °¡´Â ±æ</h2>
-			<img src="<c:url value="/resources/img/main-img.svg"/>" alt="¸ÞÀÎÀÌ¹ÌÁö">
+			<p>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ú¸ï¿½ ï¿½ï¿½ï¿½ï¿½<br>ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ö¹ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½</p>
+			<h2>ï¿½ï¿½ï¿½ï¿½, ï¿½Ô²ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½</h2>
+			<img src="<c:url value="/resources/img/main-img.svg"/>" alt="ï¿½ï¿½ï¿½ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½">
 			<div class="link">
 				<ul>
-					<li><a href="#">°ü±¤Áö °£Æí °Ë»ö</a></li>
-					<li><a href="#">ÁöÇÏÃ¶ °£Æí °Ë»ö</a></li>
+					<li><a href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½</a></li>
+					<li><a href="#">ï¿½ï¿½ï¿½ï¿½Ã¶ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½</a></li>
 					<li>
 					  <c:choose>
 						<c:when test="${sessionScope.id eq null }">
-	                      <a class="" href="#">·Î±×ÀÎ</a>
+	                      <a class="" href="#">ï¿½Î±ï¿½ï¿½ï¿½</a>
 	                    </c:when>
 	                    <c:otherwise>
-	                      <a href="${contextPath }/logout">·Î±×¾Æ¿ô</a>
+	                      <a href="${contextPath }/logout">ï¿½Î±×¾Æ¿ï¿½</a>
                        	</c:otherwise>
 	                   </c:choose>
                     </li>
 				</ul>
-				<a href="#">°èÁ¤ÀÌ ¾øÀ¸½Å°¡¿ä?</a>
+				<a href="#">ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Å°ï¿½ï¿½ï¿½?</a>
 			</div>
 		</div>
 	</section>
