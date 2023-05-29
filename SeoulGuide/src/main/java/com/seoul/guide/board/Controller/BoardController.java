@@ -16,4 +16,9 @@ public class BoardController {
 	public String tourReview() {
 		return "story/storyReview";
 	}
+	
+	@RequestMapping(value = "storydetail", method = RequestMethod.GET)
+	public String storyDetail() {
+		return "story/storyDetail";
+	}
 }
