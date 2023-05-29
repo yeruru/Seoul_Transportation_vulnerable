@@ -55,7 +55,6 @@ $(document).ready(function() {
 		var code = "";
 		$("#emailChk").click(function(){
 			var sm_email = $("#email").val();
-			console.log(sm_email);
 			$.ajax({
 		        type:"GET",
 		        url:"mailCheck?sm_email=" + sm_email,
@@ -100,7 +99,7 @@ $(document).ready(function() {
 	        return false;
 	      }
 	
-	      if($("#password").val() == $("#passwdConfirm").val()){		
+	      if($("#password").val() != $("#passwdConfirm").val()){		
 	        $("#passwordMessage").css("color", "red").text("비밀번호 확인");		
 	        alert("비밀번호가 일치하지 않습니다. 비밀번호를 확인해 주세요.");
 				return;
@@ -113,9 +112,44 @@ $(document).ready(function() {
 		  }	
 	    });
 	    
+	    $("#birthday").blur(function(){
+	    	let year =  Math.floor(($("#birthday").val())/10000);
+	    	let month = Math.floor((($("#birthday").val())%10000)/100);
+	    	let day =  (($("#birthday").val())%10000)%100;
+	    	
+	    	var birthday = parseInt($("#birthday").val(), 10);
+	    	
+	    	console.log(year);
+	    	console.log(month);
+	    	console.log(day);
+	    	
+	    	
+	    	if($("#birthday").val().length < 8){
+	    		$("#birthdaymessage").text("8자리에 맞게 작성해주세요.");
+	    		$("#birthdaymessage").css("color","red");
+	    	}else if($("#birthday").val().length == 8){
+	    		if(year < 1960  || year > 2023){
+	    			$("#birthdaymessage").text("'년'을 다시 입력해주세요");
+	    			$("#birthdaymessage").css("color","red");
+	    		}else if(month < 1 || month > 12){
+	    			$("#birthdaymessage").text("'월'을 다시 입력해주세요");
+	    			$("#birthdaymessage").css("color","red");
+	    		}else if(day < 1 || day > 31){
+	    			$("#birthdaymessage").text("'일'을 다시 입력해주세요");
+	    			$("#birthdaymessage").css("color","red");
+	    		}else if(isNaN(birthday)) {
+	    			$("#birthdaymessage").text("생년월일 형식이 아닙니다");
+	    			$("#birthdaymessage").css("color","red");
+	    		}else{
+	    			$("#birthdaymessage").text("완료");
+	    			$("#birthdaymessage").css("color","green");
+	    		}
+	    	}
+	    });
+	    
 	    $("#file").on('change',function(){
 		  var fileName = $("#file").val();
 		  $(".upload-name").val(fileName);
-});
+	});
 });
 	

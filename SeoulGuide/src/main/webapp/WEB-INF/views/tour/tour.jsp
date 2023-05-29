@@ -4,15 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="<c:url value="/resources/css/tour.css"/>">
+<link rel="stylesheet" href="<c:url value="/resources/css/tour/tour.css"/>">
+<link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
+<script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
-	<div class="hiddenbox">1</div>
-
-
-	<div>
 		<div class="totalSearch">
 			<div class="title">
 				<h3>서울 관광을 고민중이신가요?</h3>
