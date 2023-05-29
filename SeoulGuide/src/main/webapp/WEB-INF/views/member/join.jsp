@@ -89,9 +89,13 @@
 							</tr>
 							<tr>
 								<td>
-									<input type="text" name="birthday"   maxlength = "8" placeholder=" 생년월일" required>
+									<input type="text" name="birthday" id = "birthday"  maxlength = "8" placeholder=" 생년월일" required>
 									<span>ex)19770302</span>
 								</td>
+							</tr>
+							
+							<tr>
+								<td><span id="birthdaymessage"></span></td>
 							</tr>
 						</tbody>
 					</table>
