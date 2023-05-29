@@ -7,10 +7,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class BoardController {
 	
-	@RequestMapping(value = "boardwrite", method = RequestMethod.GET)
+	@RequestMapping(value = "storywrite", method = RequestMethod.GET)
 	public String boardWrite() {
-
-		return "/boardWrite";
-		
+		return "story/storyWrite";
+	}
+	
+	@RequestMapping(value = "storyreview", method = RequestMethod.GET)
+	public String tourReview() {
+		return "story/storyReview";
 	}
 }

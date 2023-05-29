@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+.sub-header {
+  top: 0px;
+  position: sticky;
+  z-index: 1;
+  padding-top: 2px;
+  height: 40px;
+  background-color: pink;
+}
+.sub-header ul {
+	display: flex;	
+}
+.sub-header ul li a {
+	padding: 0 20px;
+	line-height: 40px;
+}
