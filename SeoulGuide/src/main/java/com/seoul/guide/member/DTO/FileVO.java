@@ -11,6 +11,7 @@ public class FileVO {
 	private String contenttype;
 	private Date uploaddate;
 	private byte[] data;
+	
 	public Integer getId() {
 		return id;
 	}
