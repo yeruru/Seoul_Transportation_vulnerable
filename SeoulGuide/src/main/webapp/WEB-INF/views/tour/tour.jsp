@@ -28,19 +28,15 @@
 					<div class="iconsearch">
 						<div class = "off" value = "지체장애">
 							<img alt="" src="">
-							<p>지체장애</p>
 						</div>
 						<div class = "off" value = "시각장애">
 							<img alt="" src="">
-							<p>시각장애</p>
 						</div>
 						<div class = "off" value = "임산부">
 							<img alt="" src="">
-							<p>임산부</p>
 						</div>
 						<div class = "off" value = "고령자">
 							<img alt="" src="">
-							<p>고령자</p>
 						</div>
 					</div>
 					<div class="searchBar">

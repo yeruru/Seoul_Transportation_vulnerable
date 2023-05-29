@@ -82,7 +82,7 @@
 	height : 160px;
 	background-color : var(--c-tour);
 	margin-top : 10px;
-	margin : 10px auto 0 auto;
+	margin : 0 auto;
 }
 
 .title{

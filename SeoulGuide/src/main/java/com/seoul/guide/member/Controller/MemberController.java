@@ -64,6 +64,7 @@ public class MemberController {
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam("email") String email, @RequestParam("password") String password) {
 		ModelAndView mav = new ModelAndView();
+
 		try {
 			memeberservice.login(email, password);
 			session.setAttribute("email", email);
@@ -74,6 +75,12 @@ public class MemberController {
 			mav.setViewName("member/err");
 		}
 		return mav;
+	}
+	
+	@RequestMapping(value="logout", method=RequestMethod.GET)
+	public String logout() {
+		session.removeAttribute("email");
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/nicknameCheck", produces = "text/plain;charset=UTF-8")

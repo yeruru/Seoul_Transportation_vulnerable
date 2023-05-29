@@ -42,6 +42,7 @@ $(document).ready(function() {
 			if($(this).val()==$("#password").val()){
 				if($(this).val() == ""){
 					message.css("color", "black").text("");
+					
 				}else if($(this).val().length < 8 || $(this).val().length > 12){
 			    	message.css("color", "black").text("8 ~ 12자리로 설정해주셔야합니다");
 			    }else{
@@ -79,12 +80,17 @@ $(document).ready(function() {
 		
 		//이메일 인증번호 대조
 		$("#emailChk2").click(function(){
+	
 			if($("#sm_email2").val() == code){
-				$(".successEmailChk").text("인증번호가 일치합니다.");
-				$(".successEmailChk").css("color","green");
-				$("#emailDoubleChk").val("true");
-				$("#sm_email2").attr("disabled",true);
-				//$("#sm_email").attr("disabled",true);
+				if($("#sm_email2").val() ==""){
+				$(".successEmailChk").text("인증번호를 받아주세요");
+				}else{
+					$(".successEmailChk").text("인증번호가 일치합니다.");
+					$(".successEmailChk").css("color","green");
+					$("#emailDoubleChk").val("true");
+					$("#sm_email2").attr("disabled",true);
+					//$("#sm_email").attr("disabled",true);
+				}
 			}else{
 				$(".successEmailChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
 				$(".successEmailChk").css("color","red");
@@ -98,18 +104,21 @@ $(document).ready(function() {
 	        alert("아이디 중복 확인이 필요합니다 ")
 	        return false;
 	      }
-	
-	      if($("#password").val() != $("#passwdConfirm").val()){		
-	        $("#passwordMessage").css("color", "red").text("비밀번호 확인");		
-	        alert("비밀번호가 일치하지 않습니다. 비밀번호를 확인해 주세요.");
-				return;
-			}
-			
-		  if($("#sm_email2").val() != code){ 
-		  		$(".successEmailChk").text("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
-				$(".successEmailChk").css("color","red");
-				alert("인증번호가 일치하지 않습니다. 확인해주시기 바랍니다.");
+		  
+		  if($("#passwordMessage").text() != "비밀번호가 일치합니다"){
+		  	alert("비밀번호를 다시 확인해 주세요");
+		  	return false;
+		  }
+		  
+		  if($(".successEmailChk").text() != "인증번호가 일치합니다."){
+		  	alert("인증번호를 다시받아주세요");
+		  	return false;
 		  }	
+		  
+		  if($("#birthdaymessage").text() != "완료"){
+		  	alert("생년월일을 다시 확인해주세요");
+		  	return false;
+		  }
 	    });
 	    
 	    $("#birthday").blur(function(){
