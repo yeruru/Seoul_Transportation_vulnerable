@@ -1,5 +1,3 @@
-
-
 $(document).ready(function() {
 		var checked="N";
 		$("#checknickname").click(function() {	
@@ -159,6 +157,22 @@ $(document).ready(function() {
 	    $("#file").on('change',function(){
 		  var fileName = $("#file").val();
 		  $(".upload-name").val(fileName);
+		  
 	});
 });
+
+window.onload = function(){
+	document.getElementById("file").addEventListener("change", function() {
+    var fileInput = this;
+    var imageElement = document.getElementById("myImg");
+
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      imageElement.src = e.target.result;
+    };
+    
+    reader.readAsDataURL(fileInput.files[0]);
+  });
+}
 	
+

@@ -14,6 +14,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			select * from fileVO where id=#{id} 
 		]]>				
 	</select>
+	
+	<select id="newFileId" resultType="Integer">
+		<![CDATA[
+			select ifnull(max(id),0)+1 from fileVO
+		]]>				
+	</select>
 </mapper>
 
 	

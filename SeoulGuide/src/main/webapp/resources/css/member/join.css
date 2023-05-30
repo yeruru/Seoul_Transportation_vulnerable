@@ -8,7 +8,7 @@
     align-items: center;
     flex-direction: column;
     /* position: fixed; */
-    top: 40%;
+    top:0%;
     left: 0;
 
 }
@@ -72,6 +72,8 @@
 	width : 200px;
 	display : flex;
 	margin : 0 auto;
+	margin-bottom : 20px;
+	border-radius : 20px;
 }
 .profileImage input{
 	width : 100px;
@@ -142,4 +144,7 @@
 }
 .phonenumber p{
 	margin : 3px 10px 0 10px;
+}
+
+.profileImg{
 }
