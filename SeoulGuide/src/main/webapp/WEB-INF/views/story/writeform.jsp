@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 
 <!DOCTYPE html>
 <html>
@@ -9,40 +10,42 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
 <script defer src="<c:url value="/resources/js/BoardWrite.js"/>"></script>
-<title>±€æ≤±‚</title>
+<title>Í∏ÄÏì∞Í∏∞</title>
 </head>
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
-		<h2>∞‘Ω√∆«±€µÓ∑œ</h2>
- 		<form action="./boardwrite" method="post"
-			enctype="multipart/form-data" name="boardform">
+		<h2>Í≤åÏãúÌåêÍ∏ÄÎì±Î°ù</h2>
+		
+ 		<form action="./storywrite" method="post">
 		
    			<table>
 				<tr>
-					<td class="td_left"><label for="writer">±€æ¥¿Ã</label></td>
+					<td class="td_left"><label for="user_id">Í∏ÄÏì¥Ïù¥</label></td>
 					<td class="td_right">
-						<input type="text" name="writer" id="writer" required="required" />
+						<input type="text" name="user_id" id="writer" required="required" />
 					</td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="title">¡¶ ∏Ò</label></td>
+					<td class="td_left"><label for="post_title">Ï†ú Î™©</label></td>
 					<td class="td_right">
-						<input name="title" type="text"	id="title" required="required" /></td>
+						<input name="post_title" type="text" id="title" required="required" /></td>
 				</tr>
 				<tr>
-					<td class="td_left"><label for="content">≥ª øÎ</label></td>
+					<td class="td_left"><label for="post_content">ÎÇ¥Ïö©2</label></td>
+					<td class="td_right">
+						<input name="post_content" type="text" id="title" required="required" /></td>
+				</tr>
+				
+				
+				
+				
+				<tr>
+					<td class="td_left"><label for="post_content">ÎÇ¥ Ïö©</label></td>
 					<td>
 						
 						<div id="content" name="content" required="required" class="content-wrap">
-						<!-- «ˆ¿± -->
-						<h2 style="color: #fff">Editor</h2>
-						<div id="editor"></div>
 					
-						<h2 style="color:#fff">Viewer</h2>
-						<div id="viewer"></div>
-						<!-- «ˆ¿± -->
-					   <!-- ∞‘Ω√∆« µÓ∑œ -->
-					   <!-- TOAST UI Editor∞° µÈæÓ∞• div≈¬±◊ -->
+						
 					    <div id="editor"></div>
 					    <!-- TOAST UI Editor CDN URL(JS) -->
 					    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
@@ -52,21 +55,29 @@
 					        height: '600px',
 					        initialEditType: 'wysiwyg',
 					        previewStyle: 'vertical'
-					      });
+					    });
+
+					    const btn = document.querySelector('.btniii');
+
+					    btn.addEventListener('click', function() {
+					        console.log(editor.getHTML());
+					    });
+					    
+					    
+					    
 					    </script>
-						
+						<sapn class="btniii">html Î≥ÄÌôò</sapn>
 					</td>
 				</tr>
  				<tr>
-					<td class="td_left"><label for="file"> ¿ÃπÃ¡ˆ ∆ƒ¿œ √∑∫Œ </label></td>
+					<td class="td_left"><label for="file"> Ïù¥ÎØ∏ÏßÄ ÌååÏùº Ï≤®Î∂Ä </label></td>
 					<td class="td_right">
 						<input type="file" name="file" id="file" accept="image/*"/>
 					</td>
 				</tr>
 			</table>
 			<section id="commandCell">
-				<input type="submit" value="µÓ∑œ">&nbsp;&nbsp; <input
-					type="reset" value="¥ŸΩ√æ≤±‚" />
+				<input type="submit" value="Îì±Î°ù">&nbsp;&nbsp; <input type="reset" value="Îã§ÏãúÏì∞Í∏∞" />
 			</section>
 		</form>
 	

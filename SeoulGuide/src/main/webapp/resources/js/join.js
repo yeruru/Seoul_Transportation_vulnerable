@@ -40,7 +40,6 @@ $(document).ready(function() {
 			if($(this).val()==$("#password").val()){
 				if($(this).val() == ""){
 					message.css("color", "black").text("");
-					
 				}else if($(this).val().length < 8 || $(this).val().length > 12){
 			    	message.css("color", "black").text("8 ~ 12자리로 설정해주셔야합니다");
 			    }else{
@@ -174,5 +173,3 @@ window.onload = function(){
     reader.readAsDataURL(fileInput.files[0]);
   });
 }
-	
-
