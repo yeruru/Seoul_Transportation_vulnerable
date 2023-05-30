@@ -117,3 +117,30 @@
 .off p{
 	font-size : 10px;
 }
+
+.tourresult{
+	display : grid;
+	justify-content: center;
+	grid-template-columns: 180px 180px;
+	
+}
+
+.tourlist{
+	width : 165px;
+	height : 230px;
+	
+	margin : 10px auto;
+	border-radius : 0px;
+	border : 1px solid black;
+}
+.tourimg{
+	width : 100%;
+	height : 50%;
+	background-position: center;
+}
+.text1{
+	font-size : 15px;
+}
+.text2{
+	font-size : 8px;
+}
