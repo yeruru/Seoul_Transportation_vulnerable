@@ -31,34 +31,34 @@ table {
 
 	<section id="./writeForm">
 		<h2>게시판글상세</h2>
-		<form action="./boardmodify" method="post">
-		<input type="hidden" name="num" value="${article.num }"/>
+		<form action="./storydetail" method="post">
+		<input type="hidden" name="num" value="${article.post_id }"/>
 			<table>
 				<tr>
 					<td class="td_left"><label for="writer">글쓴이</label></td>
 					<td class="td_right"><input type="text" name="writer"
-						id="writer" readonly="readonly" value="${article.writer }"/></td>
+						id="writer" readonly="readonly" value="${article.user_id }"/></td>
 				</tr>
 				<tr>
 					<td class="td_left"><label for="title">제 목</label></td>
 					<td class="td_right"><input name="title" type="text"
-						id="title" value="${article.title }"/></td>
+						id="title" value="${article.post_title }"/></td>
 				</tr>
 				<tr>
 					<td class="td_left"><label for="content">내 용</label></td>
 					<td><textarea id="content" name="content"
-							cols="40" rows="15" >${article.content }</textarea></td>
+							cols="40" rows="15" >${article.post_content }</textarea></td>
 				</tr>
 
- 				<tr>
+ 				<%-- <tr>
 					<td class="td_left"><label for="content">이미지</label></td>
 					<td><img src="./image/${article.fileid }" width="100px" height="100px"/></td>
-				</tr>
+				</tr> --%>
 			
 			</table>
 			<section id="commandCell">
 				<input type="submit" value="수정">&nbsp;&nbsp;
-				<a href="./">목록</a>
+				<a href="storyreview">목록</a>
 			</section>
 		</form>
 	</section>

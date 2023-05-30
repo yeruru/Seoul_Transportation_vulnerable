@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.board">
+
+	<select id="selectBoardList" resultType ="com.seoul.guide.board.DTO.Article">
+		<![CDATA[
+			select*from board 
+		 ]]>
+	</select>
+	
+	<select id="selectBoard" resultType ="com.seoul.guide.board.DTO.Article" parameterType="Integer">
+		<![CDATA[
+			select*from board where post_id = #{post_id} 
+		]]>
+	</select>
+	
+	<insert id="insertBoard" parameterType="com.seoul.guide.board.DTO.Article">
+		<![CDATA[
+			insert into board(user_id, post_title, post_content) values(#{user_id},#{post_title},#{post_content})		
+		]]>
+	</insert>
+	
+</mapper>

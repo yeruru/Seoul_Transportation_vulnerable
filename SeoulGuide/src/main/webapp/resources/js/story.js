@@ -1,8 +1,8 @@
 $(document).ready(function () {
-	load('#js-load', 3, '#js-btn-wrap');
+	load('#js-load', 5, '#js-btn-wrap');
 
 	$("#js-btn-wrap").on("click", function () {
-		load('#js-load', 3, '#js-btn-wrap');
+		load('#js-load', 5, '#js-btn-wrap');
 	});
 });
 
