@@ -22,9 +22,9 @@
 				name="joinform">
 				<div class="signuptotal">
 					<div class="profileImage">
-						<!-- <div>
-							<img alt="" src="resources/img/loginLogo.png">
-						</div> -->
+						<div class = "profileImg">
+							<img alt="" id = "myImg" src="resources/img/profile.png">
+						</div>
 						<div class="filebox">
 							<input class="upload-name" value="첨부파일" placeholder="첨부파일">
 							<label for="file">파일찾기</label> <input type="file" name="file" id="file" accept="image/*" />

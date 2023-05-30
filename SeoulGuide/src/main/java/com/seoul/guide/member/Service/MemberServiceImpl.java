@@ -3,6 +3,8 @@ package com.seoul.guide.member.Service;
 import java.io.File;
 import java.io.OutputStream;
 
+import javax.servlet.ServletContext;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
@@ -17,13 +19,17 @@ public class MemberServiceImpl implements MemberService {
 
 	@Autowired
 	private MemberDAO memberDAO;
+	
+	@Autowired
+	private ServletContext servletContext;
 
 	@Override
 	public void join(MemberDTO member, MultipartFile file) throws Exception {
 
 		if (file != null && !file.isEmpty()) {
 
-			String dir = "C:/SH/upload/";
+			String dir = servletContext.getRealPath("/resources/upload/");
+			System.out.println(dir);
 
 			FileVO fileVO = new FileVO();
 			fileVO.setDirectory(dir);
@@ -34,7 +40,8 @@ public class MemberServiceImpl implements MemberService {
 			fileVO.setData(file.getBytes()); 
 			memberDAO.insertFile(fileVO);
 
-			File dfile = new File(fileVO.getDirectory()+fileVO.getId());
+			File dfile = new File(fileVO.getDirectory()+fileVO.getName());
+			System.out.println(fileVO.getId());
 			file.transferTo(dfile); 
 
 			member.setFileid(fileVO.getId());

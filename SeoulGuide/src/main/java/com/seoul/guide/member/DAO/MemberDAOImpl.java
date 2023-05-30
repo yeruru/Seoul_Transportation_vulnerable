@@ -36,8 +36,7 @@ public class MemberDAOImpl implements MemberDAO {
 
 	@Override
 	public Integer newFileId() throws Exception {
-		// TODO Auto-generated method stub
-		return null;
+		return sqlSession.selectOne("file.mapper.newFileId");
 	}
 
 	@Override
