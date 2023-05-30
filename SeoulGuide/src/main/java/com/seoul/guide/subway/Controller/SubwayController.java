@@ -23,30 +23,18 @@ public class SubwayController {
 	
 	@RequestMapping(value = "/subway", method={RequestMethod.GET, RequestMethod.POST})
 	public String subway() {
-//		ModelAndView mav = new ModelAndView();
 		
-//		try {
-//			mav.addObject("subways",subwayService.getSubwayList() );
-//			mav.setViewName("subway");
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return mav;
-		return "subway";
+		return "subway/subway";
 	}
 	
-//	@RequestMapping(value = "/search", method=RequestMethod.GET )
-//	public String searchSubway() {
-//		return "subway";
-//	}	
-	@RequestMapping(value = "/search/{sub_name}", method=RequestMethod.POST )
+	//검색기능 역명으로 검색하기
+	@RequestMapping(value = "/search", method=RequestMethod.POST )
 	public ModelAndView searchSubway(@RequestParam("sub_name") String name) {
 		ModelAndView mav = new ModelAndView();
 		try {
 			List<SubwayDTO> result = subwayService.searchSubway(name);
 			mav.addObject("station", result);
-			mav.setViewName("subway");
+			mav.setViewName("subway/subway");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -54,5 +42,8 @@ public class SubwayController {
 			mav.setViewName("subway");
 		}
 		return mav;
-	}	
+	}
+	//초기화시 subway로 돌아감
+	
+	
 }

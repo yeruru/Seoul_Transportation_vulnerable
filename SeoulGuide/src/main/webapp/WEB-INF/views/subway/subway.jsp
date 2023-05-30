@@ -4,12 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<jsp:include page="/WEB-INF/views/head.jsp"/>
 	<!-- Latest compiled and minified CSS -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Latest compiled JavaScript -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 	<jsp:include page="/WEB-INF/views/head.jsp"/> 
-	<link rel=stylesheet  href="<c:url value="/resources/css/subway.css"/>"/>
+	<link rel=stylesheet  href="<c:url value="/resources/css/subway/subway.css"/>"/>
  	<title>지하철 간편 검색</title>
 </head>
 <body class="body" >
@@ -32,24 +33,22 @@
 
 			<div class="subway-form">
 				<h4>각 지하철역 교통편의 시설을 알려드립니다.</h4>
-				<form action="./search/{sub_name}" method ="post">
+				<form action="./search" method ="post">
 					<input class="form-control-plaintext" type="text" name="sub_name" placeholder="역명으로 검색해주세요"/>
 					<hr>
-					<button class="btn btn-secondary" type="submit" >검색</button>
-					<button class="btn btn-light" type="submit" >초기화</button>
 				</form>
-				<c:forEach items="${station}" var="subway">
-					<ul>
-						<li>${subway.sub_line}</li>
-					</ul>				
-				</c:forEach>
-				
-			<%-- 	<c:forEach items="${subways}" var="subway">
-				<ul>
-					<li>${subway.sub_line}</li>
-				</ul>
-				</c:forEach>--%>			
+				<div class="btn-box">
+						<button class="btn btn-secondary" type="submit" >검색</button>
+						<button class="btn btn-light" type="reset" >초기화</button>
+				</div>
 			</div>
+			<div class="subway-list box-wrap">
+				<c:forEach items="${station}" var="subway">
+					<div class="grid-box">
+						<a href="#">${subway.sub_line}</a>
+					</div>
+				</c:forEach>
+			</div>			
 			
 			
 		</div>

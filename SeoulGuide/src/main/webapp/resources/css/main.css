@@ -1,5 +1,5 @@
-@charset "EUC-KR";
-#main p { font-size: 16px; color: var(--gray2); padding-top: 10px; line-height: 18px;}
+@charset "UTF-8";
+#main p { font-size: 16px; color: var(--gray2); padding-top: 20px; line-height: 18px;}
 #main h2 { font-size: 40px; color: var(--gray4); padding-top: 10px;}
 #main .content img { width: 280px; margin: 0 auto; display: flex;}
 #main .link li { width: 80%; display: flex; justify-content: center; margin: 15px auto; height: 55px; border-radius: 10px; transition: all .3s;}
