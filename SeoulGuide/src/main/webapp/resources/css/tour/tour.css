@@ -45,6 +45,7 @@
 	height : 30px;
 	border : 0;
 	border-radius : 6px;
+	cursor: pointer;
 }
 
 .SeoulLocal{
@@ -57,18 +58,112 @@
 	color : var( --c-text);
 	border-radius : 3px;
 }
-
 .iconsearch {
 	display : flex;
 }
 .iconsearch div{
+	margin : 20px auto 20px auto;
+	cursor:pointer;
+}
+
+
+
+
+.menu_icon1[type=checkbox]{
 	width : 60px;
 	height : 60px;
-	margin : 20px auto 20px auto;
-	border : 1px solid black;
-	border-radius : 3px;
-	cursor:pointer;
-	box-shadow: 3px 3px 7px rgba(152, 152, 157, 0.7);
+	display : none;
+}
+
+.menu_icon1[type=checkbox] + label{
+	display: inline-block; 
+	cursor: pointer;  
+	background: url('../../../resources/img/icons/Group 8.png');
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
+}
+
+.menu_icon1[type=checkbox]:checked + label { 
+	background: url('../../../resources/img/icons/Group 1.png'); 
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
+}
+
+
+
+.menu_icon6[type=checkbox]{
+	width : 60px;
+	height : 60px;
+	display : none;
+}
+.menu_icon6[type=checkbox] + label{
+	display: inline-block; 
+	cursor: pointer;  
+	background: url('../../../resources/img/icons/Group 6.png');
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
+}
+.menu_icon6[type=checkbox]:checked + label { 
+	background: url('../../../resources/img/icons/Group 4.png'); 
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
+}
+
+
+
+.menu_icon5[type=checkbox]{
+	width : 60px;
+	height : 60px;
+	display : none;
+}
+.menu_icon5[type=checkbox] + label{
+	display: inline-block; 
+	cursor: pointer;  
+	background: url('../../../resources/img/icons/Group 5.png');
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
+}
+
+.menu_icon5[type=checkbox]:checked + label { 
+	background: url('../../../resources/img/icons/Group 2.png'); 
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
+}
+
+
+
+.menu_icon2[type=checkbox]{
+	width : 60px;
+	height : 60px;
+	display : none;
+}
+.menu_icon2[type=checkbox] + label{
+	display: inline-block; 
+	cursor: pointer;  
+	background: url('../../../resources/img/icons/Group 7.png');
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
+}
+.menu_icon2[type=checkbox]:checked + label { 
+	background: url('../../../resources/img/icons/Group 3.png'); 
+	background-position: center;
+	background-size: cover ;
+	width : 60px;
+	height : 60px;
 }
 
 .hiddenbox{
@@ -114,10 +209,6 @@
 	background-color : var(--c-content);
 }
 
-.off p{
-	font-size : 10px;
-}
-
 .tourresult{
 	display : grid;
 	justify-content: center;
@@ -137,10 +228,19 @@
 	width : 100%;
 	height : 50%;
 	background-position: center;
+	background-size: cover
 }
 .text1{
 	font-size : 15px;
 }
 .text2{
 	font-size : 8px;
+}
+.menu_icon{
+	display : flex;
+	position : absolute;
+}
+.menu_icon img{
+	width : 30px;
+	height : 30px;
 }
