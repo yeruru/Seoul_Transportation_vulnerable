@@ -6,7 +6,7 @@
 
 	<select id="selectBoardList" resultType ="com.seoul.guide.board.DTO.Article">
 		<![CDATA[
-			select*from board 
+			select*from board order by post_regdate desc
 		 ]]>
 	</select>
 	
@@ -21,5 +21,11 @@
 			insert into board(user_id, post_title, post_content) values(#{user_id},#{post_title},#{post_content})		
 		]]>
 	</insert>
+	
+	<update id="updateBoard" parameterType="java.util.Map">
+		<![CDATA[
+			update board set post_title=#{post_title}, post_content=#{post_content} where user_id=#{user_id}		
+		]]>
+	</update>
 	
 </mapper>

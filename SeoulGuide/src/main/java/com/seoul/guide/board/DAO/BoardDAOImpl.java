@@ -1,6 +1,7 @@
 package com.seoul.guide.board.DAO;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,5 +36,9 @@ public class BoardDAOImpl implements BoardDAO {
 		return sqlSession.insert("mapper.board.insertBoard", article);
 	}
 	
+	@Override
+	public void updateBoard(Map<String, Object> param) throws Exception {
+		sqlSession.update("mapper.board.updateBoard", param);
+	}
 
 }
