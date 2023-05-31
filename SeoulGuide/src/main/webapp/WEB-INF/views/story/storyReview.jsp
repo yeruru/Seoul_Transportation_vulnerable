@@ -47,9 +47,6 @@
 			                        <div class="tumb-title">
 			                            <em>${article.post_title }</em>
 			                            
-			                        </div>
-			                        	<p>${article.post_content }</p>
-			                    	</div>
 				                </a>
 				            </li>
 			            	</c:forEach>

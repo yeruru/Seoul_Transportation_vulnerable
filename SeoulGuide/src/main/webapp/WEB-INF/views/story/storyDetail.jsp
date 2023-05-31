@@ -1,37 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type="text/css">
-h2 {
-	text-align: center;
-}
-table {
-	margin: auto;
-	width: 450px;
-}
-.td_left {
-	width: 150px;
-	background: orange;
-}
-.td_right {
-	width: 300px;
-	background: skyblue;
-}
-#commandCell {
-	text-align: center;
-}
-</style>
+<script defer src="<c:url value="/resources/js/boardWrite.js"/>"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.css">
+<link rel="stylesheet" href="https://uicdn.toast.com/editor/2.0.0/toastui-editor.min.css">
+<script src="https://uicdn.toast.com/editor/2.0.0/toastui-editor-all.min.js"></script>
 </head>
 <body>
 	<!-- 게시판 등록 -->
 
 	<section id="./writeForm">
 		<h2>게시판글상세</h2>
-		<form action="./storydetail" method="post">
+		<form action="./storymodify" method="post">
 		<input type="hidden" name="num" value="${article.post_id }"/>
 			<table>
 				<tr>
@@ -46,8 +31,40 @@ table {
 				</tr>
 				<tr>
 					<td class="td_left"><label for="content">내 용</label></td>
-					<td><textarea id="content" name="content"
-							cols="40" rows="15" >${article.post_content }</textarea></td>
+					<td>
+						<div id="viewer">${article.post_content}</div>
+					    <!-- TOAST UI Editor CDN URL(JS) -->
+					    <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+					    <script>
+					    const viewer = toastui.Editor.factory({
+				            el: document.querySelector('#viewer'),
+				            viewer: true,
+				            height: '500px',
+				            initialValue: content,
+				            
+				        }); 
+					    
+					    
+					    
+					    /* function ToView()
+				        {
+				            viewer.setMarkdown(editor.getMarkdown());
+				        }; */
+					    </script>
+						
+						
+						
+						<%-- <textarea id="content" name="content" cols="40" rows="15">
+					        <c:out value="${article.post_content}" escapeXml="true" />
+					    </textarea> --%>
+					</td>
+					
+					
+					
+					
+					
+					
+					
 				</tr>
 
  				<%-- <tr>

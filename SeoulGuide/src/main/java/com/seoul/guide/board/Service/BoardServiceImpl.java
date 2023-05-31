@@ -1,6 +1,8 @@
 package com.seoul.guide.board.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,5 +33,13 @@ public class BoardServiceImpl implements BoardService {
 	public Integer writeBoard(Article article) throws Exception {
 		return boardDAO.insertBoard(article);
 		
+	}
+	@Override
+	public void modifyBoard(Integer user_id, String post_title, String post_content) throws Exception {
+		Map<String, Object> map= new HashMap<>();
+		map.put("user_id", user_id);
+		map.put("post_title", post_title);
+		map.put("post_content", post_content);
+		boardDAO.updateBoard(map);
 	}
 }
