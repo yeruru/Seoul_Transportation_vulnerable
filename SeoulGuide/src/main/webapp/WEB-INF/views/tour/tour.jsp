@@ -26,28 +26,29 @@
 	</div>
 	<div class="searchbackground">
 		<div class="box">
-			<form action="">
+			<form action="tourdetailsearch" method = "POST">
 				<div class="search">
 					<div class="iconsearch">
-						<div class="off" value="지체장애">
-							<input type="checkbox" class="menu_icon1" id="menu_icon1"><label
+						<div class="off">
+							<input type="checkbox"  class="menu_icon1" name="menu_icon"  value="type1" id="menu_icon1"><label
 								for="menu_icon1"></label>
 						</div>
-						<div class="off" value="시각장애">
-							<input type="checkbox" class="menu_icon6" id="menu_icon6"><label
+						<div class="off">
+							<input type="checkbox" class="menu_icon6"  name="menu_icon" value="type2" id="menu_icon6"><label
 								for="menu_icon6"></label>
 						</div>
-						<div class="off" value="임산부">
-							<input type="checkbox" class="menu_icon5" id="menu_icon5"><label
+						<div class="off">
+							<input type="checkbox" class="menu_icon5" name="menu_icon" value="type3" id="menu_icon5"><label
 								for="menu_icon5"></label>
 						</div>
-						<div class="off" value="고령자">
-							<input type="checkbox" class="menu_icon2" id="menu_icon2"><label
+						<div class="off">
+							<input type="checkbox" class="menu_icon2" name="menu_icon" value="type4" id="menu_icon2"><label
 								for="menu_icon2"></label>
 						</div>
 					</div>
 					<div class="searchBar">
-						<span>지역 선택</span> <select class="SeoulLocal" name="Seoullocal">
+						<span>지역 선택</span> 
+						<select class="SeoulLocal" name="tourist_subtitle">
 							<option value="">구 선택</option>
 							<option value="강남구">강남구</option>
 							<option value="강동구">강동구</option>
