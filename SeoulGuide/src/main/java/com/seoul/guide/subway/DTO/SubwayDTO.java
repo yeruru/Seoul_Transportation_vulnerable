@@ -1,78 +1,80 @@
 package com.seoul.guide.subway.DTO;
 
 public class SubwayDTO {
-	private Integer sub_id;
-	private String sub_name;
-	private String sub_line;
-	private String sub_id_api;
-	private String sub_name_api;
-	private String sub_line_api;
+	private String RAIL_OPR_ISTT_CD;
+	private String RAIL_OPR_ISTT_NM;
+	private String LN_CD;
+	private String LN_NM;
+	private String STIN_CD;
+	private String STIN_NM;
 	
 	public SubwayDTO() {}
 
-	public SubwayDTO(Integer sub_id, String sub_name, String sub_line, String sub_id_api, String sub_name_api,
-			String sub_line_api) {
-		this.sub_id = sub_id;
-		this.sub_name = sub_name;
-		this.sub_line = sub_line;
-		this.sub_id_api = sub_id_api;
-		this.sub_name_api = sub_name_api;
-		this.sub_line_api = sub_line_api;
+	public SubwayDTO(String rAIL_OPR_ISTT_CD, String rAIL_OPR_ISTT_NM, String lN_CD, String lN_NM, String sTIN_CD,
+			String sTIN_NM) {
+		RAIL_OPR_ISTT_CD = rAIL_OPR_ISTT_CD;
+		RAIL_OPR_ISTT_NM = rAIL_OPR_ISTT_NM;
+		LN_CD = lN_CD;
+		LN_NM = lN_NM;
+		STIN_CD = sTIN_CD;
+		STIN_NM = sTIN_NM;
 	}
 
-	public Integer getSub_id() {
-		return sub_id;
+	public String getRAIL_OPR_ISTT_CD() {
+		return RAIL_OPR_ISTT_CD;
 	}
 
-	public void setSub_id(Integer sub_id) {
-		this.sub_id = sub_id;
+	public void setRAIL_OPR_ISTT_CD(String rAIL_OPR_ISTT_CD) {
+		RAIL_OPR_ISTT_CD = rAIL_OPR_ISTT_CD;
 	}
 
-	public String getSub_name() {
-		return sub_name;
+	public String getRAIL_OPR_ISTT_NM() {
+		return RAIL_OPR_ISTT_NM;
 	}
 
-	public void setSub_name(String sub_name) {
-		this.sub_name = sub_name;
+	public void setRAIL_OPR_ISTT_NM(String rAIL_OPR_ISTT_NM) {
+		RAIL_OPR_ISTT_NM = rAIL_OPR_ISTT_NM;
 	}
 
-	public String getSub_line() {
-		return sub_line;
+	public String getLN_CD() {
+		return LN_CD;
 	}
 
-	public void setSub_line(String sub_line) {
-		this.sub_line = sub_line;
+	public void setLN_CD(String lN_CD) {
+		LN_CD = lN_CD;
 	}
 
-	public String getSub_id_api() {
-		return sub_id_api;
+	public String getLN_NM() {
+		return LN_NM;
 	}
 
-	public void setSub_id_api(String sub_id_api) {
-		this.sub_id_api = sub_id_api;
+	public void setLN_NM(String lN_NM) {
+		LN_NM = lN_NM;
 	}
 
-	public String getSub_name_api() {
-		return sub_name_api;
+	public String getSTIN_CD() {
+		return STIN_CD;
 	}
 
-	public void setSub_name_api(String sub_name_api) {
-		this.sub_name_api = sub_name_api;
+	public void setSTIN_CD(String sTIN_CD) {
+		STIN_CD = sTIN_CD;
 	}
 
-	public String getSub_line_api() {
-		return sub_line_api;
+	public String getSTIN_NM() {
+		return STIN_NM;
 	}
 
-	public void setSub_line_api(String sub_line_api) {
-		this.sub_line_api = sub_line_api;
+	public void setSTIN_NM(String sTIN_NM) {
+		STIN_NM = sTIN_NM;
 	}
 
 	@Override
 	public String toString() {
-		return "SubwayDTO [sub_id=" + sub_id + ", sub_name=" + sub_name + ", sub_line=" + sub_line + ", sub_id_api="
-				+ sub_id_api + ", sub_name_api=" + sub_name_api + ", sub_line_api=" + sub_line_api + "]";
+		return "SubwayDTO [RAIL_OPR_ISTT_CD=" + RAIL_OPR_ISTT_CD + ", RAIL_OPR_ISTT_NM=" + RAIL_OPR_ISTT_NM + ", LN_CD="
+				+ LN_CD + ", LN_NM=" + LN_NM + ", STIN_CD=" + STIN_CD + ", STIN_NM=" + STIN_NM + "]";
 	}
-
-		
+	
+	
+	
+	
 }

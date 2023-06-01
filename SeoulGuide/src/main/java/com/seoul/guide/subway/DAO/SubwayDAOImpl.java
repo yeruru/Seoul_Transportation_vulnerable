@@ -16,10 +16,16 @@ public class SubwayDAOImpl implements SubwayDAO{
 	private SqlSessionTemplate sqlSession;
 	
 	@Override
-	public List<SubwayDTO> selectSubwayByName(Map<String, Object> param) throws Exception {
+	public List<SubwayDTO> selectSubwayByName(String name) throws Exception {
 		// TODO Auto-generated method stub
-		System.out.println(param);
-		return sqlSession.selectList("mapper.subway.selectSubwayByName",param);
+		System.out.println(name);
+		return sqlSession.selectList("mapper.subway.selectSubwayByName",name);
+	}
+
+	@Override
+	public SubwayDTO selectSubwayByNameAndLine(Map<String, String> param) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectOne("mapper.subway.selectSubwayByNameAndLine",param);
 	}
 
 //	@Override

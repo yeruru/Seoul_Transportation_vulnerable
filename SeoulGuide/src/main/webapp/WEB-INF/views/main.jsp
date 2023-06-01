@@ -13,15 +13,6 @@
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<section id="main" class="content-wrap">
-		<div class="content">
-			<p>교통약자를 위한<br>서울시 장애물 없는 관광</p>
-			<h2>서울, 함께 가는 길</h2>
-			<img src="<c:url value="/resources/img/main-img.svg"/>" alt="메인이미지">
-			<div class="link">
-				<ul>
-					<li><a href="#">관광지 간편 검색</a></li>
-					<li><a href="subway">지하철 간편 검색</a></li>
-					<li><a href="#">로그인</a></li>
 		<div id="skip-nav" class="content">
 			<p>교통약자를 위한<br>서울시 장애물 없는 관광</p>
          	<h2>서울, 함께 가는 길</h2>
@@ -29,7 +20,7 @@
 			<div class="link">
 				<ul>
 					<li><a href="#">관광지 간편 검색</a></li>
-					<li><a href="#">지하철 간편 검색</a></li>
+					<li><a href="subway">지하철 간편 검색</a></li>
 					<li>
 					  <c:choose>
 						<c:when test="${sessionScope.id eq null }">
