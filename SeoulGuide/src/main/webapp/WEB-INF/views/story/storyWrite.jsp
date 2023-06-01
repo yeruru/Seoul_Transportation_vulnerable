@@ -11,6 +11,7 @@
 <script defer src="<c:url value="/resources/js/BoardWrite.js"/>"></script>
 <title>글쓰기</title>
 </head>
+
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 		<h2>게시판글등록</h2>

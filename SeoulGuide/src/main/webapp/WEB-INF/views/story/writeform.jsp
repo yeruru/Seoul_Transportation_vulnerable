@@ -7,15 +7,15 @@
 <html>
 <head>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/story/storyReview.css"/>">
+<link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <link rel="stylesheet"
 	href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
-	
+<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 <script defer src="<c:url value="/resources/js/boardWrite.js"/>"></script>
 <title>글쓰기</title>
 </head>
+
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
