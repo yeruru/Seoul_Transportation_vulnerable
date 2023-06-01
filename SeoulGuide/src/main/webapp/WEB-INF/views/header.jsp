@@ -12,15 +12,12 @@
 
 <div class="header-wrap">
 
-
-
 	<!-- 접근성 -->
 	<div>
-	
        <a href="#;" class="accbtn">
        	<img src="<c:url value="/resources/img/accessicon.png"/>" alt="접근성 버튼">
        </a>
-       
+      
        <!-- 접근성 팝업 -->
        <div class="access">
          <div class ="popup">
@@ -71,8 +68,16 @@
 	             <li><a href="#">실시간 교통</a></li>
 	           </ul>
 	         </li>
-	         <li><a href="#">로그인</a></li>
-	         <li><a href="#">회원가입</a></li>
+	         <c:choose>
+	         	<c:when test="${sessionScope.email eq null }">
+	         	    <li><a href="./loginform">로그인</a></li>
+	         		<li><a href="./joinform">회원가입</a></li>
+	         	</c:when>
+	         	<c:otherwise>
+	         		<li><a href="./logout">로그아웃</a></li>	
+	         	</c:otherwise>
+	         </c:choose>
+
 	       </ul>
 	     </nav>
 	</div>

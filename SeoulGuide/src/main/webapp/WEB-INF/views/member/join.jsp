@@ -6,10 +6,11 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<link rel="stylesheet" href="<c:url value="/resources/css/member/join.css"/>">
+<link rel="stylesheet"
+	href="<c:url value="/resources/css/member/join.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
-<script src="<c:url value="/resources//js/jquery-3.3.1.js"/>"></script>
-<script defer src="<c:url value="/resources/js/join.js"/>"></script>
+<script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
+<script src="<c:url value="/resources/js/join.js"/>"></script>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 <body class="body">
@@ -21,14 +22,13 @@
 				name="joinform">
 				<div class="signuptotal">
 					<div class="profileImage">
-						<div>
-							<img alt="" src="resources/img/loginLogo.png">
+						<div class = "profileImg">
+							<img alt="" id = "myImg" src="resources/img/profile.png">
 						</div>
 						<div class="filebox">
 							<input class="upload-name" value="첨부파일" placeholder="첨부파일">
-							<label for="file">파일찾기</label> <input type="file" name="file" id="file" accept="image/*"/>
+							<label for="file">파일찾기</label> <input type="file" name="file" id="file" accept="image/*" />
 						</div>
-
 					</div>
 					<table>
 						<colgroup>
@@ -39,38 +39,69 @@
 							<tr>
 								<td class="nickname"><input type="text" name="nickname"
 									id="nickname" placeholder=" 닉네임" required>
-									<button type="button" id="checkId">중복확인</button> <span
-									class="message" id="idMessage"></span></td>
+									<button type="button" id="checknickname">중복확인</button></td>
+							</tr>
+							<tr>
+								<td><span class="message" id="idMessage"></span></td>
 							</tr>
 							<tr>
 								<td><input type="text" name="username" placeholder=" 이름"
 									required></td>
 							</tr>
 							<tr>
-								<td><input type="text" name="email" id="email"
-									placeholder=" 이메일" required>
+								<td class="emailcheck"><input type="text" name="email"
+									id="email" placeholder=" 이메일" required>
+									<button type="button" id="emailChk" class="doubleChk">인증번호
+										요청</button></td>
+							</tr>
+							<tr>
+								<td class="emailcheck2"><input id="sm_email2" type="text"
+									name="sm_email2" title="인증번호 입력" disabled required />
+									<button type="button" id="emailChk2" class="doubleChk">이메일인증</button>
 								</td>
+
+							</tr>
+							<tr>
+								<td><span class="point successEmailChk">이메일 입력후 인증번호
+										보내기를 해주십시오.</span> <input type="hidden" id="emailDoubleChk" /></td>
 							</tr>
 							<tr>
 								<td><input type="password" name="password" id="password"
 									placeholder=" 비밀번호" required></td>
 							</tr>
+
 							<tr>
-								<td><input type="password" name="passwdConfirm" id="passwdConfirm" placeholder=" 비밀번호 확인" required> <span id="passwordMessage"></span></td>
+								<td><input type="password" name="passwdConfirm"
+									id="passwdConfirm" placeholder=" 비밀번호 확인" required>
 							</tr>
 							<tr>
-								<td><input type="text" name="phoneNumber"
-									id="phoneNumber" placeholder=" 휴대전화" required></td>
+								<td><span id="passwordMessage"></span></td>
 							</tr>
 							<tr>
-								<td><input type="text" name="birthday" placeholder=" 생년월일"
-									required></td>
+								<td class = "phonenumber">
+									<select name="phone1" class = "phone1" required>
+											<option value="010" selected>010</option>
+											<option value="011">011</option>
+									</select><p>-</p> 
+									<input type="text" name="phone2" class = "phone" required maxlength="4"><p>-</p>
+									<input type="text" name="phone3" class = "phone" required maxlength="4">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="text" name="birthday" id = "birthday"  maxlength = "8" placeholder=" 생년월일" required>
+									<span>ex)19770302</span>
+								</td>
+							</tr>
+							
+							<tr>
+								<td><span id="birthdaymessage"></span></td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div>
-					<button  class = "submitbutton" type="submit">회원가입</button>
+					<button class="submitbutton" id="submitbutton" type="submit">회원가입</button>
 				</div>
 			</form>
 		</div>

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+.sub-header {
+  top: 0px;
+  position: sticky;
+  z-index: 1;
+  padding-top: 2px;
+  height: 50px;
+  background-color: var(--c-bg);
+  box-shadow: 0px 0px 5px 1px rgb(237, 238, 243);
+}
+.sub-header ul {
+	display: flex;	
+	justify-content: space-between;
+}
+
+.sub-header ul li:nth-child(4) {
+	flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.sub-header ul li a {
+	padding: 0 20px;
+	line-height: 50px;
+	color: var(--gray);
+}
+
+.sub-header ul li a:hover {
+	color: var(--c-tour);
+}
