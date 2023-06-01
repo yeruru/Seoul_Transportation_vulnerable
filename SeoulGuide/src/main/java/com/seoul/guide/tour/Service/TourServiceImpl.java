@@ -1,6 +1,10 @@
 package com.seoul.guide.tour.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +20,17 @@ public class TourServiceImpl implements TourService {
 	@Override
 	public List<TourDTO> gettourList() throws Exception {
 		return tourDAO.selecttourlist();
+	}
+
+	@Override
+	public List<TourDTO> detailSearch(String[] menu_icon, String tourist_subtitle) throws Exception {
+		Map<String, Object> map = new HashMap<>();
+		List<String> list = Arrays.asList(menu_icon);
+		System.out.println(list);
+		map.put("menu_icon", list);
+		map.put("tourist_subtitle", tourist_subtitle);
+		System.out.println(map.get("tourist_subtitle"));
+		return tourDAO.detailSearch(map);
 	}
 
 }

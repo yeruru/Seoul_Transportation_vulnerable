@@ -103,14 +103,14 @@
 .menu_icon6[type=checkbox] + label{
 	display: inline-block; 
 	cursor: pointer;  
-	background: url('../../../resources/img/icons/Group 6.png');
+	background: url('../../../resources/img/icons/Group 5.png');
 	background-position: center;
 	background-size: cover ;
 	width : 60px;
 	height : 60px;
 }
 .menu_icon6[type=checkbox]:checked + label { 
-	background: url('../../../resources/img/icons/Group 4.png'); 
+	background: url('../../../resources/img/icons/Group 2.png'); 
 	background-position: center;
 	background-size: cover ;
 	width : 60px;
@@ -127,7 +127,7 @@
 .menu_icon5[type=checkbox] + label{
 	display: inline-block; 
 	cursor: pointer;  
-	background: url('../../../resources/img/icons/Group 5.png');
+	background: url('../../../resources/img/icons/Group 7.png');
 	background-position: center;
 	background-size: cover ;
 	width : 60px;
@@ -135,7 +135,7 @@
 }
 
 .menu_icon5[type=checkbox]:checked + label { 
-	background: url('../../../resources/img/icons/Group 2.png'); 
+	background: url('../../../resources/img/icons/Group 3.png'); 
 	background-position: center;
 	background-size: cover ;
 	width : 60px;
@@ -152,14 +152,14 @@
 .menu_icon2[type=checkbox] + label{
 	display: inline-block; 
 	cursor: pointer;  
-	background: url('../../../resources/img/icons/Group 7.png');
+	background: url('../../../resources/img/icons/Group 6.png');
 	background-position: center;
 	background-size: cover ;
 	width : 60px;
 	height : 60px;
 }
 .menu_icon2[type=checkbox]:checked + label { 
-	background: url('../../../resources/img/icons/Group 3.png'); 
+	background: url('../../../resources/img/icons/Group 4.png'); 
 	background-position: center;
 	background-size: cover ;
 	width : 60px;
