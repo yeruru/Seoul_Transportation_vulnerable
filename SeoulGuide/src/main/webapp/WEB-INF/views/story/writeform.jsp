@@ -15,6 +15,7 @@
 <script defer src="<c:url value="/resources/js/boardWrite.js"/>"></script>
 <title>글쓰기</title>
 </head>
+
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">

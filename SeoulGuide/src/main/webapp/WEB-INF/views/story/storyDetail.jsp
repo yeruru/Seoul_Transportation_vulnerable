@@ -17,6 +17,7 @@
 	<div class="sub-header-box">
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
 		
+		
 		<section id="./writeForm" class="content-wrap storydetail">
 			<form action="./storymodify" method="post">
 				<input type="hidden" name="num" value="${article.post_id }"/>

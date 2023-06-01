@@ -88,10 +88,12 @@ public class BoardController {
 	  
 	  
 	
+	
 	@RequestMapping(value="/storymodify", method=RequestMethod.GET)
 	public String storyModify() {
 		return "story/storyModify";
 	}
+	
 	
 	
 	

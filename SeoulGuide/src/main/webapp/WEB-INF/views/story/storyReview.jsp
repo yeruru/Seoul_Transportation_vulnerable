@@ -13,6 +13,7 @@
 	<script defer src="<c:url value="/resources/js/story.js"/>"></script>
 	
 </head>
+
 <body class="body">
 
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
