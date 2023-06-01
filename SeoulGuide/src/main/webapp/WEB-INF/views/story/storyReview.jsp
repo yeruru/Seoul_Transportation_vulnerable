@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +38,7 @@
 			                for (int i = 0; i < 1; i++) {
 			            %> --%> 
 			            
-			            <c:forEach items="${boards}" var="article">
+			          <c:forEach items="${boards}" var="article">
 			            <li class="lists__item js-load">
 			                <a href="storydetail?post_id=${article.post_id}">
 			                    <div class="tumb-box">
@@ -45,11 +46,13 @@
 			                            <%-- tumb 내용 --%>
 			                        </div>
 			                        <div class="tumb-title">
-			                            <em>${article.post_title }</em>
-			                            
+			                        	<em>${article.post_title }</em>
+			                        	
+			                        </div>
+			                      </div>
 				                </a>
-				            </li>
-			            	</c:forEach>
+				           </li>
+			            </c:forEach>
 			           <%-- <%
 			                }
 			            %> --%>

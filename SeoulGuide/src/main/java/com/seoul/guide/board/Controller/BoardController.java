@@ -73,16 +73,27 @@ public class BoardController {
 	}
 	
 	
-	@RequestMapping(value="/storymodify", method=RequestMethod.POST)
-	public ModelAndView boardModify(@RequestParam("user_id") Integer user_id, @RequestParam("post_title") String post_title,
-			@RequestParam("post_content") String post_content) {
-		ModelAndView mav = new ModelAndView();
-		try {
-			boardService.modifyBoard(user_id, post_title, post_content);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		mav.setViewName("redirect:/storyreview");
-		return mav;
+
+	  @RequestMapping(value="/storyDetail", method=RequestMethod.POST) public
+	  ModelAndView storyDetail(@RequestParam("user_id") Integer
+	  user_id, @RequestParam("post_title") String post_title,
+	  
+	  @RequestParam("post_content") String post_content) { ModelAndView mav = new
+	  ModelAndView(); try { boardService.modifyBoard(user_id, post_title,
+	  post_content); } catch(Exception e) { e.printStackTrace(); }
+	  mav.setViewName("redirect:/storyreview"); return mav; }
+	 
+	  
+	  
+	  
+	  
+	
+	@RequestMapping(value="/storymodify", method=RequestMethod.GET)
+	public String storyModify() {
+		return "story/storyModify";
 	}
+	
+	
+	
+	
 }
