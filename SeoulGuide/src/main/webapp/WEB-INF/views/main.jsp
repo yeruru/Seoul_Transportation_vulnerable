@@ -20,7 +20,7 @@
 			<div class="link">
 				<ul>
 					<li><a href="#">관광지 간편 검색</a></li>
-					<li><a href="#">지하철 간편 검색</a></li>
+					<li><a href="subway">지하철 간편 검색</a></li>
 					<li>
 					  <c:choose>
 						<c:when test="${sessionScope.id eq null }">

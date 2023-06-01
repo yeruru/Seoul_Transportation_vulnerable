@@ -8,7 +8,7 @@ import com.seoul.guide.subway.DTO.SubwayDTO;
 public interface SubwayDAO {
 	
 //	public List<SubwayDTO> selectSubwayList() throws Exception;
-	public List<SubwayDTO> selectSubwayByName(Map<String,Object> param) throws Exception;
-	
+	public List<SubwayDTO> selectSubwayByName(String name) throws Exception;
+	public SubwayDTO selectSubwayByNameAndLine(Map<String, String> param) throws Exception;
 	
 }

@@ -4,9 +4,15 @@
 <mapper namespace="mapper.subway">
 
 	
-	<select id="selectSubwayByName" resultType="com.seoul.guide.subway.DTO.SubwayDTO" parameterType="java.util.Map">
+	<select id="selectSubwayByName" resultType="com.seoul.guide.subway.DTO.SubwayDTO" parameterType="String">
     <![CDATA[
-        select * from subway where sub_name like concat('%', #{name}, '%')
+        select * from subway where STIN_NM = #{name}
     ]]>
 	</select>
+	
+	<select id="selectSubwayByNameAndLine" resultType="com.seoul.guide.subway.DTO.SubwayDTO" parameterType="java.util.Map">
+    <![CDATA[
+        select * from subway where STIN_NM =#{name} and ln_nm=#{line}
+    ]]>
+	</select>	
 </mapper>						
