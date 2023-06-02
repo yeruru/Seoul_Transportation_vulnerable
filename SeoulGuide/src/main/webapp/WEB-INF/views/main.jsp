@@ -19,15 +19,15 @@
 			<img src="<c:url value="/resources/img/main-img.svg"/>" alt="메인이미지">
 			<div class="link">
 				<ul>
-					<li><a href="#">관광지 간편 검색</a></li>
+					<li><a href="./tourlist">관광지 간편 검색</a></li>
 					<li><a href="#">지하철 간편 검색</a></li>
 					<li>
 					  <c:choose>
-						<c:when test="${sessionScope.id eq null }">
-	                      <a class="" href="#">로그인</a>
+						<c:when test="${sessionScope.email eq null }">
+	                      <a class="" href="./loginform">로그인</a>
 	                    </c:when>
 	                    <c:otherwise>
-	                      <a href="${contextPath }/logout">로그아웃</a>
+	                      <a href="./logout">로그아웃</a>
                        	</c:otherwise>
 	                   </c:choose>
                     </li>
