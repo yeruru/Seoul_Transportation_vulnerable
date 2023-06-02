@@ -118,12 +118,10 @@ public class MemberController {
 	    try {
 	    	MimeMessage mail = mailSender.createMimeMessage();
 	        MimeMessageHelper mailHelper = new MimeMessageHelper(mail, true, "UTF-8");
-	        
 	        mailHelper.setFrom(from);
 	        mailHelper.setTo(to);
 	        mailHelper.setSubject(title);
-	        mailHelper.setText(content, true);       
-	        
+	        mailHelper.setText(content, true);  
 	        mailSender.send(mail);
 	        num = Integer.toString(serti);
 	        

@@ -46,27 +46,7 @@
 
 						});
 					</script>
-
-
-
-
 				</div>
-				<div class="tumb-container">
-					<div class="thumb-box">
-						<div id="imageBoxContainer" class="image-box">
-							<img id="imageBox" src="" alt="">
-						</div>
-						<div class="plus-text" id="noImageText">
-							썸네일 이미지가 없습니다.<br> 이미지를 추가해주세요.
-						</div>
-						<div class="plus-box" onclick="openFileInput()">
-							<span id="plusIcon"><a href="#;">+</a></span>
-						</div>
-						<input type="file" id="fileInput" style="display: none;"
-							onchange="handleFileInput(event)">
-					</div>
-				</div>
-
 				<section id="commandCell">
 					<input type="submit" value="등록" class="submit-btn">
 				</section>

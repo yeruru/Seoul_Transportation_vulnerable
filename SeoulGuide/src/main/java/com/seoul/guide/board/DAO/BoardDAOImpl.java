@@ -41,4 +41,10 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.update("mapper.board.updateBoard", param);
 	}
 
+
+	@Override
+	public void deleteBoard(Integer post_id) throws Exception {
+		sqlSession.delete("mapper.board.deleteBoard", post_id);
+	}
+
 }

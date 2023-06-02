@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>스토리상세페이지</title>
 <script defer src="<c:url value="/resources/js/boardWrite.js"/>"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.48.4/codemirror.css">
 <link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
@@ -16,7 +16,6 @@
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
-		
 		
 		<section id="./writeForm" class="content-wrap storydetail">
 			<form action="./storymodify" method="post">
@@ -45,7 +44,9 @@
 				</script>
 			
 				<section id="commandCell">
-					<input type="submit" value="수정">&nbsp;&nbsp;
+
+					<a href="<c:url value='/storymodify?post_id=${article.post_id}'/>">수정</a>
+
 					<a href="storyreview">목록</a>
 				</section>
 			</form>
