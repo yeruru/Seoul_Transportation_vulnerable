@@ -78,7 +78,7 @@ public class BoardController {
 		return mav;
 	}
 	
-	
+
 	@RequestMapping(value = "/storymodify", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView storyModify(@RequestParam("post_id") Integer num) {
 	    ModelAndView mav = new ModelAndView();
@@ -121,8 +121,5 @@ public class BoardController {
 			e.printStackTrace();
 		}
 		 return mav;
-	}
-	
-	
-		
+  }
 }

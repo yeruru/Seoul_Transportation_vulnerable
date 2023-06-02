@@ -44,7 +44,9 @@
 				</script>
 			
 				<section id="commandCell">
+
 					<a href="<c:url value='/storymodify?post_id=${article.post_id}'/>">수정</a>
+
 					<a href="storyreview">목록</a>
 				</section>
 			</form>

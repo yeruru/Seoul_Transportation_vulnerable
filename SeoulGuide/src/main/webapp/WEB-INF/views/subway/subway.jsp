@@ -21,7 +21,7 @@
 
 		<div class="subway-head"">
 		
-			<div class="subway-wrap">
+			<div class="subway-wrap box-wrap">
 				<div>	
 					<p>
 					서울 관광을 고민중이신가요? <br>
@@ -34,18 +34,18 @@
 			<div class="subway-form">
 				<h4>각 지하철역 교통편의 시설을 알려드립니다.</h4>
 				<form action="./search" method ="post">
-					<input class="form-control-plaintext" type="text" name="sub_name" placeholder="역명으로 검색해주세요"/>
+					<input class="form-control-plaintext" type="text" name="STIN_NM" value="${STIN_NM}" placeholder="역명으로 검색해주세요"/>
 					<hr>
-				</form>
-				<div class="btn-box">
+					<div class="btn-box">
 						<button class="btn btn-secondary" type="submit" >검색</button>
 						<button class="btn btn-light" type="reset" >초기화</button>
-				</div>
+					</div>
+				</form>
 			</div>
 			<div class="subway-list box-wrap">
 				<c:forEach items="${station}" var="subway">
 					<div class="grid-box">
-						<a href="#">${subway.sub_line}</a>
+						<a href="./subwaydetail?station=${STIN_NM }&line=${subway.LN_NM}">${subway.LN_NM}</a>
 					</div>
 				</c:forEach>
 			</div>			

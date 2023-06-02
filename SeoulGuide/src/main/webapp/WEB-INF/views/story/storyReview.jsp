@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,6 +13,7 @@
 	<script defer src="<c:url value="/resources/js/story.js"/>"></script>
 	
 </head>
+
 <body class="body">
 
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
@@ -33,7 +35,7 @@
 	  			<div id="js-load" class="main">
 			        <ul class="menu">
 			            
-			            <c:forEach items="${boards}" var="article">
+			          <c:forEach items="${boards}" var="article">
 			            <li class="lists__item js-load">
 			                <a href="storydetail?post_id=${article.post_id}">
 			                    <div class="tumb-box" <%-- style="background-image: url('<c:url value="/resources/img/logo.png"/>');" --%>>
@@ -54,6 +56,7 @@
 										</script>
 			                        </div>
 			                        <div class="tumb-title">
+
 			                            <em>${article.post_title }</em>
 			                        </div>
 			                        <a href="storydelete?num=${article.post_id}">삭제</a>
@@ -61,6 +64,7 @@
 				                </a>
 				            </li>
 			            	</c:forEach>
+
 
 			        </ul>
 			    </div>
