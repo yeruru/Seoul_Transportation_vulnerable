@@ -6,13 +6,9 @@ import javax.xml.bind.annotation.XmlElement;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 public class OuterLivePopulationStatus {
-	
-		
 
-		@XmlElement(name = "LIVE_PPLTN_STTS")
-	    private InnerLivePopulationStatus innerLivePopulationStatus;
-
-
+	@XmlElement(name = "LIVE_PPLTN_STTS")
+    private InnerLivePopulationStatus innerLivePopulationStatus;
 
     // getter, setter ...
 		public InnerLivePopulationStatus getInnerLivePopulationStatus() {
