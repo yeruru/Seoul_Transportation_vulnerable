@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+html {
+	scroll-behavior: smooth;
+}
+
+.title {
+	font-size : 30px;
+	font-weight: 600;
+	text-align: center;
+}
+.subtitle{
+	font-size : 15px;
+	color : gray;
+	font-weight: 400;
+	text-align: center;
+	margin-top : 20px;
+}
+.sidebar {
+	display : flex;
+	justify-content: center;
+	margin-top : 40px;
+
+}
+
+.sidebar li {
+	width : 125px;
+	height : 30px;
+	line-height : 30px;
+	border-top : 1.1px solid #E2E2E2;
+	border-bottom : 1.1px solid #E2E2E2;
+	text-align: center;
+	font-size : 11px;
+	position: relative;
+	
+}
+
+
+.sidebar li::before {
+	content: "";
+    position: absolute;
+    right: 0;
+    width: 1px;
+    height: 10px;
+    background-color: #E2E2E2;
+ 	top: 30%;
+}
+
+.sidebar li a {
+	display : block;
+	width : 100%;
+	position: relative;
+	transition: all 0.3s;
+}
+
+.sidebar li:hover a {
+	color: var(--c-tour);
+}
+
+
+.sidebar li:hover a::after  {
+	opacity: 1;
+	color: var(--c-tour);
+}
+
+.sidebar li a::after {
+	content: "";
+	opacity: 0;
+    position: absolute;
+    width: 100%;
+    height: 1.2px;
+    background-color: var(--c-tour);
+    bottom: 0;
+    right: -50%;
+    transform: translate(-50%, 0);
+    transition: all 0.3s;
+}
+.on {color: var(--c-tour)}
+
+
+.sidebar li:last-child::before {
+	display: none;
+}
+
+.tourimg {
+	margin : 20px auto;
+	
+	background-size: cover;
+    background-repeat: no-repeat
+}
+
+.line {
+	width : 500px;
+	margin-top : 3px;
+	margin-bottom : 20px;
+	height : 1px;
+	background-color : black;
+}
+.line2 {
+	width : 470px;
+	height : 1px;
+	background-color : black;
+	margin-bottom : 20px;
+	margin-top : 3px;
+}
+
+#detail2{
+	height: 550px;
+}
+.content {
+	width : 500px;
+	height :300px;
+	margin : 0 auto;
+}
+
+.tourlistContent {
+	font-size : 5px;
+	line-height : 15px;
+}
+
+.detailcontent{
+	display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.detailcontent1{
+	width : 50%;
+	height : 100px;
+	
+	font-size : 10px;
+	flex-grow: 1.5;
+    box-sizing: border-box;
+    padding-right: 20px;
+    
+    line-height : 15px;
+}
+
+.detailcontent1 div {
+	font-size : 10px;
+	margin : 10px 0 10px 0;
+}
+
+.detailcontent1 div::before {
+	content : "•   "
+}
+
+.detailcontent2 div::before {
+	content : "•   "
+}
+
+.detailcontent2 div {
+	font-size : 10px;
+	margin : 10px 0 10px 0;
+}
+
+.tourstory{
+	display:flex;
+	width : 100px;
+	height : 300px;
+}
+.subtitletour {
+	font-size : 15px;
+	color : gray;
+	font-weight: 400;
+	margin-top : 10px;
+}
+.titletour{
+	font-size : 20px;
+	font-weight: 600;
+}
+
+.tourstory {
+	height : 100px;
+	width : 500px;
+	margin : 0 auto;
+}
+.tourstory button {
+	background-color : var(--c-tour);
+	color : white;
+	height : 50px;
+	width : 200px;
+	border : none;
+	border-radius : 9px;
+	font-size : 17px;
+	font-weight : 500px;
+}
+
+.tourname {
+	height : 100px;
+	width : 300px;
+}
+
+#detail3 {
+	height: 600px;
+}
+
+.comment {
+	width : 465px;
+	height : 200px;	
+	background-color : #E2E2E2;
+	margin : 0 auto;
+	padding : 20px 20px;
+}
+
+.commenttitle {
+	font-size:20px;
+	font-weight:500;
+}
+
+.commenttitle span {
+	font-size:12px;
+	color : gray;
+}
+
+.commentmain {
+	width : 460px;
+	height: 50px;
+	padding : 5px 5px;
+	display : block;
+	margin : 0 auto;
+	border : 0;
+}
+.commentbutton button{
+	width : 100px;
+	height : 30px;
+	background-color : var(--c-tour);
+	color : white;
+	border : 0;
+	margin-top: 10px;
+}
+
+

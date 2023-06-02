@@ -24,7 +24,7 @@
 					<li>
 					  <c:choose>
 						<c:when test="${sessionScope.id eq null }">
-	                      <a class="" href="#">로그인</a>
+	                      <a class="" href="loginform">로그인</a>
 	                    </c:when>
 	                    <c:otherwise>
 	                      <a href="${contextPath }/logout">로그아웃</a>

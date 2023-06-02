@@ -8,4 +8,7 @@ import com.seoul.guide.tour.DTO.TourDTO;
 public interface TourDAO {
 	public List<TourDTO> selecttourlist() throws Exception;
 	public List<TourDTO> detailSearch(Map<String, Object> param) throws Exception;
+	public List<TourDTO> Search(String word) throws Exception;
+	
+	public TourDTO detail(Integer id) throws Exception;
 }

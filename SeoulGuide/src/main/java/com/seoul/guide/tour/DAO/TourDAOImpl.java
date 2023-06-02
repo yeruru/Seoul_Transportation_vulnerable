@@ -24,4 +24,16 @@ public class TourDAOImpl implements TourDAO {
 		return sqlsession.selectList("mapper.tour.searchdetail", param);
 	}
 
+	@Override
+	public List<TourDTO> Search(String word) throws Exception {
+		return sqlsession.selectList("mapper.tour.search", word);
+	}
+
+	@Override
+	public TourDTO detail(Integer id) throws Exception {
+		return sqlsession.selectOne("mapper.tour.detail", id);
+	}
+	
+	
+
 }

@@ -30,7 +30,17 @@
 	    	</if>
 	    </foreach> 
         or tourist_subtitle=#{tourist_subtitle}
-	      
 	</select>
 	
+	<select id="search" parameterType="String" resultType="com.seoul.guide.tour.DTO.TourDTO">
+	  <![CDATA[
+		select * from tourist where tourist_name like concat('%', #{word}, '%')
+		]]>
+	</select>
+	
+	<select id="detail" parameterType="Integer" resultType="com.seoul.guide.tour.DTO.TourDTO">
+		<![CDATA[
+			select * from tourist where tourist_id=#{tourist_id}
+		]]>
+	</select>
 </mapper>						
