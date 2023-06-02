@@ -56,7 +56,7 @@
 	         <li class="not">
 	           <a href="#">관광지</a>
 	           <ul>
-	             <li><a href="#">관광지 간편 검색</a></li>
+	             <li><a href="./tourlist">관광지 간편 검색</a></li>
 	             <li><a href="#">관광스토리</a></li>
 	             <li><a href="#">관광지 TEST</a></li>
 	           </ul>

@@ -8,4 +8,7 @@ import com.seoul.guide.tour.DTO.TourDTO;
 public interface TourService {
 	public List<TourDTO> gettourList() throws Exception;
 	public List<TourDTO> detailSearch(String[] menu_icon, String tourist_subtitle) throws Exception;
+	public List<TourDTO> Search(String word) throws Exception;
+	
+	public TourDTO detail(Integer id) throws Exception;
 }

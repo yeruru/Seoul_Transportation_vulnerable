@@ -25,14 +25,14 @@
 
 					<li>
 					  <c:choose>
-						<c:when test="${sessionScope.email eq null }">
-	                      <a class="" href="./loginform">로그인</a>
-	                    </c:when>
-	                    <c:otherwise>
-	                      <a href="./logout">로그아웃</a>
-                       	</c:otherwise>
-	                   </c:choose>
-                    </li>
+						      <c:when test="${sessionScope.email eq null }">
+	                   <a class="" href="./loginform">로그인</a>
+	                </c:when>
+	                <c:otherwise>
+	                  <a href="./logout">로그아웃</a>
+                  </c:otherwise>
+	             </c:choose>
+           </li>
 				</ul>
 				<a href="#">계정이 없으신가요?</a>
 			</div>

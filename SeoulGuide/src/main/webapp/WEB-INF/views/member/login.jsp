@@ -12,7 +12,7 @@
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<section class = "content-wrap" id="loginpage">
-		<form action = "./login", method = "POST">
+		<form action = "./login" method = "POST">
 			<div class = "loginbackground">
 				<p>로그인</p>
 				<div><input type="text" class = "email" name="email" placeholder=" Email"></div>
@@ -20,11 +20,14 @@
 				<div >
 		             <input  class="button1" type="submit" value="로그인">
 		        </div>
-		        <div >
-		             <input  class="button2" type="submit" value="회원가입">
-		        </div>
 			</div>
 		</form>
+		<form action = 'joinform'>
+			<div>
+		      <input  class="button2" type="submit" value="회원가입">
+			</div>
+		</form>
+	
 	</section>
 </body>
 </html>

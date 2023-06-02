@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -36,7 +37,6 @@ public class TourController {
 		try {
 
 			List<TourDTO> tourlist = tourservice.detailSearch(menu_icon, tourist_subtitle);
-			System.out.println(tourlist);
 			mav.addObject("tourlist", tourlist);
 			mav.setViewName("tour/tour");
 		}catch(Exception e) {
@@ -44,4 +44,29 @@ public class TourController {
 		}
 		return mav;
 	}
+	
+	@RequestMapping(value="toursearch", method = RequestMethod.POST)
+	public ModelAndView searchTour(@RequestParam("word") String word) {
+		ModelAndView mav = new ModelAndView();
+		try {
+			List<TourDTO> tourlist = tourservice.Search(word);
+			mav.addObject("tourlist", tourlist);
+			mav.setViewName("tour/tour");
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
+	}
+	
+	@RequestMapping(value="detail", method=RequestMethod.GET)
+	public String tourdetail(Model model, Integer id) {
+		try {
+			TourDTO tourDTO = tourservice.detail(id);
+			model.addAttribute("tourdetail", tourDTO);
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return "tour/tourdetail";
+	}
+
 }
