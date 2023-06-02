@@ -50,8 +50,8 @@ public class DensityDetailController {
 
 	            // 변환된 객체를 모델에 추가
 	            model.addAttribute("cityDataResponse", cityDataResponse);
-
-
+//	            System.out.println(cityDataResponse.getCityData().getPrkSttsList().get(0).getPrkNm());
+	            
 	        } catch (JAXBException e) {
 	            e.printStackTrace();
 	        }
