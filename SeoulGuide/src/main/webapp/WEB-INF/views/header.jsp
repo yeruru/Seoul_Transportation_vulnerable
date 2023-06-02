@@ -41,7 +41,7 @@
 	
 	<!-- 로고 -->
 	<h1 class="logo">
-	  <a href="#">
+	  <a href="./">
 	    <img src="<c:url value="/resources/img/logo.png"/>"  alt="서울, 함께 가는 길">
 	    <img src="<c:url value="/resources/img/logo-dark.png"/>"  alt="서울, 함께 가는 길" class="logo-dark">
 	  </a>
@@ -52,20 +52,20 @@
 	     <div class="menu-bg"></div>
 	     <nav id="gnb" class="gnb">
 	       <ul class="gnb-box">
-	         <li><a href="#">HOME</a></li>
+	         <li><a href="./">HOME</a></li>
 	         <li class="not">
 	           <a href="#">관광지</a>
 	           <ul>
 	             <li><a href="./tourlist">관광지 간편 검색</a></li>
-	             <li><a href="#">관광스토리</a></li>
-	             <li><a href="#">관광지 TEST</a></li>
+	             <li><a href="./storyreview">관광스토리</a></li>
+	             <li><a href="./test">관광지 TEST</a></li>
 	           </ul>
 	         </li>
 	         <li class="not">
 	           <a href="#">지하철</a>
 	           <ul>
-	             <li><a href="#">지하철 간편 검색</a></li>
-	             <li><a href="#">실시간 교통</a></li>
+	             <li><a href="./subway">지하철 간편 검색</a></li>
+	             <li><a href="./density">실시간 교통</a></li>
 	           </ul>
 	         </li>
 	         <c:choose>

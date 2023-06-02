@@ -15,7 +15,16 @@
 				<li><a href="#">홈</a></li>
 				<li><a href="#">인기관광지</a></li>
 				<li><a href="#">방문자리뷰</a></li>
-				<li><a href="#">로그인</a></li>
+				
+				
+				<c:choose>
+		         	<c:when test="${sessionScope.email eq null }">
+		         	    <li><a href="./loginform">로그인</a></li>
+		         	</c:when>
+		         	<c:otherwise>
+		         		<li><a href="./logout">로그아웃</a></li>
+		         	</c:otherwise>
+	         	</c:choose>
 			</ul>
 		</div>
 	</div>

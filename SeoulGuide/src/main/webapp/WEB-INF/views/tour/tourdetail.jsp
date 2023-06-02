@@ -117,7 +117,7 @@
 						<p class="titletour">해당 관광지를 다녀오셨나요?</p>
 						<p class="subtitletour">다녀오셨다면, 다양한 관광경험을 나눠주세요</p>		
 					</div>
-					<div><button>관광스토리</button></div>
+					<div><a href = "./storyreview"><button>관광스토리</button></a></div>
 				</div>
 				
 				<div class="comment">
