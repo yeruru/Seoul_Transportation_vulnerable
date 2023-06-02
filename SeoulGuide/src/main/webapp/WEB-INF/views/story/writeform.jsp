@@ -7,15 +7,15 @@
 <html>
 <head>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/story/storyReview.css"/>">
+<link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <link rel="stylesheet"
 	href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
-	
+<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 <script defer src="<c:url value="/resources/js/boardWrite.js"/>"></script>
 <title>글쓰기</title>
 </head>
+
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
@@ -46,27 +46,7 @@
 
 						});
 					</script>
-
-
-
-
 				</div>
-				<div class="tumb-container">
-					<div class="thumb-box">
-						<div id="imageBoxContainer" class="image-box">
-							<img id="imageBox" src="" alt="">
-						</div>
-						<div class="plus-text" id="noImageText">
-							썸네일 이미지가 없습니다.<br> 이미지를 추가해주세요.
-						</div>
-						<div class="plus-box" onclick="openFileInput()">
-							<span id="plusIcon"><a href="#;">+</a></span>
-						</div>
-						<input type="file" id="fileInput" style="display: none;"
-							onchange="handleFileInput(event)">
-					</div>
-				</div>
-
 				<section id="commandCell">
 					<input type="submit" value="등록" class="submit-btn">
 				</section>

@@ -25,10 +25,8 @@ public class SubwayServiceImpl implements SubwayService {
 		if(name==null || name.trim().length() == 0) {
 			return null;
 		} 
-		Map<String, Object> map= new HashMap<>();
-		map.put("name", name);
-		System.out.println(subwayDAO.selectSubwayByName(map));
-		return subwayDAO.selectSubwayByName(map);
+		System.out.println(subwayDAO.selectSubwayByName(name));
+		return subwayDAO.selectSubwayByName(name);
 	}
 
 //	@Override

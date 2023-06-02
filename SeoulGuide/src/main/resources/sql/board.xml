@@ -23,9 +23,15 @@
 	</insert>
 	
 	<update id="updateBoard" parameterType="java.util.Map">
-		<![CDATA[
-			update board set post_title=#{post_title}, post_content=#{post_content} where user_id=#{user_id}		
-		]]>
+	    <![CDATA[
+	        update board set post_title = #{post_title}, post_content = #{post_content} where post_id = #{post_id}
+	    ]]>
 	</update>
+	
+	<delete id="deleteBoard" parameterType="Integer">
+		 <![CDATA[
+	        delete from board where post_id = #{post_id}
+	    ]]>
+	</delete>
 	
 </mapper>

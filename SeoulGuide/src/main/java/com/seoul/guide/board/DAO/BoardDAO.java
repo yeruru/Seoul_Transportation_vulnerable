@@ -10,4 +10,5 @@ public interface BoardDAO {
 	public Article selectBoard(Integer post_id) throws Exception;
 	public Integer insertBoard(Article article) throws Exception;
 	public void updateBoard(Map<String,Object> param) throws Exception;
+	public void deleteBoard(Integer post_id) throws Exception;
 }

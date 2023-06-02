@@ -1,70 +1,50 @@
 @charset "UTF-8";
 
 /* tourreview  */
-#tourreview  h4 { font-size: 30px; padding-bottom: 30px; }
-#tourreview .review-tumb { margin-top: 40px;}
-#tourreview .write-btn-box { display: flex; align-items: center; border-bottom: 3px solid var(--c-tour); width: 80%; margin: 0 auto; justify-content: space-between;}
-#tourreview .write-btn { width:35px; height: 35px; border: 1px solid var(--c-tour); background: var(--c-bg); box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 50%; display: flex; justify-content: center; align-items: center;  align-items: center; transition: all .3s;}
-#tourreview .write-btn span { color: var(--c-tour);} 
-#tourreview .write-btn:hover { background-color: var(--c-tour);}
-#tourreview .write-btn:hover span { color: #fff;}
-#tourreview .review-tumb ul {display: flex; flex-wrap: wrap;}
-#tourreview .review-tumb ul li:first-child { margin-top: 40px;}
-#tourreview .review-tumb ul li { width: 400px; margin: 20px auto;}
-#tourreview .tumb { width: 400px; height: 240px; overflow: hidden; box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 10px;}
-#tourreview .tumb-title { display: flex; width: 100%; justify-content: space-between; padding: 13px 0;}
-#tourreview .tumb-title em { font-size: 18px; font-weight: 700;}
+#story-review  h4 { font-size: 30px; padding-bottom: 30px; }
+#story-review .review-tumb { margin-top: 40px;}
+#story-review .write-btn-box { display: flex; align-items: center; border-bottom: 3px solid var(--c-tour); width: 80%; margin: 0 auto; justify-content: space-between;}
+#story-review .write-btn { width:35px; height: 35px; border: 1px solid var(--c-tour); background: var(--c-bg); box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 50%; display: flex; justify-content: center; align-items: center;  align-items: center; transition: all .3s;}
+#story-review .write-btn span { color: var(--c-tour);} 
+#story-review .write-btn:hover { background-color: var(--c-tour);}
+#story-review .write-btn:hover span { color: #fff;}
+#story-review .review-tumb ul {display: flex; flex-wrap: wrap;}
+#story-review .review-tumb ul li:first-child { margin-top: 40px;}
+#story-review .review-tumb ul li { width: 400px; margin: 20px auto;}
+#story-review .tumb { width: 400px; height: 240px; overflow: hidden; position: relative; box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 10px;}
+#story-review .tumb-title { display: flex; width: 100%; justify-content: space-between; padding: 13px 0;}
+#story-review .tumb-title em { font-size: 18px; font-weight: 700;}
+#story-review .js-load { display: none;}
+#story-review .js-load.active { display: block;}
+#story-review .js-load:after { display: none;}
+#story-review .btn-wrap { display: block;}
+#story-review ul li { list-style:none;  position:relative; float:left; width:calc(100%/3 - 12px); margin:12px 6px 0; }
+#story-review .more { background-color: var(--c-tour); width: 80%; display: flex; justify-content: center; align-items: center; margin: 0 auto; color: #fff; height: 50px; margin-bottom: 50px; border-radius: 20px; border: 0; font-size: 16px;}
+#story-review .viewer-box { box-sizing: border-box; padding: 30px;}    
+#story-review .viewer-box img:first-of-type{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 
-#tourreview .js-load { display: none;}
-#tourreview .js-load.active { display: block;}
-#tourreview .js-load:after { display: none;}
-#tourreview .btn-wrap { display: block;}
-#tourreview ul li { list-style:none;  position:relative; float:left; width:calc(100%/3 - 12px); margin:12px 6px 0; }
-#tourreview .more { background-color: var(--c-tour); width: 80%; display: flex; justify-content: center; align-items: center; margin: 0 auto; color: #fff; height: 50px; margin-bottom: 50px; border-radius: 20px; border: 0; font-size: 16px;}
 
-
-
+/* writeform  */
 #writeform .title input { width: 100%; height: 50px; font-size: 30px; box-sizing: border-box; outline: none; border-bottom: 4px solid rgba(209,214,231,1); border-top: none; border-left: none; border-right: none; margin-bottom: 10px;}
 #writeform .title input::placeholder { font-size: 30px; color: rgba(209,214,231,1);}
-#writeform .submit-btn {     margin: 40px auto;
-    display: block;
-    width: 300px;
-    height: 50px;
-    border-radius: 40px;
-    background-color: var(--c-tour);
-    color: #fff;
-    border: 0;
-    font-weight: 700; cursor: pointer;}
+#writeform .submit-btn { margin: 40px auto; display: block; width: 300px; height: 50px; border-radius: 40px; background-color: var(--c-tour); color: #fff; border: 0; font-weight: 700; cursor: pointer;}
+#writeform .tumb-container { margin-top: 20px; border: 1px solid rgba(209,214,231,1); border-radius: 20px; overflow: hidden;}
+#writeform .plus-text { text-align: center; line-height: 20px; color: rgba(157 161 173);}
+#writeform .plus-box span { display: flex; justify-content: center; align-items: center; padding: 30px; font-size: 30px; cursor: pointer; color: rgba(209,214,231,1);}
+#writeform .plus-box span a { display: flex; width: 60px; height: 60px; background-color: var(--c-tour); justify-content: center; align-items: center; color: #fff; border-radius: 10px;}
     
     
+/* storydetail */    
+.storydetail h3 { font-size: 30px; margin-bottom: 40px;}
+.storydetail .viewer-box { box-sizing: border-box; padding: 30px; margin-top: 30px; box-shadow: 0px 0px 5px 1px rgb(237, 238, 243); border-radius: 10px;}    
+.storydetail .sub-title { display: flex; padding-bottom: 20px; align-items: flex-end; align-items: center; border-bottom: 1px solid #cfcfcf;}  
+.storydetail .name { padding-right: 10px;}    
+.storydetail .date { font-size: 12px; color: #999faa;}
+#copyButton { flex-grow: 3; display: flex; justify-content: flex-end; color: rgb(191 191 191); font-size: 14px;}
+
+/* storymodify */
+.storydetail h3 input { font-size: 30px; margin-bottom: 40px; width: 100%; height: 50px; font-size: 30px; box-sizing: border-box; outline: none; border-bottom: 4px solid rgba(209,214,231,1); border-top: none; border-left: none; border-right: none; margin-bottom: 10px;}
+
     
     
-    
- #writeform .tumb-container   {    margin-top: 20px;
-    border: 1px solid rgba(209,214,231,1);
-    border-radius: 20px;
-    overflow: hidden;}
-    
-    .plus-text {text-align: center;
-    line-height: 20px; color: rgba(157 161 173);}
-    
-    .plus-box span {
-    	display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    font-size: 30px;
-    cursor: pointer;
-    color: rgba(209,214,231,1);
-    }
-    
-    .plus-box span a {
-    display: flex;
-    width: 60px;
-    height: 60px;
-    background-color: var(--c-tour);
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    border-radius: 10px;}
     

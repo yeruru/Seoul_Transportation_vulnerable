@@ -35,11 +35,16 @@ public class BoardServiceImpl implements BoardService {
 		
 	}
 	@Override
-	public void modifyBoard(Integer user_id, String post_title, String post_content) throws Exception {
+	public void modifyBoard(Integer post_id, String post_title, String post_content) throws Exception {
 		Map<String, Object> map= new HashMap<>();
-		map.put("user_id", user_id);
+		map.put("post_id", post_id);
 		map.put("post_title", post_title);
 		map.put("post_content", post_content);
 		boardDAO.updateBoard(map);
+	}
+
+	@Override
+	public void delete(Integer user_id) throws Exception {
+		boardDAO.deleteBoard(user_id);
 	}
 }

@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,12 +13,13 @@
 	<script defer src="<c:url value="/resources/js/story.js"/>"></script>
 	
 </head>
+
 <body class="body">
 
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
-		<section id="tourreview" class="box-wrap">
+		<section id="story-review" class="box-wrap">
 			
 			
 	  		<div class="review-tumb">
@@ -32,27 +34,38 @@
 
 	  			<div id="js-load" class="main">
 			        <ul class="menu">
-			           <%--  <%-- 첫 번째 3개의 li 요소만 표시됨 --%>
-			           <%--  <%
-			                for (int i = 0; i < 1; i++) {
-			            %> --%> 
 			            
-			            <c:forEach items="${boards}" var="article">
+			          <c:forEach items="${boards}" var="article">
 			            <li class="lists__item js-load">
 			                <a href="storydetail?post_id=${article.post_id}">
-			                    <div class="tumb-box">
+			                    <div class="tumb-box" <%-- style="background-image: url('<c:url value="/resources/img/logo.png"/>');" --%>>
+
 			                        <div class="tumb">
-			                            <%-- tumb 내용 --%>
+			                            <!-- TOAST UI Viewer -->
+										<div id="viewer"><div class="viewer-box">${article.post_content}</div></div>
+										<!-- TOAST UI Viewer CDN URL(JS) -->
+										<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+										<script>
+										    const viewer = toastui.Editor.factory({
+									            el: document.querySelector('#viewer'),
+									            viewer: true,
+									            height: '500px',
+									            initialValue: content,
+									            
+									        }); 
+										</script>
 			                        </div>
 			                        <div class="tumb-title">
+
 			                            <em>${article.post_title }</em>
+			                        </div>
+			                        <a href="storydelete?num=${article.post_id}">삭제</a>
 			                            
 				                </a>
 				            </li>
 			            	</c:forEach>
-			           <%-- <%
-			                }
-			            %> --%>
+
+
 			        </ul>
 			    </div>
 			    
