@@ -115,8 +115,8 @@
 				<div class="tourstory">
 					<div class = "tourname">
 						<p class="titletour">해당 관광지를 다녀오셨나요?</p>
-						<p class="subtitletour">다녀오셨다면, 다양한 관광경험을 나눠주세요</p>		
-					</div>
+						<p class="subtitletour">다녀오셨다면, 다양한 관광경험을 나눠주세요</p>	
+					</div>	
 					<div><a href = "./storyreview"><button>관광스토리</button></a></div>
 				</div>
 				
@@ -131,7 +131,19 @@
 					</div>
 				</div>
 				
-				
+				<div class="usercomment">
+					<div class="commentimg">
+						<img alt="" id = "myImg" src="resources/img/profile.png">
+					</div>
+					<div class="commentContent">
+						<div class="commentcn"><p>밤에 가면 이뻐요</p></div>
+						<div class="commentday">
+							<p>닉네임</p>
+							<hr>
+							<p>오늘 날짜</p>
+						</div>
+					</div>
+				</div>
 		</section>
 
 		<script>

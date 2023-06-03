@@ -105,7 +105,7 @@ html {
 }
 
 #detail2{
-	height: 550px;
+	height: 650px;
 }
 .content {
 	width : 500px;
@@ -156,8 +156,9 @@ html {
 
 .tourstory{
 	display:flex;
-	width : 100px;
-	height : 300px;
+	width : 500px;
+	height : 100px;
+	margin : auto auto 0 auto;
 }
 .subtitletour {
 	font-size : 15px;
@@ -170,11 +171,7 @@ html {
 	font-weight: 600;
 }
 
-.tourstory {
-	height : 100px;
-	width : 500px;
-	margin : 0 auto;
-}
+	
 .tourstory button {
 	background-color : var(--c-tour);
 	color : white;
@@ -197,15 +194,15 @@ html {
 
 .comment {
 	width : 465px;
-	height : 200px;	
+	height : 130px;	
 	background-color : #E2E2E2;
 	margin : 0 auto;
 	padding : 20px 20px;
 }
 
 .commenttitle {
-	font-size:20px;
-	font-weight:500;
+	font-size: 17px;
+    font-weight: 600;
 }
 
 .commenttitle span {
@@ -220,6 +217,7 @@ html {
 	display : block;
 	margin : 0 auto;
 	border : 0;
+	font-size : 10px;
 }
 .commentbutton button{
 	width : 100px;
@@ -228,6 +226,35 @@ html {
 	color : white;
 	border : 0;
 	margin-top: 10px;
+	
+	float: right;
 }
-
+.commentimg img{
+	width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.usercomment{
+    display: flex;
+    width: 500px;
+    margin: 20px auto;
+    border-bottom: 1.5px solid #E2E2E2;
+    height: 80px;
+}
+.commentContent{
+	margin-left: 17px;
+	margin-top: 10px;
+	font-size : 12px;
+}
+.commentday{
+	display:flex;
+	margin-top:10px;
+}
+.commentday p{
+	margin-left : 10px;
+	margin-right : 10px;
+}
+.commentcn{
+	margin-left : 10px;
+}
 
