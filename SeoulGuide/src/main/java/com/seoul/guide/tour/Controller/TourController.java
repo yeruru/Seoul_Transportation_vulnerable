@@ -32,11 +32,12 @@ public class TourController {
 	}
 	
 	@RequestMapping(value = "tourdetailsearch", method = RequestMethod.POST)
-	public ModelAndView searchDetailTour(@RequestParam("menu_icon") String[] menu_icon, @RequestParam("tourist_subtitle") String tourist_subtitle) {
+	public ModelAndView searchDetailTour(@RequestParam(value = "menu_icon",required=false) String[] menu_icon, @RequestParam("tourist_subtitle") String tourist_subtitle) {
 		ModelAndView mav = new ModelAndView();
 		try {
-
 			List<TourDTO> tourlist = tourservice.detailSearch(menu_icon, tourist_subtitle);
+			System.out.println(menu_icon);
+			System.out.println(tourist_subtitle);
 			mav.addObject("tourlist", tourlist);
 			mav.setViewName("tour/tour");
 		}catch(Exception e) {

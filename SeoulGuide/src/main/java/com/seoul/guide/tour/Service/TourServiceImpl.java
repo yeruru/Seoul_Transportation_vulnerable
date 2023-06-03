@@ -25,6 +25,7 @@ public class TourServiceImpl implements TourService {
 	public List<TourDTO> detailSearch(String[] menu_icon, String tourist_subtitle) throws Exception {
 		Map<String, Object> map = new HashMap<>();
 		List<String> list = Arrays.asList(menu_icon);
+		System.out.println(list);
 		map.put("menu_icon", list);
 		map.put("tourist_subtitle", tourist_subtitle);
 		return tourDAO.detailSearch(map);
