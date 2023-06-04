@@ -21,7 +21,7 @@ import com.seoul.guide.subway.DTO.MovementDTO;
 import com.seoul.guide.subway.DTO.SubwayDTO;
 
 @Service
-public class SubwayApiService {
+public class MovementApiService {
 	
 	@Autowired
 	private SubwayDAO subwayDAO;

@@ -28,6 +28,12 @@ public class SubwayDAOImpl implements SubwayDAO{
 		return sqlSession.selectOne("mapper.subway.selectSubwayByNameAndLine",param);
 	}
 
+	@Override
+	public List<SubwayDTO> selectSubwayLineByName(String name) throws Exception {
+		// TODO Auto-generated method stub
+		return sqlSession.selectList("mapper.subway.selectSubwayLineByName", name);
+	}
+
 //	@Override
 //	public List<SubwayDTO> selectSubwayList() throws Exception {
 //		// TODO Auto-generated method stub
