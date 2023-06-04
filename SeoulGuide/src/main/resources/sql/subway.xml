@@ -15,4 +15,9 @@
         select * from subway where STIN_NM =#{name} and ln_nm=#{line}
     ]]>
 	</select>	
+	<select id="selectSubwayLineByName" resultType="com.seoul.guide.subway.DTO.SubwayDTO" parameterType="String">
+    <![CDATA[
+        select LN_CD from subway where STIN_NM = #{name}
+    ]]>
+	</select>
 </mapper>						

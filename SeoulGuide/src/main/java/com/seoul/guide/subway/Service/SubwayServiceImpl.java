@@ -1,8 +1,6 @@
 package com.seoul.guide.subway.Service;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,12 +19,18 @@ public class SubwayServiceImpl implements SubwayService {
 	}
 
 	@Override
-	public List<SubwayDTO> searchSubway(String name) throws Exception {
+	public List<SubwayDTO> searchSubwayByName(String name) throws Exception {
 		if(name==null || name.trim().length() == 0) {
 			return null;
 		} 
 		System.out.println(subwayDAO.selectSubwayByName(name));
 		return subwayDAO.selectSubwayByName(name);
+	}
+
+	@Override
+	public List<SubwayDTO> findSubwayLineByName(String name) throws Exception {
+		// TODO Auto-generated method stub
+		return subwayDAO.selectSubwayLineByName(name);
 	}
 
 //	@Override
