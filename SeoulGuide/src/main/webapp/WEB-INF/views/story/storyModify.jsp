@@ -54,6 +54,7 @@
 			</form>
 		</section>
 	</div>
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
 <script>
 	function copyUrl() {
