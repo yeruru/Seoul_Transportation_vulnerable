@@ -11,8 +11,9 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
 <link rel="stylesheet" href="https://uicdn.toast.com/editor/2.0.0/toastui-editor.min.css">
 <script src="https://uicdn.toast.com/editor/2.0.0/toastui-editor-all.min.js"></script>
+<script defer src="<c:url value="/resources/js/header.js"/>"></script>
 </head>
-<body>
+<body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
