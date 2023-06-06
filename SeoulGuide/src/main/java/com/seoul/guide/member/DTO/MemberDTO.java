@@ -10,13 +10,14 @@ public class MemberDTO {
 	private Integer phone2;
 	private Integer phone3;
 	private String birthday;
-	private Integer fileid;
+	private Integer userid;
 	
-	public Integer getFileid() {
-		return fileid;
+	
+	public Integer getUserid() {
+		return userid;
 	}
-	public void setFileid(Integer fileid) {
-		this.fileid = fileid;
+	public void setUserid(Integer userid) {
+		this.userid = userid;
 	}
 	public String getNickname() {
 		return nickname;

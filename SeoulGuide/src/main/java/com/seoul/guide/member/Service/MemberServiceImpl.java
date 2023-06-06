@@ -44,7 +44,7 @@ public class MemberServiceImpl implements MemberService {
 			System.out.println(fileVO.getId());
 			file.transferTo(dfile); 
 
-			member.setFileid(fileVO.getId());
+			member.setUserid(fileVO.getId());
 		}
 		memberDAO.insertMember(member);
 	}

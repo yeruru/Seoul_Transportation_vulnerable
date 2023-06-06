@@ -9,6 +9,7 @@
 	href="<c:url value="/resources/css/tour/tourdetail.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
+<script src="<c:url value="/resources/js/comment.js"/>"></script>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 <body class="body">
@@ -18,6 +19,7 @@
 	<section class="content-wrap" id="detail">
 		<p class="title">${tourdetail.tourist_name }</p>
 		<p class="subtitle">${tourdetail.tourist_subtitle }</p>
+		<input id="tourid" type="hidden" value="${tourdetail.tourist_id }">
 
 		<ul class="sidebar">
 			<li><a href="#detail2">상세정보</a></li>
@@ -120,30 +122,59 @@
 					<div><a href = "./storyreview"><button>관광스토리</button></a></div>
 				</div>
 				
-				<div class="comment">
-					<p class="commenttitle">관광후기 <span>* 로그인 후 댓글 작성이 가능합니다.</span></p> 
-					<div class="line2"></div>
-					<div>
-						<textarea id="comment" name="commentmain" class="commentmain" title="여행경험 입력" placeholder="관광후기를 남겨주세요."   style="resize: none;"></textarea>
-					</div>
-					<div class="commentbutton">
-						<button>등록하기</button>
+				<c:choose>
+					<c:when test="${sessionScope.email eq null }">
+						<div class="comment">
+							<p class="commenttitle">관광후기 <span>* 로그인 후 댓글 작성이 가능합니다.</span></p> 
+							<div class="line2"></div>
+							<div>
+								<textarea id="comment" name="commentmain" class="commentmain" title="여행경험 입력" placeholder="관광후기를 남겨주세요."   style="resize: none;"></textarea>
+							</div>
+							<div class="commentbutton">
+								<button href="./loginform">등록하기</button>
+							</div>
+						</div>
+					</c:when>
+					<c:otherwise>
+							<div class="comment">
+								<p class="commenttitle">관광후기 <span>* 로그인 후 댓글 작성이 가능합니다.</span></p> 
+								<div class="line2"></div>
+								<div>
+									<textarea id="comment" name="commentmain" class="commentmain" title="여행경험 입력" placeholder="관광후기를 남겨주세요."   style="resize: none;"></textarea>
+								</div>
+								<div class="commentbutton">
+							<button id="Comment">등록하기</button>
 					</div>
 				</div>
+					</c:otherwise>
+				</c:choose>
 				
-				<div class="usercomment">
-					<div class="commentimg">
-						<img alt="" id = "myImg" src="resources/img/profile.png">
-					</div>
-					<div class="commentContent">
-						<div class="commentcn"><p>밤에 가면 이뻐요</p></div>
-						<div class="commentday">
-							<p>닉네임</p>
-							<hr>
-							<p>오늘 날짜</p>
+				
+				<c:forEach items="${comments }" var="comment">
+				
+					<div class="usercomment">
+						<div class="commentimg">
+							<img alt="" id = "myImg" src="resources/img/profile.png">
+						</div>
+						<div class="commentContent">
+							<div class="commentcn"><p>${comment.comment_content }</p></div>
+							<div class="commentday">
+								<p>닉네임</p>
+								<hr>
+								<p>오늘 날짜</p>
+							</div>
+							
+						</div>
+						<div class="subbutton">
+							<p>
+								<a href="">수정</a> / <a href = "">삭제</a>
+							</p>
 						</div>
 					</div>
-				</div>
+				
+				</c:forEach> 
+				
+			
 		</section>
 
 		<script>

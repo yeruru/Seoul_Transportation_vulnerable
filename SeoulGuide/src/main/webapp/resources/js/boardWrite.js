@@ -1,5 +1,3 @@
-
-
 const btn = document.querySelector('.submit-btn');
 const hiddenInput = document.querySelector('.form');
 
