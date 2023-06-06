@@ -49,10 +49,9 @@
 
 		<!-- 로고 -->
 		<h1 class="logo">
-			<a href="./"> <img src="<c:url value="/resources/img/logo.png"/>"
-				alt="서울, 함께 가는 길"> <img
-				src="<c:url value="/resources/img/logo-dark.png"/>"
-				alt="서울, 함께 가는 길" class="logo-dark">
+			<a href="./"> 
+			<img src="<c:url value="/resources/img/logo.png"/>"alt="서울, 함께 가는 길"> 
+			<img src="<c:url value="/resources/img/logo-dark.png"/>"alt="서울, 함께 가는 길" class="logo-dark">
 			</a>
 		</h1>
 
