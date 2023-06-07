@@ -257,4 +257,9 @@ html {
 .commentcn{
 	margin-left : 10px;
 }
+.subbutton {
+	margin-left: 250px;
+    margin-top: 32px;
+    font-size: 12px;
+}
 

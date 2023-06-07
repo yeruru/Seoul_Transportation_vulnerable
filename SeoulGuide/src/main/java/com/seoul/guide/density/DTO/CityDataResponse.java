@@ -17,6 +17,8 @@ public class CityDataResponse {
 
     @XmlElement(name = "CITYDATA")
     private CityData cityData;
+    
+    private String densName;
 
     // getter, setter ...
     public int getListTotalCount() {
@@ -34,6 +36,13 @@ public class CityDataResponse {
 	public void setCityData(CityData cityData) {
 		this.cityData = cityData;
 	}
+	
+	public String getDensName() {
+        return densName;
+    }
 
+    public void setDensName(String densName) {
+        this.densName = densName;
+    }
     
 }

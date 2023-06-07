@@ -12,8 +12,6 @@ public class MemberDTO {
 	private String birthday;
 	private Integer userid;
 	
-	
-	
 	public Integer getUserid() {
 		return userid;
 	}
