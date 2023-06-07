@@ -6,6 +6,11 @@
 	<link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 </head>
 <style>
+	/* 부트스트랩 속성 제거 */
+	*, ::after, ::before { box-sizing: content-box;}
+	ul { padding: 0 !important;}
+	p { margin: 0 !important;}
+	
 	footer { background-color: var(--footer); color: #6F6F6F; width: 100%; height: 200px; padding: 10px 0; margin-top: 170px;}
 	.top { padding: 20px 0; display: flex;}
 	.footer-nav:last-child { padding-left: 20px;}
@@ -24,8 +29,8 @@
 	<div class="box-wrap">
 		<div class="top">
 			<div class="footer-nav">
-				<ul>
-					<li>
+				<ul class="footer-ul">
+					<li class="footer-li">
 						<em>관광지</em>
 						<ul>
 							<li><a href="./tourlist">관광지 간편 검색</a></li>

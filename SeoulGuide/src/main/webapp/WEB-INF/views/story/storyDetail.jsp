@@ -45,7 +45,15 @@
 				</script>
 			
 				<section id="commandCell">
-
+					<%-- <c:choose>
+					<c:when test="=${sessionScope.user_id}">
+						
+					</c:when>
+					<c:otherwise>
+							
+						</c:otherwise>
+					</c:choose> --%>
+					
 					<a href="<c:url value='/storymodify?post_id=${article.post_id}'/>">수정</a>
 
 					<a href="storyreview">목록</a>
@@ -57,19 +65,19 @@
 </body>
 
 <script>
-function copyUrl() {
-  var url = window.location.href;
-
-  var tempInput = document.createElement("input");
-  tempInput.style = "position: absolute; left: -1000px; top: -1000px";
-  tempInput.value = url;
-  document.body.appendChild(tempInput);
-
-  tempInput.select();
-  document.execCommand("copy");
-  document.body.removeChild(tempInput);
-
-  alert("URL이 복사되었습니다.");
-}
+	function copyUrl() {
+	  var url = window.location.href;
+	
+	  var tempInput = document.createElement("input");
+	  tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+	  tempInput.value = url;
+	  document.body.appendChild(tempInput);
+	
+	  tempInput.select();
+	  document.execCommand("copy");
+	  document.body.removeChild(tempInput);
+	
+	  alert("URL이 복사되었습니다.");
+	}
 </script>
 </html>

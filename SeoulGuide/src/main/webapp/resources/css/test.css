@@ -7,10 +7,22 @@
     font-weight: 700;
     font-style: normal;
 }
-
 /* 나눔손글씨펜 */
 @import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
 .nanumpenscript * { font-family: 'Nanum Pen Script', cursive;}
+/* 더잠실체 */
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TheJamsil2Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil2Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
 
 section{ display: flex; flex-direction: column;}
 .question { display: none;}
@@ -18,11 +30,50 @@ section{ display: flex; flex-direction: column;}
 button { border: 0;}
 button:focus,
 button:active { outline: none; box-shadow: none;}
+h2 { font-family: 'PyeongChangPeace-Bold'; color: #1A2E45; text-align: center;}
+body.dark .start h2 { color: #fff;}
+body.dark .question h2 { color: #fff;}
+body.dark .question-btn { color: #fff;}
+.progress-bar { background-color: var(--c-tour) !important;}
 
-h2 { font-family: 'PyeongChangPeace-Bold'; font-size: 65px; color: #1A2E45;}
+.start h2 { font-size: 65px;}
 .start .main-img { width: 250px; margin: 0 auto;}
-.start .text-box { width: 400px; position: relative;}
-.start .text-box img { width: 40px; position: absolute; top: 30px;}
-.start .text-box p { font-family: 'Nanum Pen Script'; font-size: 35px; color: #616378;}
-.start > p { font-family: 'Nanum Pen Script'; margin-top: 60px; font-size: 20px;}
+.start .text-box { width: 400px; position: relative; left: 90px; top: -10px;}
+.start .text-box img { width: 40px; position: absolute; top: 40px;}
+.start .text-box p { font-family: 'Nanum Pen Script'; font-size: 30px; color: #616378; padding-top: 10px;}
+.start > p { font-family: 'Nanum Pen Script'; margin-top: 60px; font-size: 20px; text-align: center; padding-bottom: 20px;}
 .start .test-btn { width: 400px; background-color: var(--c-tour); margin: 0 auto; height: 50px; font-weight: 700; border-radius: 20px; color: #fff; }
+
+.question h2 { font-size: 35px; padding-top: 40px; padding-bottom: 20px;}
+.question h3 { text-align: center;}
+
+.question-btn { height: 70px; border-radius: 10px; border: 1px solid var(--c-tour); background: var(--footer); transition: all .3s;}
+.question-btn:hover { background-color: var(--c-tour); color: #fff;}
+.loading-screen { position: relative; top:-50px; left:0; display: none; width: 100%; height: 700px; background-color: rgba(22, 11, 65, 1);}
+.loading-screen p { font-size: 30px; color: #fff; font-family: 'Nanum Pen Script'; position: absolute; top: 20%; left: 50%; transform: translate(-50%, -50%);}
+.loading-screen img { position: absolute; top: 40%; left: 50%; transform: translate(-50%, -50%); width: 200px; }
+
+#mbtiResult { font-family: 'TheJamsil5Bold'; font-size: 40px;}
+#imgResult { border-radius: 20px;}
+#subTitle { font-family: 'Nanum Pen Script'; padding: 20px 0; text-align: center;}
+#explain { font-family: 'TheJamsil2Light'; font-weight: 300; padding: 30px 0; font-size: 20px; text-align: center; line-height: 28px; background-color: #F4F6F8;
+    display: block;
+    margin: 20px 0 !important;}
+    
+    
+    
+.sh { align-items: center; display: flex; flex-direction: column; padding-top: 20px; font-family: 'TheJamsil2Light';}  
+.sh em { font-size: 30px; padding: 10px 0;}  
+.sns { display: flex; justify-content: center; align-items: center;}
+.sns span { cursor:pointer; margin: 10px 20px !important; display: inline-block; width: 48px; height: 48px; border-radius: 50%; background-color: #000; text-align: center; line-height: 48px; background-color: #dbe1ed;} 
+.link { display: flex; flex-direction: column; align-items: center; margin-top: 20px;}    
+.link a {width: 350px; text-align: center; height: 60px; background-color: pink; border-radius: 10px; margin-bottom: 20px; display: flex; align-items: center; color: #fff; justify-content: space-around;}
+.link a:nth-of-type(1) { background-color: var(--c-tour);}
+.link a:nth-of-type(2) { background-color: var(--c-subway);}
+
+#kakao-link-btn { border-radius: 50%; overflow: hidden; width: 50px; margin: 10px 20px;}
+       
+    
+    
+    
+    
