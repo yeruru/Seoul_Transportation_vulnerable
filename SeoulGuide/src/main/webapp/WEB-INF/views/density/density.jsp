@@ -16,6 +16,27 @@
 </head>
 <body>
 	<h1>Density Information</h1>
+
+	<!-- Sort By -->
+	<form id="sortForm" method="get">
+		<select id="sortSelect" name="sort">
+			<option value="default" ${'default' eq sort ? 'selected' : ''}>기본</option>
+			<option value="dense_lvl" ${'dense_lvl' eq sort ? 'selected' : ''}>혼잡도순</option>
+			<option value="name" ${'name' eq sort ? 'selected' : ''}>가나다순</option>
+		</select>
+	</form>
+
+	<script>
+		$(document).ready(function() {
+			$('#sortSelect').change(function() {
+				$('#sortForm').submit();
+			});
+		});
+	</script>
+
+
+
+
 	<div class="container">
 		<div class="row">
 			<c:forEach var="density" items="${densityList}">
