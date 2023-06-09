@@ -24,6 +24,7 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private ServletContext servletContext;
 
+
 	@Override
 	public void join(MemberDTO member, MultipartFile file) throws Exception {
 
@@ -46,7 +47,7 @@ public class MemberServiceImpl implements MemberService {
 			file.transferTo(dfile); 
 
 
-			member.setUserid(fileVO.getId());
+			member.setUserId(fileVO.getId());
 
 		}
 		memberDAO.insertMember(member);
@@ -75,7 +76,7 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO getMemberWithImg(String userId) {
+	public MemberDTO getMemberWithImg(Integer userId) {
 		return memberDAO.selectMemberWithImg(userId);
 	}
 

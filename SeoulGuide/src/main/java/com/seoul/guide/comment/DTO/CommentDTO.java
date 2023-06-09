@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class CommentDTO {
 	private Integer comment_id;
-	private String member_email;
 	private Integer tourist_id;
+	private Integer user_id;
 	private String comment_content;
 	
 	private String nickname;
@@ -15,12 +15,12 @@ public class CommentDTO {
 	
 	
 	public CommentDTO() {}
-	public CommentDTO(String member_email, Integer tourist_id, String comment_content, String nickname, String name) {
-		this.member_email = member_email;
+	public CommentDTO(Integer user_id, Integer tourist_id, String comment_content, String nickname, String name) {
 		this.tourist_id = tourist_id;
 		this.comment_content = comment_content;
 		this.nickname = nickname;
 		this.name = name;
+		this.user_id = user_id;
 	}
 	
 	
@@ -41,11 +41,11 @@ public class CommentDTO {
 	}
 
 
-	public String getMember_email() {
-		return member_email;
+	public Integer getUser_id() {
+		return user_id;
 	}
-	public void setMember_email(String member_email) {
-		this.member_email = member_email;
+	public void setUser_id(Integer user_id) {
+		this.user_id = user_id;
 	}
 	public Integer getTourist_id() {
 		return tourist_id;

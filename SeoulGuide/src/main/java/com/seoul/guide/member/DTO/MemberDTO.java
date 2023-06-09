@@ -14,11 +14,12 @@ public class MemberDTO {
 	
 	//fileVO
 	private String name;
+	private String directory;
 	
 	public MemberDTO() {}
 	
 	public MemberDTO(Integer userId, String nickname, String username, String email, String password, Integer phone1,
-			Integer phone2, Integer phone3, String birthday, String name) {
+			Integer phone2, Integer phone3, String birthday, String name, String directory) {
 		this.userId = userId;
 		this.nickname = nickname;
 		this.username = username;
@@ -29,11 +30,13 @@ public class MemberDTO {
 		this.phone3 = phone3;
 		this.birthday = birthday;
 		this.name = name;
+		this.directory = directory;
 	}
 
 
 	public Integer getUserId() {
 		return userId;
+	}
 	
 
 	public void setUserId(Integer userId) {
@@ -111,6 +114,14 @@ public class MemberDTO {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getDirectory() {
+		return directory;
+	}
+
+	public void setDirectory(String directory) {
+		this.directory = directory;
 	}
 
 	@Override

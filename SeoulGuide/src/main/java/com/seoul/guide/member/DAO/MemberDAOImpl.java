@@ -50,7 +50,7 @@ public class MemberDAOImpl implements MemberDAO {
 	
 	//profile
 	@Override
-	public MemberDTO selectMemberWithImg(String userId) {
+	public MemberDTO selectMemberWithImg(Integer userId) {
 		return sqlSession.selectOne("MemberMapper.selectMemberWithImg", userId);
 		
 	}

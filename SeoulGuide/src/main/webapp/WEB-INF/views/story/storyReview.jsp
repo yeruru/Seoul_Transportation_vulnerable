@@ -90,4 +90,23 @@
 	</div>
 	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
+<script>
+window.addEventListener('load', function() {
+	  var darkModeCookie = getCookie('darkMode');
+	  if (darkModeCookie === 'true') {
+	    bodyEl.classList.add('dark');
+	  }
+	});
+
+	function getCookie(name) {
+	  var cookies = document.cookie.split(';');
+	  for (var i = 0; i < cookies.length; i++) {
+	    var cookie = cookies[i].trim();
+	    if (cookie.startsWith(name + '=')) {
+	      return cookie.substring(name.length + 1);
+	    }
+	  }
+	  return '';
+	}
+</script>
 </html>

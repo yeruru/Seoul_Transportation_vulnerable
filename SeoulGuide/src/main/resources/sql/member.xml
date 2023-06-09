@@ -23,9 +23,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	
 	<!-- 여기서부터 마이페이지 -->
-	 <select id = "selectMemberWithImg" parameterType="String" resultType="com.seoul.guide.member.DTO.MemberDTO">
+	 <select id = "selectMemberWithImg" parameterType="Integer" resultType="com.seoul.guide.member.DTO.MemberDTO">
 		<![CDATA[
-			select m.nickname, m.username, m.email, m.birthday, f.name
+			select m.nickname, m.username, m.email, m.birthday, f.name, f.directory
 			from member m join filevo f
 							on  m.userId = f.id where userId=#{userId}
 	     ]]>

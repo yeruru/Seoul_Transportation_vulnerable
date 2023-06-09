@@ -28,9 +28,9 @@ public class CommentController {
 	@RequestMapping(value = "/commentinsert", method= RequestMethod.POST)
 	@ResponseBody
 	public void insertComment(@RequestParam(value = "tourist_id") Long tourist_id, @ModelAttribute CommentDTO commentDTO) throws Exception {
-		String email = (String) session.getAttribute("email");
+		Integer userid =  (Integer)session.getAttribute("id");
 		Integer id = tourist_id.intValue();
-		commentDTO.setMember_email(email);
+		commentDTO.setUser_id(userid);
 		commentDTO.setTourist_id(id);
 		commentService.insertComment(commentDTO);
 	}

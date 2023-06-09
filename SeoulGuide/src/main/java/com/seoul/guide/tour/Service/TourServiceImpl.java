@@ -24,8 +24,10 @@ public class TourServiceImpl implements TourService {
 	@Override
 	public List<TourDTO> detailSearch(String[] menu_icon, String tourist_subtitle) throws Exception {
 		Map<String, Object> map = new HashMap<>();
-		List<String> list = Arrays.asList(menu_icon);
-		map.put("menu_icon", list);
+		if(menu_icon!=null) {
+			List<String> list = Arrays.asList(menu_icon);
+			map.put("menu_icon", list);
+		}
 		map.put("tourist_subtitle", tourist_subtitle);
 		return tourDAO.detailSearch(map);
 	}
