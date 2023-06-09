@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>Density Information</title>
+<title>교통 정보</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 <script
@@ -12,10 +12,14 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
+	
+	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
+	
 </head>
-<body>
-	<h1>Density Information</h1>
+<body class="body">
+	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<div class="content-wrap">
+	<h1>교통 정보</h1>
 
 	<!-- Sort By -->
 	<form id="sortForm" method="get">
@@ -89,6 +93,24 @@
 				});
 			</script>
 			<style>
+			#sortForm {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 15px;
+    padding-bottom: 20px;
+}
+.col-md-4 {
+    webkit-box-flex: 0;
+    flex: 50% !important;
+    max-width: 50% !important;
+}
+@media (max-width: 399px) {
+    .col-md-4 {
+        -webkit-box-flex: 0;
+        flex: 100% !important;
+        max-width: 100% !important;
+    }
+}
 .label {
 	border-radius: 100px;
 	color: white;
@@ -116,6 +138,11 @@
 
 		</div>
 	</div>
+
+</div> 
+
+<!-- footer -->	
+ <jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 
 </body>
 </html>
