@@ -3,6 +3,13 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="mapper.density">
+
+	<select id="selectAllDensityByPage" resultType="com.seoul.guide.density.DTO.DensityDTO">
+	    SELECT * FROM density
+	    ORDER BY id ASC
+	    LIMIT #{offset}, #{rowsPerPage}
+	</select>
+
 	<select id="selectAllDensity"
 		resultType="com.seoul.guide.density.DTO.DensityDTO">
         <![CDATA[
@@ -10,7 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         ]]>
 	</select>
 
-	<select id="selectAllDensityOrderByDenseLvl"
+	<select id="selectAllDensityOrderByDenseLvl" parameterType="map"
 		resultType="com.seoul.guide.density.DTO.DensityDTO">
 		SELECT * FROM density
 		ORDER BY CASE
@@ -20,13 +27,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		WHEN dense_lvl = '붐빔' THEN 4
 		ELSE 5
 		END DESC
+		LIMIT #{offset}, #{rowsPerPage}
 	</select>
 
-
-	<select id="selectAllDensityOrderByName"
+	<select id="selectAllDensityOrderByName" parameterType="map"
 		resultType="com.seoul.guide.density.DTO.DensityDTO">
         <![CDATA[
             select * from density order by dens_name asc
+            limit #{offset}, #{rowsPerPage}
         ]]>
 	</select>
 
@@ -38,13 +46,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         ]]>
 	</update>
 
-	<select id="selectAllDensityUnsorted"
+	<select id="selectAllDensityUnsorted" parameterType="map"
 		resultType="com.seoul.guide.density.DTO.DensityDTO">
-    <![CDATA[
-        select * from density
-    ]]>
+        <![CDATA[
+            select * from density
+            limit #{offset}, #{rowsPerPage}
+        ]]>
+	</select>
+	
+	<!-- This is the new query for getting the total count -->
+	<select id="getTotalDensityCount" resultType="int">
+	    SELECT COUNT(*) FROM density
 	</select>
 
-
 </mapper>
-

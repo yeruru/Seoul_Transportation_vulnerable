@@ -12,17 +12,17 @@
 	<div class="sub-header">
 		<div class="box-wrap">
 			<ul>
-				<li><a href="#">홈</a></li>
-				<li><a href="#">인기관광지</a></li>
-				<li><a href="#">방문자리뷰</a></li>
-				
+				<li><a href="./storyreview">관광스토리</a></li>
 				
 				<c:choose>
-		         	<c:when test="${sessionScope.email eq null }">
+		         	<c:when test="${sessionScope.id eq null }">
 		         	    <li><a href="./loginform">로그인</a></li>
 		         	</c:when>
 		         	<c:otherwise>
-		         		<li><a href="./logout">로그아웃</a></li>
+		         		<li>
+		         			<%-- <img id="profileImage" src="<c:url value='/resources/upload/${member.name}'/>" alt="프로필 이미지"> --%>
+		         			<a href="writeform" class="write-btn" title="리뷰 글쓰기">글쓰기</a>
+	  					</li>
 		         	</c:otherwise>
 	         	</c:choose>
 			</ul>

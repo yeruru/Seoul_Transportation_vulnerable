@@ -38,9 +38,6 @@
 		});
 	</script>
 
-
-
-
 	<div class="container">
 		<div class="row">
 			<c:forEach var="density" items="${densityList}">
@@ -92,6 +89,18 @@
 					});
 				});
 			</script>
+
+			<!-- Pagination -->
+			<nav aria-label="Page navigation example">
+				<ul class="pagination">
+					<c:forEach begin="1" end="${totalPages}" var="pageNo">
+						<li class="page-item ${pageNo eq currentPage ? 'active' : ''}">
+							<a class="page-link" href="/guide/density?page=${pageNo}&sort=${sort}">${pageNo}</a>
+						</li>
+					</c:forEach>
+				</ul>
+			</nav>
+
 			<style>
 			#sortForm {
     display: flex;
@@ -101,7 +110,7 @@
 }
 .col-md-4 {
     webkit-box-flex: 0;
-    flex: 50% !important;
+    flex: 40% !important;
     max-width: 50% !important;
 }
 @media (max-width: 399px) {
