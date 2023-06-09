@@ -54,4 +54,14 @@ public class BoardDAOImpl implements BoardDAO {
     public List<Article> selectBoardListBySearch(String search) throws Exception {
         return sqlSession.selectList("mapper.board.selectBoardListBySearch", search);
     }
+	
+	//조회수 업데이트 코드
+	@Override
+	public void updateViewCount(Integer post_id) throws Exception {
+	    sqlSession.update("mapper.board.updateViewCount", post_id);
+	}
+	@Override
+    public void incrementViewCount(Integer post_id) throws Exception {
+        sqlSession.update("mapper.board.incrementViewCount", post_id);
+    }
 }

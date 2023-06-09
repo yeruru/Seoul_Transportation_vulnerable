@@ -14,4 +14,7 @@ public interface BoardService {
 	//검색기능용 코드
     public List<Article> searchBoardList(String search) throws Exception;
 
+    //조회수 관리용 코드 
+    public void incrementViewCount(Integer post_id) throws Exception;
+
 }

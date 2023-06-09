@@ -15,4 +15,10 @@ public interface BoardDAO {
 	
 	//검색기능용코드
     public List<Article> selectBoardListBySearch(String search) throws Exception;
+    
+    //조회수용 코드 
+    public void updateViewCount(Integer post_id) throws Exception;
+    public void incrementViewCount(Integer post_id) throws Exception;
+
+
 }

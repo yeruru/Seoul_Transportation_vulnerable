@@ -45,12 +45,13 @@ public class BoardController {
 	}
 
 	
-
+	//조회수 관리로직  추가함!
 	@RequestMapping(value = "storydetail", method = RequestMethod.GET)
 	public ModelAndView storyDetail(@RequestParam("post_id") Integer num) {
 		ModelAndView mav = new ModelAndView();
 		try {
 			Article article = boardService.getBoard(num);
+			boardService.incrementViewCount(num); // 추가된 부분
 			mav.addObject("article", article);
 			mav.setViewName("story/storyDetail");
 		} catch(Exception e) {
@@ -60,6 +61,7 @@ public class BoardController {
 		}
 		return mav;
 	}
+
 	
 	@RequestMapping(value="/writeform", method=RequestMethod.GET)
 	public String writeform() {
