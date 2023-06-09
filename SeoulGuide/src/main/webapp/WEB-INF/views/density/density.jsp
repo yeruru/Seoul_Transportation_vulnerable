@@ -2,25 +2,27 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <head>
-<title>교통 정보</title>
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	
-	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
-	
+	<title>실시간 교통 정보</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="<c:url value="/resources/css/density.css"/>">
+	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>	
 </head>
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+	<div class="bg">
+		<div class="box-wrap">
+			<p class="banner-sub">
+			서울 관광을 고민중이신가요?<br>
+			‘서울, 함께 가는 길’ 을 따라 편안하고 안전한 관광하세요.
+			</p>
+			<h2 class="banner-title">실시간 교통 정보</h2>
+			<img src="<c:url value="/resources/img/density.svg"/>" alt="실시간교통정보 이미지">
+		</div>
+	</div>
 <div class="content-wrap">
-	<h1>교통 정보</h1>
-
 	<!-- Sort By -->
 	<form id="sortForm" method="get">
 		<select id="sortSelect" name="sort">
@@ -101,49 +103,6 @@
 				</ul>
 			</nav>
 
-			<style>
-			#sortForm {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 15px;
-    padding-bottom: 20px;
-}
-.col-md-4 {
-    webkit-box-flex: 0;
-    flex: 40% !important;
-    max-width: 50% !important;
-}
-@media (max-width: 399px) {
-    .col-md-4 {
-        -webkit-box-flex: 0;
-        flex: 100% !important;
-        max-width: 100% !important;
-    }
-}
-.label {
-	border-radius: 100px;
-	color: white;
-	padding: 5px;
-	text-align: center;
-}
-
-.crowded {
-	background-color: red;
-}
-
-.slightly-crowded {
-	background-color: orange;
-}
-
-.normal {
-	background-color: yellow;
-	color: black;
-}
-
-.relaxed {
-	background-color: green;
-}
-</style>
 
 		</div>
 	</div>

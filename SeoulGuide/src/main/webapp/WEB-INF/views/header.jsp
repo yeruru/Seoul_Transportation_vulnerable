@@ -68,7 +68,7 @@
 						<li><a href="./storyreview">관광스토리</a></li>
 						<li><a href="./test">관광지 TEST</a></li>
 					</ul></li>
-				<li class="not"><a href="#">지하철</a>
+				<li class="not"><a href="#">교통정보</a>
 					<ul>
 						<li><a href="./subway">지하철 간편 검색</a></li>
 						<li><a href="./density">실시간 교통</a></li>

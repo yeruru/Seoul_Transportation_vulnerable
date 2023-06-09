@@ -1,0 +1,29 @@
+.bg { background-color: #363636; color: #fff; height: 300px;}
+.bg .box-wrap { position: relative;}
+.bg .box-wrap img { position: absolute; top: 50%; right: 0; width: 300px;}
+.bg .banner-title { padding-top: 20px;}
+
+.col-md-4 { webkit-box-flex: 0; flex: 40% !important; max-width: 50% !important;}
+@media (max-width: 500px) {
+    .col-md-4 {
+        -webkit-box-flex: 0;
+        flex: 100% !important;
+        max-width: 100% !important;
+    }
+}
+.label { border-radius: 100px; color: white; padding: 5px; text-align: center;}
+.crowded { background-color: #ff4141;}
+.slightly-crowded { background-color: #F69715;}
+.normal { background-color: rgba(13, 153, 255, 1); color: white;}
+.relaxed { background-color: green;}
+.row { justify-content: center !important;}
+#sortForm { padding-top: 30px; display: flex; justify-content: flex-end; font-size: 12px; padding-bottom: 20px;}
+#sortForm select { padding: 5px;}
+
+
+/* 다크모드 */
+body.dark #sortForm select{ background-color: #000; color: #fff;}  
+body.dark .page-item.active .page-link { color: #fff; background-color: #515151; border-color: #5c5c5c;} 
+body.dark .page-item .page-link { color: #fff; background-color: #a6a3a3; border-color: #5c5c5c;}
+body.dark .card-body { background-color: #000 !important;}
+body.dark .card { border: 1px solid rgba(0,0,0,.125);}

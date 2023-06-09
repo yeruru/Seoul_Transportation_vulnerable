@@ -1,6 +1,7 @@
 @charset "UTF-8";
+/* style 초기화 */
 * { margin:0; padding:0;}
-body{ font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); overflow-x: hidden;}
+body{ min-width: 300px; font-size: 16px; line-height: 1; font-family: "Roboto", "Noto Sans KR", sans-serif; word-break: kepp-all; color: var(--c-text); overflow-x: hidden;}
 a { text-decoration: none; color: var(--c-text);}
 em{ font: inherit; vertical-align: baseline;} 
 img { width: 100%;}
@@ -51,7 +52,10 @@ body.dark {
 }
 
 body {background-color: var(--c-bg);}
+body.he { height: 1000px;}
+.footer-box { margin-top: 400px;}
 
+/* 눈누폰트 */
 /* 평창평화체 */
 @font-face {
     font-family: 'PyeongChangPeace-Bold';
@@ -104,4 +108,32 @@ body {background-color: var(--c-bg);}
   </div>
 
  */
+ 
+/* banner 글씨체 */
+.banner-sub {padding-top: 50px; font-family: 'TheJamsil2Light'; line-height: 17px; font-size: 14px; color: rgb(235 235 235);}
+.banner-title {font-family: 'TheJamsil5Bold'; font-size: 40px; padding-bottom: 20px;}
+ 
+/* 검색결과 없음 */
+.none-result { width: 500px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; flex-direction: column; align-content: center; align-items: center;}
+.none-result img { width: 200px; display: block; padding-bottom: 20px;}
+.none-result em {font-family: 'TheJamsil5Bold'; font-size: 20px; padding-bottom: 20px;}
+.none-result p { font-family: 'TheJamsil2Light'; line-height: 18px;}
+@media (max-width: 500px) {
+    .none-result {
+        width: 300px;
+    }
+    .subway-form  {
+    	max-width: 300px;
+    }
+}
 
+/* 
+<div class="none-result">
+    <img src="<c:url value="/resources/img/none_result.png"/>" alt="검색결과없음">
+    <em>검색 결과가 없어요.</em>
+    <p>
+        ㆍ키워드를 정확하게 입력하셨는지 확인해보세요.<br>
+        ㆍ지하철 역명으로 검색해보세요. (예: 서울 -> 서울역)
+    </p>
+</div> 
+*/
