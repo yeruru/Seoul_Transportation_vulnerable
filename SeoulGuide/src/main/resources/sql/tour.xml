@@ -9,33 +9,44 @@
 	</select>
 	
 	<select id="searchdetail" parameterType = "java.util.Map" resultType="com.seoul.guide.tour.DTO.TourDTO">
-         select * from tourist where
-          <foreach collection="menu_icon" item="menu" index="index" open="("  separator = " " close =")" >
-	    	<if test ='index>0'>or</if>
-	    	
-	    	<if test='menu == "type1"'>
-	    	 (menu_icon1 = 1 or menu_icon3 = 1 or menu_icon4 = 1)  or tourist_subtitle=#{tourist_subtitle}
-	    	</if>
-	    	
-	    	<if test='menu == "type2"'>
-	    		 menu_icon6 = 1 or tourist_subtitle=#{tourist_subtitle}
-	    	</if>
-	    	
-	    	<if test='menu == "type3"'>
-	    		menu_icon5 = 1 or tourist_subtitle=#{tourist_subtitle}
-	    	</if>
-	    	
-	    	<if test='menu == "type4"'>
-	    		menu_icon2 = 1 or tourist_subtitle=#{tourist_subtitle}
-	    	</if>
-
-	    </foreach> 
-        
+         select * from tourist 
+         	where
+          <choose>
+          	<when test="menu_icon!=null">
+          		<foreach collection="menu_icon" item="menu" index="index" open="("  separator = " " close =")" >
+          			<if test="index>0">
+						OR
+					</if>
+			    	<choose>
+				      <when test="menu == 'type1'">
+				        (menu_icon1 = 1 OR menu_icon3 = 1 OR menu_icon4 = 1)
+				      </when>
+				      <when test="menu == 'type2'">
+				        menu_icon6 = 1 
+				      </when>
+				      <when test="menu == 'type3'">
+				        menu_icon5 = 1 
+				      </when>
+				      <when test="menu == 'type4'">
+				        menu_icon2 = 1 
+				      </when>
+			    	</choose>
+	    		</foreach> 
+				<if test="tourist_subtitle!=null and tourist_subtitle!=''">
+					and tourist_subtitle = #{tourist_subtitle}
+				</if>
+			</when>
+			<otherwise>
+				<if test="tourist_subtitle!=null and tourist_subtitle!=''">
+					tourist_subtitle = #{tourist_subtitle}
+				</if>
+			</otherwise>
+		</choose>
 	</select>
 	
 	<select id="search" parameterType="String" resultType="com.seoul.guide.tour.DTO.TourDTO">
 	  <![CDATA[
-		select * from tourist where tourist_name like concat('%', #{word}, '%')
+		select * from tourist where tourist_name like concat('%', #{word}, '%') or tourist_subtitle like concat('%', #{word}, '%') 
 		]]>
 	</select>
 	
