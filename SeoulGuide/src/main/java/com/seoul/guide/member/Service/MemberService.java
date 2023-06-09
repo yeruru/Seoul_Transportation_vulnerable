@@ -17,5 +17,5 @@ public interface MemberService {
 	
 	//마이페이지
 	//회원 정보와 파일 정보를 함께 조회하는 메서드
-    public MemberDTO getMemberWithImg(String userId);
+    public MemberDTO getMemberWithImg(Integer userId);
 }

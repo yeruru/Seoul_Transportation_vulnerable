@@ -1,5 +1,7 @@
 package com.seoul.guide.board.Controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -37,7 +39,7 @@ public class BoardController {
 		return mav;
 	}
 	
-	
+
 	@RequestMapping(value = "storydetail", method = RequestMethod.GET)
 	public ModelAndView storyDetail(@RequestParam("post_id") Integer num) {
 		ModelAndView mav = new ModelAndView();

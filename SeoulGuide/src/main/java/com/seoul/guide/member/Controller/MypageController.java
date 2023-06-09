@@ -45,7 +45,7 @@ public class MypageController {
 	public String myPage(HttpSession session, Model model) {
 		
 		// HttpSession에서 로그인된 사용자 정보 가져오기
-        String userId = (String) session.getAttribute("userId");
+		Integer userId = (Integer) session.getAttribute("id");
         // 로그인된 사용자의 회원 정보와 파일 정보 조회
         MemberDTO member = memberService.getMemberWithImg(userId);
         System.out.println(member.getEmail());
@@ -59,7 +59,7 @@ public class MypageController {
 	@RequestMapping(value = "/modifyMember", method=RequestMethod.GET)
 	public String modifyMemberView(HttpSession session, Model model) {
 		// HttpSession에서 로그인된 사용자 정보 가져오기
-        String userId = (String) session.getAttribute("userId");
+        Integer userId = (Integer) session.getAttribute("id");
      // 로그인된 사용자의 회원 정보와 파일 정보 조회
         MemberDTO member = memberService.getMemberWithImg(userId);
         System.out.println(member.getUserId());
@@ -76,4 +76,6 @@ public class MypageController {
 		
 		return "myPage/modifyMember";
 	}
+	
+
 }

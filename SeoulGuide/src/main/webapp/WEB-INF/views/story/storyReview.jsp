@@ -25,12 +25,10 @@
 				<p>관광지에 다녀온 후 당신의 경험을 공유해주세요.</p>
 				<h4>관광스토리</h4>
 				<img src="<c:url value="/resources/img/test-main.svg"/>" alt="메인이미지">
-				<img class="img-dark" src="<c:url value="/resources/img/test/loding.svg"/>" alt="메인이미지">
+				<img class="img-dark" src="<c:url value="/resources/img/story-dark.svg"/>" alt="메인이미지">
 			</div>
 		</div>
 		<section id="story-review" class="box-wrap">
-			
-			
 	  		<div class="review-tumb">
 	  			
 	  			<div class="write-btn-box">
@@ -51,34 +49,21 @@
 			          <c:forEach items="${boards}" var="article">
 			            <li class="lists__item js-load">
 			                <a href="storydetail?post_id=${article.post_id}">
-			                    <div class="tumb-box" <%-- style="background-image: url('<c:url value="/resources/img/logo.png"/>');" --%>>
-
-			                        <div class="tumb">
-			                            <!-- TOAST UI Viewer -->
-										<div id="viewer"><div class="viewer-box">${article.post_content}</div></div>
-										<!-- TOAST UI Viewer CDN URL(JS) -->
-										<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-										<script>
-										    const viewer = toastui.Editor.factory({
-									            el: document.querySelector('#viewer'),
-									            viewer: true,
-									            height: '500px',
-									            initialValue: content,
-									            
-									        }); 
-										</script>
-			                        </div>
-			                        <div class="tumb-title">
-
-			                            <em>${article.post_title }</em>
-			                        </div>
-			                        <a href="storydelete?num=${article.post_id}">삭제</a>
-			                            
-				                </a>
-				            </li>
-			            	</c:forEach>
-
-
+			                    <div class="tumb-box">
+			                       <div class="tumb">
+			                          <!-- TOAST UI Viewer -->
+									  <div id="viewer"><div class="viewer-box">${article.post_content}</div></div>
+			                       </div>
+			                       <div class="tumb-title">
+			                          <em>${article.post_title }</em>
+			                       </div>
+			                      </div>
+			                      <c:if test="${sessionScope.id eq article.user_id }">
+										<a href="storydelete?num=${article.user_id}">삭제</a>
+									</c:if>
+				               </a>
+				           </li>
+			            </c:forEach>
 			        </ul>
 			    </div>
 			    
