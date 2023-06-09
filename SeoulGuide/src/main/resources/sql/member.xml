@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="MemberMapper">
 	<insert id="memberAdd" parameterType="com.seoul.guide.member.DTO.MemberDTO">
 		<![CDATA[
-	     insert into member (nickname,username,email,password, phone1,phone2, phone3, birthday, userid ) values(#{nickname},#{username},#{email},#{password},#{phone1},#{phone2},#{phone3},{#birthday}, #{userid})
+	     insert into member (nickname,username,email,password, phone1,phone2, phone3, birthday, userid ) values(#{nickname},#{username},#{email},#{password},#{phone1},#{phone2},#{phone3},#{birthday}, #{userid})
 	     ]]>
 	</insert>
 	
@@ -18,6 +18,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="nicknameCheck" parameterType="String" resultType="Integer">
 		 <![CDATA[
 	     	select count(*) from member where nickname = #{nickname}
+	     ]]>
+	</select>
+	
+	<select id="selectuserid" parameterType="String" resultType="Integer">
+		<![CDATA[
+	     	select userId from member where email = #{email}
 	     ]]>
 	</select>
 	

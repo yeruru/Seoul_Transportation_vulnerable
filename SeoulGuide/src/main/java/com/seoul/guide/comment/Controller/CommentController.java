@@ -1,6 +1,6 @@
 package com.seoul.guide.comment.Controller;
 
-import java.util.List;
+
 
 import javax.servlet.http.HttpSession;
 
@@ -24,15 +24,30 @@ public class CommentController {
 	@Autowired
 	private HttpSession session;
 
+	// 댓글 작성
 	@RequestMapping(value = "/commentinsert", method= RequestMethod.POST)
 	@ResponseBody
 	public void insertComment(@RequestParam(value = "tourist_id") Long tourist_id, @ModelAttribute CommentDTO commentDTO) throws Exception {
-		System.out.println(tourist_id);
 		String email = (String) session.getAttribute("email");
 		Integer id = tourist_id.intValue();
 		commentDTO.setMember_email(email);
 		commentDTO.setTourist_id(id);
 		commentService.insertComment(commentDTO);
+	}
+	
+	@RequestMapping(value="/delete", method=RequestMethod.GET)
+	public ModelAndView deleteComment(@RequestParam("id") Integer id) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		int tourid = commentService.selecttouristid(id);
+		System.out.println(id);
+		try {
+			commentService.Delete(id);
+			mav.setViewName("redirect:/detail?id="+tourid);
+			System.out.println(commentService.selecttouristid(id));
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		return mav;
 	}
 
 	

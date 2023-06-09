@@ -26,7 +26,7 @@
 
 					<li>
 						<c:choose>
-							<c:when test="${sessionScope.email eq null }">
+							<c:when test="${sessionScope.id eq null }">
 								<a class="" href="./loginform">로그인</a>
 							</c:when>
 							<c:otherwise>
@@ -37,7 +37,7 @@
 				</ul>
 				
 				<c:choose>
-					<c:when test="${sessionScope.email eq null }">
+					<c:when test="${sessionScope.id eq null }">
 						<a href="./joinform">계정이 없으신가요?</a>
 					</c:when>
 					<c:otherwise>

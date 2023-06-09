@@ -67,7 +67,9 @@ public class MemberController {
 
 		try {
 			memeberservice.login(email, password);
-			session.setAttribute("email", email);
+		    Integer id = memeberservice.selectuserid(email);
+		    System.out.println(id);
+			session.setAttribute("id", id);
 			mav.setViewName("redirect:/");
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -79,7 +81,7 @@ public class MemberController {
 	
 	@RequestMapping(value="logout", method=RequestMethod.GET)
 	public String logout() {
-		session.removeAttribute("email");
+		session.removeAttribute("id");
 		return "redirect:/";
 	}
 	

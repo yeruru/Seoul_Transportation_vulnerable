@@ -267,3 +267,8 @@
 .tourtext {
 	padding: 10px 10px;
 }
+
+.js-load { display: none;}
+.js-load.active { display: block;}
+.js-load:after { display: none;}
+.btn-wrap { display: block;}

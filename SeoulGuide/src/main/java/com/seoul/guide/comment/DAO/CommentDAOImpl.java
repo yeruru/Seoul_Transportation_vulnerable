@@ -1,6 +1,7 @@
 package com.seoul.guide.comment.DAO;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,22 @@ public class CommentDAOImpl implements CommentDAO {
 	public List<CommentDTO> selectComment(Integer id) throws Exception {
 		return sqlsession.selectList("mapper.comment.selectcomment",id);
 	}
+
+	@Override
+	public CommentDTO oneSelectComment(Integer id) throws Exception {
+		return sqlsession.selectOne("mapper.comment.Oneselectcomment", id);
+	}
+
+	@Override
+	public void deleteComment(Integer id) throws Exception {
+		sqlsession.delete("mapper.comment.deleteComment",id);
+	}
+
+	@Override
+	public Integer selecttouristid(Integer id) throws Exception {
+		return sqlsession.selectOne("mapper.comment.selecttouristID", id);
+		
+	}
+
 
 }

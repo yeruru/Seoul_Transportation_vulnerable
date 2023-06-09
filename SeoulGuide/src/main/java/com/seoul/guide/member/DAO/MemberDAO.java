@@ -11,4 +11,5 @@ public interface MemberDAO {
 	public void insertFile(FileVO file) throws Exception;
 	public Integer newFileId() throws Exception;
 	public FileVO selectFile(Integer id) throws Exception;
+	public Integer selectID(String email) throws Exception;
 }

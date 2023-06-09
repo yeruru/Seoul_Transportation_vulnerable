@@ -57,8 +57,8 @@ body {background-color: var(--c-bg);}
 .content-wrap { padding-top: 50px; max-width: 580px; margin: 0 auto;} 
 
 /* login-popup 공통 스타일 */
-.shadow-bg {  position: fixed;  background-color: #000; opacity: .6;  width: 100vw; height: 100vh; top: 0; left: 0; z-index: 1; visibility: hidden; opacity: 0; transition: all .3s;}
-.shadow-bg.show {visibility: visible; opacity: 1;}
+.shadow-bg {  position: fixed;  background-color: #000; opacity: 0;  width: 100vw; height: 100vh; top: 0; left: 0; z-index: 1; visibility: hidden; opacity: 0; transition: all .3s;}
+.shadow-bg.show {visibility: visible; opacity: 0.6;}
 .login-popup-content { position: fixed; z-index: 2; background-color: aliceblue; width: 200px; height: 100px; padding: 20px; border-radius: 10px; top: 50%; left: 50%; transform: translate(-50%, -50%); visibility: hidden; opacity: 0; transition: all .3s;}
 .login-popup-content.show { visibility: visible; opacity: 1;}
 .login-popup-content em { font-size: 15px; line-height: 19px; background-color: #F5F5F5;}
