@@ -23,29 +23,12 @@ public class MypageController {
 	
 	@Autowired
 	private HttpSession session;
-		
-//	@RequestMapping(value = "profile", method=RequestMethod.GET)
-//	public ModelAndView profileView() {
-//		 ModelAndView mav = new ModelAndView();
-//
-//		    // 회원 정보 조회
-////		    Optional<MemberDTO> userOptional = memberService.findUser(userId);
-////		    if (userOptional.isPresent()) {
-////		        User user = userOptional.get();
-////		        mav.addObject("user", user);
-////		        mav.setViewName("mypage/profile");
-////		    } else {
-////		    	mav.setViewName("error"); // 회원 정보가 없는 경우 에러 페이지로 이동
-////		    }
-//
-//		    return mav;
-//	}
-	
 	@RequestMapping(value= "/profile", method=RequestMethod.GET)
 	public String myPage(HttpSession session, Model model) {
 		
 		// HttpSession에서 로그인된 사용자 정보 가져오기
-		Integer userId = (Integer) session.getAttribute("id");
+        Integer userId =  (Integer) session.getAttribute("id");
+
         // 로그인된 사용자의 회원 정보와 파일 정보 조회
         MemberDTO member = memberService.getMemberWithImg(userId);
         System.out.println(member.getEmail());

@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.seoul.guide.board.DTO.Article;
+
+//BoardDAOImpl
 @Repository
 public class BoardDAOImpl implements BoardDAO {
 	@Autowired
@@ -47,4 +49,19 @@ public class BoardDAOImpl implements BoardDAO {
 		sqlSession.delete("mapper.board.deleteBoard", post_id);
 	}
 
+	//검색기능용 코드
+	@Override
+    public List<Article> selectBoardListBySearch(String search) throws Exception {
+        return sqlSession.selectList("mapper.board.selectBoardListBySearch", search);
+    }
+	
+	//조회수 업데이트 코드
+	@Override
+	public void updateViewCount(Integer post_id) throws Exception {
+	    sqlSession.update("mapper.board.updateViewCount", post_id);
+	}
+	@Override
+    public void incrementViewCount(Integer post_id) throws Exception {
+        sqlSession.update("mapper.board.incrementViewCount", post_id);
+    }
 }

@@ -272,3 +272,15 @@
 .js-load.active { display: block;}
 .js-load:after { display: none;}
 .btn-wrap { display: block;}
+
+.reviewbutton{
+	display: block;
+    margin: 0 auto;
+    width : 500px;
+    height : 40px;
+    border : 0;
+    background-color:var(--c-tour);
+    color : white;
+    font-size : 20px;
+    border-radius : 10px;
+}

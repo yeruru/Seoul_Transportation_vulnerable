@@ -5,10 +5,20 @@ import java.util.Map;
 
 import com.seoul.guide.board.DTO.Article;
 
+//BoardDAO
 public interface BoardDAO {
 	public List<Article> selectBoardList() throws Exception;
 	public Article selectBoard(Integer post_id) throws Exception;
 	public Integer insertBoard(Article article) throws Exception;
 	public void updateBoard(Map<String,Object> param) throws Exception;
 	public void deleteBoard(Integer post_id) throws Exception;
+	
+	//검색기능용코드
+    public List<Article> selectBoardListBySearch(String search) throws Exception;
+    
+    //조회수용 코드 
+    public void updateViewCount(Integer post_id) throws Exception;
+    public void incrementViewCount(Integer post_id) throws Exception;
+
+
 }

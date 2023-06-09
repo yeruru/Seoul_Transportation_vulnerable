@@ -24,6 +24,7 @@ public class MemberServiceImpl implements MemberService {
 	@Autowired
 	private ServletContext servletContext;
 
+
 	@Override
 	public void join(MemberDTO member, MultipartFile file) throws Exception {
 

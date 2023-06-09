@@ -28,7 +28,7 @@
 	</form>
 	<div class="searchbackground">
 		<div class="box">
-			<form action="tourdetailsearch" method="POST">
+			<form action="tourdetailsearch" method="GET">
 				<div class="search">
 					<div class="iconsearch">
 						<div class="off">
@@ -115,7 +115,7 @@
 			
 		</div>
 		<div style="padding-top:20px;">
-              <button type="button" id="js-btn-wrap" class="more">리뷰 더보기</button>
+              <button class="reviewbutton" type="button" id="js-btn-wrap" class="more">리뷰 더보기</button>
         </div>
 	</div>
 </body>

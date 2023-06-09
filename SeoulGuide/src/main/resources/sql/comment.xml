@@ -5,7 +5,7 @@
 <mapper namespace="mapper.comment">
 	<insert id="insertcomment" parameterType="com.seoul.guide.comment.DTO.CommentDTO">
 		<![CDATA[
-			insert into tourist_comment (member_email, tourist_id, comment_content) values(#{member_email},#{tourist_id},#{comment_content})
+			insert into tourist_comment (user_id, tourist_id, comment_content) values(#{user_id},#{tourist_id},#{comment_content})
 		]]>		
 	</insert>
 	
@@ -17,11 +17,11 @@
 	
 	<select id="selectcomment" parameterType="Integer" resultType="com.seoul.guide.comment.DTO.CommentDTO">
 		<![CDATA[
-			select t.comment_id ,m.nickname, f.name, t.comment_content, t.t_comment_reg, t.member_email
+			select t.comment_id ,m.nickname, f.name, t.comment_content, t.t_comment_reg, t.user_id
 			from member m join filevo f
 				          	on  m.userid = f.id
 				    	  join tourist_comment t
-			                on m.email = t.member_email  
+			                on m.userid = t.user_id  
 			                where tourist_id=#{tourist_id}
 			                order by t_comment_reg DESC
 

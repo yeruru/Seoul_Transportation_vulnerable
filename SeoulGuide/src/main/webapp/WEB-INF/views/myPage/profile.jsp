@@ -9,10 +9,10 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/mypage/profile.css"/>">
-<link rel="stylesheet"
+<!-- <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
 <meta charset="UTF-8">
 <title>마이페이지</title>
 <style>
@@ -38,6 +38,7 @@
 						</li>
 					<li>닉네임: ${member.nickname}</li>
 					<li>이메일: ${member.email}</li>
+					<li>${member.directory }</li>
 				</ul>
 			</div>
 			<div class="tab">
@@ -84,6 +85,25 @@
 			contentItems[idx].style.display = 'block';
 		});
 	});
+</script>
+<script>
+window.addEventListener('load', function() {
+	  var darkModeCookie = getCookie('darkMode');
+	  if (darkModeCookie === 'true') {
+	    bodyEl.classList.add('dark');
+	  }
+	});
+
+	function getCookie(name) {
+	  var cookies = document.cookie.split(';');
+	  for (var i = 0; i < cookies.length; i++) {
+	    var cookie = cookies[i].trim();
+	    if (cookie.startsWith(name + '=')) {
+	      return cookie.substring(name.length + 1);
+	    }
+	  }
+	  return '';
+	}
 </script>
 
 

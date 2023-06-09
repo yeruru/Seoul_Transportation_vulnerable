@@ -34,4 +34,25 @@
 	    ]]>
 	</delete>
 	
+	<select id="selectBoardListBySearch" resultType="com.seoul.guide.board.DTO.Article" parameterType="String">
+        <![CDATA[
+            SELECT * FROM board 
+            WHERE post_title LIKE CONCAT('%', #{search}, '%') OR user_id LIKE CONCAT('%', #{search}, '%')
+            ORDER BY post_regdate DESC
+        ]]>
+    </select>
+    
+    <update id="updateViewCount" parameterType="Integer">
+    <![CDATA[
+        update board set view_count = view_count + 1 where post_id = #{post_id}
+    ]]>
+</update>
+<update id="incrementViewCount" parameterType="Integer">
+    <![CDATA[
+        UPDATE board SET view_count = view_count + 1 WHERE post_id = #{post_id}
+    ]]>
+</update>
+
+    
+    
 </mapper>
