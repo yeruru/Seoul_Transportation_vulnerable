@@ -52,6 +52,30 @@ body.dark {
 
 body {background-color: var(--c-bg);}
 
+/* 평창평화체 */
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+/* 나눔손글씨펜 */
+@import url(//fonts.googleapis.com/earlyaccess/nanumpenscript.css);
+.nanumpenscript * { font-family: 'Nanum Pen Script', cursive;}
+/* 더잠실체 */
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'TheJamsil2Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil2Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+
 .wrap { max-width: 700px; margin: 0 auto;}
 .box-wrap { max-width: 580px; margin: 0 auto;}
 .content-wrap { padding-top: 50px; max-width: 580px; margin: 0 auto;} 
