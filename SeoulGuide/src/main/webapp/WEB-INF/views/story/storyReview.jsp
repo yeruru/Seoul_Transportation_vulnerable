@@ -18,20 +18,33 @@
 
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
+	
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
+		<div class="story-bg">
+			<div class="content-wrap story-box">
+				<p>관광지에 다녀온 후 당신의 경험을 공유해주세요.</p>
+				<h4>관광스토리</h4>
+				<img src="<c:url value="/resources/img/test-main.svg"/>" alt="메인이미지">
+				<img class="img-dark" src="<c:url value="/resources/img/test/loding.svg"/>" alt="메인이미지">
+			</div>
+		</div>
 		<section id="story-review" class="box-wrap">
 			
 			
 	  		<div class="review-tumb">
 	  			
 	  			<div class="write-btn-box">
-	  				<h4>방문자 리뷰</h4>
-	  				<a href="writeform" class="write-btn" title="리뷰 글쓰기">
-	  					<span class="material-symbols-outlined">edit</span>
-	  				</a>
+					<div class="serch">
+						<input type="text" id="search-input" placeholder="작성자/제목">
+   				 		<button id="search-button">
+   				 			<span class="material-symbols-outlined">search</span>
+						</button>
+					</div>
+					<div class="filter">
+						<a href="#">인기순</a>
+						<a href="#">최신순</a>
+					</div>
 	  			</div>
-	  			
-
 	  			<div id="js-load" class="main">
 			        <ul class="menu">
 			            
