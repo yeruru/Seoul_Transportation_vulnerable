@@ -2,6 +2,7 @@ package com.seoul.guide.member.Service;
 
 import java.io.File;
 import java.io.OutputStream;
+import java.util.List;
 
 import javax.servlet.ServletContext;
 
@@ -36,7 +37,7 @@ public class MemberServiceImpl implements MemberService {
 			fileVO.setName(file.getOriginalFilename());
 			fileVO.setSize(file.getSize());
 			fileVO.setContenttype(file.getContentType());
-			fileVO.setId(memberDAO.newFileId());
+			fileVO.setId(memberDAO.newUserId());
 			fileVO.setData(file.getBytes()); 
 			memberDAO.insertFile(fileVO);
 
@@ -44,7 +45,9 @@ public class MemberServiceImpl implements MemberService {
 			System.out.println(fileVO.getId());
 			file.transferTo(dfile); 
 
+
 			member.setUserid(fileVO.getId());
+
 		}
 		memberDAO.insertMember(member);
 	}
@@ -72,6 +75,13 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
+	public MemberDTO getMemberWithImg(String userId) {
+		return memberDAO.selectMemberWithImg(userId);
+	}
+
+	
+	//myPage
+
 	public Integer selectuserid(String email) throws Exception {
 		return memberDAO.selectID(email);
 	}

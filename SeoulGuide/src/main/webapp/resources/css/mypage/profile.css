@@ -1,0 +1,41 @@
+@charset "UTF-8";
+/*tab*/
+.tab .tab-list {
+	position: relative;
+	display: flex;
+}
+
+.tab .list {
+	margin-top: 5px;
+	width: 100%;
+	border-bottom: 1px solid #e2e5eb;
+}
+
+.tab .list > a {
+	display: inline-block;
+	margin-right: 12px;
+	padding: 0 0 16px;
+	color: #777;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+.tab .list > a.on {
+	color: var( --c-tour);
+	border-bottom: 3px solid var( --c-tour);
+} 
+
+.tab-content {
+	margin-top: 10px;
+	height: 100px;
+	
+}
+
+.tab-content .content {
+	display: none;
+}
+
+.tab-content .content.on {
+	
+	display: block;
+}

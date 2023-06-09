@@ -30,6 +30,7 @@
                     </c:forEach>
                 </tbody>
             </table>
+            <a href="subwaydetail?station=${station}&line='4호선'">ㅁㅁㅁ</a>
         </div>
     </section>
 </body>

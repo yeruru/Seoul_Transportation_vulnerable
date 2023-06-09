@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="MemberMapper">
 	<insert id="memberAdd" parameterType="com.seoul.guide.member.DTO.MemberDTO">
 		<![CDATA[
-	     insert into member (nickname,username,email,password, phone1,phone2, phone3, birthday , userid) values(#{nickname},#{username},#{email},#{password},#{phone1},#{phone2},#{phone3},#{birthday},#{userid})
+	     insert into member(nickname,username,email,password, phone1, phone2, phone3, birthday) values(#{nickname},#{username},#{email},#{password},#{phone1},#{phone2},#{phone3},#{birthday})
 	     ]]>
 	</insert>
 	
@@ -21,6 +21,19 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	     ]]>
 	</select>
 	
+	
+	<!-- 여기서부터 마이페이지 -->
+	 <select id = "selectMemberWithImg" parameterType="String" resultType="com.seoul.guide.member.DTO.MemberDTO">
+		<![CDATA[
+			select m.nickname, m.username, m.email, m.birthday, f.name
+			from member m join filevo f
+							on  m.userId = f.id where userId=#{userId}
+	     ]]>
+	 </select>
+	
+	
+	
+
 	<select id="selectuserid" parameterType="String" resultType="Integer">
 		<![CDATA[
 	     	select userId from member where email = #{email}

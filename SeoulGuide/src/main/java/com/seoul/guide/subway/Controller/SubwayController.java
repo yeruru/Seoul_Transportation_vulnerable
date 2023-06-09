@@ -24,9 +24,8 @@ public class SubwayController {
 	@Autowired
 	private MovementApiService movementApiService;
 	
-	@RequestMapping(value = "/subway", method = RequestMethod.GET)
+	@RequestMapping(value = "/subway", method = RequestMethod.GET) 
 	public String subway() {
-
 		return "subway/subway";
 	}
 
@@ -43,7 +42,7 @@ public class SubwayController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 			System.out.println("검색오류");
-			mav.setViewName("subway");
+			mav.setViewName("subway/subway");
 		}
 		return mav;
 	}
