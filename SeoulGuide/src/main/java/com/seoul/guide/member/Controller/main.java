@@ -17,14 +17,10 @@ public class main {
 	public String Main() {
 
 		return "main";
-		
 	}
 	
 
-//	@RequestMapping(value = "/subway", method = RequestMethod.GET) 
-//	public String subway() {
-//		return "subway";
-//	}
+	
 
 	
 }

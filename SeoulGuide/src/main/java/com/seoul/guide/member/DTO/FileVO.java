@@ -12,6 +12,21 @@ public class FileVO {
 	private Date uploaddate;
 	private byte[] data;
 	
+	public FileVO() {}
+	
+	
+	public FileVO(Integer id, String directory, String name, Long size, String contenttype, Date uploaddate,
+			byte[] data) {
+		this.id = id;
+		this.directory = directory;
+		this.name = name;
+		this.size = size;
+		this.contenttype = contenttype;
+		this.uploaddate = uploaddate;
+		this.data = data;
+	}
+
+
 	public Integer getId() {
 		return id;
 	}

@@ -1,6 +1,7 @@
 package com.seoul.guide.member.Service;
 
 import java.io.OutputStream;
+import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -13,4 +14,8 @@ public interface MemberService {
 	
 	
 	public void fileView(Integer id, OutputStream out) throws Exception;
+	
+	//마이페이지
+	//회원 정보와 파일 정보를 함께 조회하는 메서드
+    public MemberDTO getMemberWithImg(String userId);
 }
