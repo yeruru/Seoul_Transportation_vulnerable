@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.board.Service.BoardService;
 
+//BoardController
 @Controller
 public class BoardController {
 	
@@ -24,20 +25,25 @@ public class BoardController {
 		return "test";
 	}
 	
-	
+	//검색기능 추가
 	@RequestMapping(value = "/storyreview", method= {RequestMethod.GET, RequestMethod.POST})
-	public ModelAndView tourReview() {
-		ModelAndView mav = new ModelAndView();
-		try {
-			mav.addObject("boards", boardService.getBoardList());
-			mav.setViewName("story/storyReview");
-		} catch(Exception e) {
-			e.printStackTrace();
-			mav.addObject("err", "게시판 글 목록 조회 실패");
-			mav.setViewName("err");
-		}
-		return mav;
+	public ModelAndView tourReview(@RequestParam(value = "search", required = false) String search) {
+	    ModelAndView mav = new ModelAndView();
+	    try {
+	        if (search != null && !search.isEmpty()) {
+	            mav.addObject("boards", boardService.searchBoardList(search));
+	        } else {
+	            mav.addObject("boards", boardService.getBoardList());
+	        }
+	        mav.setViewName("story/storyReview");
+	    } catch(Exception e) {
+	        e.printStackTrace();
+	        mav.addObject("err", "게시판 글 목록 조회 실패");
+	        mav.setViewName("err");
+	    }
+	    return mav;
 	}
+
 	
 
 	@RequestMapping(value = "storydetail", method = RequestMethod.GET)

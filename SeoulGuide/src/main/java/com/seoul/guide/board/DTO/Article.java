@@ -2,6 +2,7 @@ package com.seoul.guide.board.DTO;
 
 import java.util.Date;
 
+//Article
 public class Article {
 	private int post_id;
 	private int user_id;

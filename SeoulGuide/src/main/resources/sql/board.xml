@@ -34,4 +34,12 @@
 	    ]]>
 	</delete>
 	
+	<select id="selectBoardListBySearch" resultType="com.seoul.guide.board.DTO.Article" parameterType="String">
+        <![CDATA[
+            SELECT * FROM board 
+            WHERE post_title LIKE CONCAT('%', #{search}, '%') OR user_id LIKE CONCAT('%', #{search}, '%')
+            ORDER BY post_regdate DESC
+        ]]>
+    </select>
+    
 </mapper>
