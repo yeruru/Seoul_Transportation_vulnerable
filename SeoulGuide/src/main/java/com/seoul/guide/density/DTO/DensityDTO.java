@@ -2,6 +2,7 @@ package com.seoul.guide.density.DTO;
 
 import java.io.Serializable;
 
+//DensityDTO
 public class DensityDTO implements Serializable {
     private String dens_name;
     private String dense_lvl;

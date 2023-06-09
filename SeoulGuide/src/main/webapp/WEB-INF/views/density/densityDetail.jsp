@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>Density Detail</title>
 <!-- 표 디자인용 -->
 <link rel="stylesheet"
@@ -21,9 +22,17 @@
 	background-color: orange !important;
 }
 </style>
+
+<!-- head -->
+<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 
-<body>
+<body class="body">
+
+<!-- head -->
+<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+<div class="content-wrap">
+
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
@@ -131,10 +140,11 @@
 
 		<!-- 주차장 상태 출력 코드 -->
 		<div class="my-4">
-			
-			<h2>${cityDataResponse.getCityData().getAreaName()} 주차 공간</h2>
+
+			<h2>${cityDataResponse.getCityData().getAreaName()}주차 공간</h2>
 			<p>잔여 주차공간 :
-				${cityDataResponse.getCityData().getRemainingCapacity()} / ${cityDataResponse.getCityData().getTotalCapacity()}</p>
+				${cityDataResponse.getCityData().getRemainingCapacity()} /
+				${cityDataResponse.getCityData().getTotalCapacity()}</p>
 			<p>주차장 잔여율 :
 				${cityDataResponse.getCityData().getRemainingRate()}%</p>
 		</div>
@@ -159,84 +169,91 @@
 			</tbody>
 		</table>
 
-		 <!-- 날씨 -->
-		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-         <h1 class="mt-4">날씨 정보</h1>
-		 <div class="table-responsive">
-    <table class="table mt-4">
-        <tbody>
-            <tr>
-                <th>날씨 시각</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getWeatherTime()}</td>
-                <th>최고기온</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getMaxTemperature()}</td>
-            </tr>
-            <tr>
-                <th>온도</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getTemperature()}</td>
-                <th>최저기온</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getMinTemperature()}</td>
-            </tr>
-            <tr>
-                <th>체감온도</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getSensibleTemperature()}</td>
-                <th>습도</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getHumidity()}</td>
-            </tr>
-            <tr>
-                <th>풍향</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getWindDirection()}</td>
-                <th>풍속</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getWindSpeed()}</td>
-            </tr>
-            <tr>
-                <th>강수량</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPrecipitation()}</td>
-                <th>강수 소식</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPrecipitationMsg()}</td>
-            </tr>
-            <tr>
-                
-                <th>일출</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getSunrise()}</td>
-                <th>일몰</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getSunset()}</td>
-            </tr>
-            <tr>
-                
-                <th>자외선(UV) 지수</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getUvIndexLevel()}</td>
-                <th>자외선(UV)</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getUvIndex()}</td>
-            </tr>
-            <tr>
-                
-                <th>미세먼지 PM2.5</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm25Index()}</td>
-                <th>미세먼지 PM2.5 지수</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm25()}</td>
-            </tr>
-            <tr>
-                
-                <th>미세먼지 PM10</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm10Index()}</td>
-                <th>미세먼지 PM10 지수</th>
-                <td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm10()}</td>
-            </tr>
-           
-          
-        </tbody>
-    </table>
-</div>
-		 
+		<!-- 날씨 -->
+		<link rel="stylesheet"
+			href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<h1 class="mt-4">날씨 정보</h1>
+		<div class="table-responsive">
+			<table class="table mt-4">
+				<tbody>
+					<tr>
+						<th>날씨 시각</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getWeatherTime()}</td>
+						<th>최고기온</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getMaxTemperature()}</td>
+					</tr>
+					<tr>
+						<th>온도</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getTemperature()}</td>
+						<th>최저기온</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getMinTemperature()}</td>
+					</tr>
+					<tr>
+						<th>체감온도</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getSensibleTemperature()}</td>
+						<th>습도</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getHumidity()}</td>
+					</tr>
+					<tr>
+						<th>풍향</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getWindDirection()}</td>
+						<th>풍속</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getWindSpeed()}</td>
+					</tr>
+					<tr>
+						<th>강수량</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPrecipitation()}</td>
+						<th>강수 소식</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPrecipitationMsg()}</td>
+					</tr>
+					<tr>
 
-         
-    
-		 
+						<th>일출</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getSunrise()}</td>
+						<th>일몰</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getSunset()}</td>
+					</tr>
+					<tr>
+
+						<th>자외선(UV) 지수</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getUvIndexLevel()}</td>
+						<th>자외선(UV)</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getUvIndex()}</td>
+					</tr>
+					<tr>
+
+						<th>미세먼지 PM2.5</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm25Index()}</td>
+						<th>미세먼지 PM2.5 지수</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm25()}</td>
+					</tr>
+					<tr>
+
+						<th>미세먼지 PM10</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm10Index()}</td>
+						<th>미세먼지 PM10 지수</th>
+						<td>${cityDataResponse.getCityData().getOuterWeatherStts().getInnerweatherStts().getPm10()}</td>
+					</tr>
+
+
+				</tbody>
+			</table>
+		</div>
+
+
+
+
+
 
 
 
 	</div>
+
+</div>
+
+	<!-- footer -->
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
+
 </body>
 
 
