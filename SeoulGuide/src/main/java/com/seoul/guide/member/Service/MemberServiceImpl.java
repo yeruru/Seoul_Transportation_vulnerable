@@ -68,8 +68,12 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int nicknameCheck(String nickname) throws Exception {
 		int count = memberDAO.nicknameCheck(nickname);
-		System.out.println(count);
 		return count;
+	}
+
+	@Override
+	public Integer selectuserid(String email) throws Exception {
+		return memberDAO.selectID(email);
 	}
 	
 	

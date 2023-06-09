@@ -19,4 +19,13 @@ $(document).ready(function(){
 			}
 		});
 	});
+	
+	$(".buttonComment").click(function(){
+		alert("헤이더");
+	});
 });
+
+
+
+
+

@@ -73,7 +73,7 @@
 						<li><a href="./density">실시간 교통</a></li>
 					</ul></li>
 				<c:choose>
-					<c:when test="${sessionScope.email eq null }">
+					<c:when test="${sessionScope.id eq null }">
 						<li><a href="./loginform">로그인</a></li>
 						<li><a href="./joinform">회원가입</a></li>
 					</c:when>

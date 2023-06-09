@@ -7,6 +7,7 @@
 <link rel="stylesheet"href="<c:url value="/resources/css/tour/tour.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
+<script src="<c:url value="/resources/js/tour.js"/>"></script>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 <body class="body">
@@ -74,10 +75,10 @@
 				</div>
 			</form>
 		</div>
-		<div class="tourresult">
-			<c:forEach items="${tourlist}" var="tour">
+		<div class="tourresult" id="js-load">
+			<c:forEach items="${tourlist}" var="tour">	
 				<a href="${path}/guide/detail?id=${tour.tourist_id}">
-					<div class="tourlist">
+					<div class="tourlist lists__item js-load">
 						<div class="tourimg" style="background-image: url(./resources/img/tour/tour${tour.tourist_id}.jpg);"></div>
 							<div class="tourtext">
 								<p class="text1">${tour.tourist_title}</p>
@@ -110,7 +111,12 @@
 					</div>
 				</a>
 			</c:forEach>
+			   
+			
 		</div>
+		<div style="padding-top:20px;">
+              <button type="button" id="js-btn-wrap" class="more">리뷰 더보기</button>
+        </div>
 	</div>
 </body>
 </html>
