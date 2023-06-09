@@ -2,6 +2,8 @@ package com.seoul.guide.tour.Controller;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.seoul.guide.comment.DTO.CommentDTO;
+import com.seoul.guide.comment.Service.CommentService;
 import com.seoul.guide.tour.DTO.TourDTO;
 import com.seoul.guide.tour.Service.TourService;
 
@@ -18,6 +22,9 @@ public class TourController {
 		
 	@Autowired
 	private TourService tourservice;
+	
+	@Inject
+	private CommentService commentService;
 	
 	@RequestMapping(value = "tourlist", method = RequestMethod.GET)
 	public ModelAndView tour() {
@@ -36,8 +43,6 @@ public class TourController {
 		ModelAndView mav = new ModelAndView();
 		try {
 			List<TourDTO> tourlist = tourservice.detailSearch(menu_icon, tourist_subtitle);
-			System.out.println(menu_icon);
-			System.out.println(tourist_subtitle);
 			mav.addObject("tourlist", tourlist);
 			mav.setViewName("tour/tour");
 		}catch(Exception e) {
@@ -64,6 +69,8 @@ public class TourController {
 		try {
 			TourDTO tourDTO = tourservice.detail(id);
 			model.addAttribute("tourdetail", tourDTO);
+			List<CommentDTO> comments = commentService.selectComment(id);
+			model.addAttribute("comments", comments);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

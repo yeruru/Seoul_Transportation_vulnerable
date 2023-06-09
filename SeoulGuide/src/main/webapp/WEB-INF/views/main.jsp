@@ -4,10 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>서울, 함께 가는 길</title>
-<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
-<link rel="stylesheet" href="<c:url value="/resources/css/main.css"/>">
+	<meta charset="UTF-8">
+	<title>서울, 함께 가는 길</title>
+	<jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
+	<link rel="stylesheet" href="<c:url value="/resources/css/main.css"/>">
 </head>
 <body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
@@ -26,7 +26,7 @@
 
 					<li>
 						<c:choose>
-							<c:when test="${sessionScope.email eq null }">
+							<c:when test="${sessionScope.id eq null }">
 								<a class="" href="./loginform">로그인</a>
 							</c:when>
 							<c:otherwise>
@@ -37,7 +37,7 @@
 				</ul>
 				
 				<c:choose>
-					<c:when test="${sessionScope.email eq null }">
+					<c:when test="${sessionScope.id eq null }">
 						<a href="./joinform">계정이 없으신가요?</a>
 					</c:when>
 					<c:otherwise>

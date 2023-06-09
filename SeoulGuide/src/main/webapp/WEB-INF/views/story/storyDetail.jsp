@@ -11,8 +11,9 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
 <link rel="stylesheet" href="https://uicdn.toast.com/editor/2.0.0/toastui-editor.min.css">
 <script src="https://uicdn.toast.com/editor/2.0.0/toastui-editor-all.min.js"></script>
+<script defer src="<c:url value="/resources/js/header.js"/>"></script>
 </head>
-<body>
+<body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
@@ -44,7 +45,15 @@
 				</script>
 			
 				<section id="commandCell">
-
+					<%-- <c:choose>
+					<c:when test="=${sessionScope.user_id}">
+						
+					</c:when>
+					<c:otherwise>
+							
+						</c:otherwise>
+					</c:choose> --%>
+					
 					<a href="<c:url value='/storymodify?post_id=${article.post_id}'/>">수정</a>
 
 					<a href="storyreview">목록</a>
@@ -52,21 +61,23 @@
 			</form>
 		</section>
 	</div>
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
+
 <script>
-function copyUrl() {
-  var url = window.location.href;
-
-  var tempInput = document.createElement("input");
-  tempInput.style = "position: absolute; left: -1000px; top: -1000px";
-  tempInput.value = url;
-  document.body.appendChild(tempInput);
-
-  tempInput.select();
-  document.execCommand("copy");
-  document.body.removeChild(tempInput);
-
-  alert("URL이 복사되었습니다.");
-}
+	function copyUrl() {
+	  var url = window.location.href;
+	
+	  var tempInput = document.createElement("input");
+	  tempInput.style = "position: absolute; left: -1000px; top: -1000px";
+	  tempInput.value = url;
+	  document.body.appendChild(tempInput);
+	
+	  tempInput.select();
+	  document.execCommand("copy");
+	  document.body.removeChild(tempInput);
+	
+	  alert("URL이 복사되었습니다.");
+	}
 </script>
 </html>

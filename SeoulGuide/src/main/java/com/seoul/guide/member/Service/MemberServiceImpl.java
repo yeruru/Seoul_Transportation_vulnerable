@@ -45,7 +45,9 @@ public class MemberServiceImpl implements MemberService {
 			System.out.println(fileVO.getId());
 			file.transferTo(dfile); 
 
-			member.setUserId(fileVO.getId());
+
+			member.setUserid(fileVO.getId());
+
 		}
 		memberDAO.insertMember(member);
 	}
@@ -69,7 +71,6 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int nicknameCheck(String nickname) throws Exception {
 		int count = memberDAO.nicknameCheck(nickname);
-		System.out.println(count);
 		return count;
 	}
 
@@ -81,6 +82,9 @@ public class MemberServiceImpl implements MemberService {
 	
 	//myPage
 
+	public Integer selectuserid(String email) throws Exception {
+		return memberDAO.selectID(email);
+	}
 	
 	
 

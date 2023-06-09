@@ -57,6 +57,11 @@ public class MemberDAOImpl implements MemberDAO {
 
 	
 	
+	@Override
+	public Integer selectID(String email) throws Exception {
+		return sqlSession.selectOne("MemberMapper.selectuserid", email);
+	}
+
 
 	
 	

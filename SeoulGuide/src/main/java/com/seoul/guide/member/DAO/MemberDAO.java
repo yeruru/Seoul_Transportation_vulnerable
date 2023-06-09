@@ -18,4 +18,5 @@ public interface MemberDAO {
 	 // 회원 정보와 이미지정보 join해서 출력
 	public MemberDTO selectMemberWithImg(String userId);
 	
+	public Integer selectID(String email) throws Exception;
 }

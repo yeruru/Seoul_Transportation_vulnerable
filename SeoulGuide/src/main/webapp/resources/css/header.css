@@ -3,6 +3,7 @@
 
 /* header */
 
+html.fixed { position: fixed; overflow-y: scroll; width: 100%;}
 #header { width: 100%; height: 48px; background-color: var(--c-bg); box-shadow:0px 0px 5px 1px rgb(237, 238, 243); position: relative; z-index : 10000;}
 
 body.dark #header { box-shadow:0px 0px 5px 1px rgb(55, 55, 57);}
@@ -33,6 +34,10 @@ body.dark #header .logo-dark { opacity: 1;}
 /* menu */
 /* menu button */
 #header > .header-wrap > ul > li:last-child { position: relative;}
+
+
+
+
 #header a.menu {position: relative; width: 24px; height: 16px; display: inline-block;}
 #header a.menu::before {content: ''; position: absolute; left: 50%; top: 0; transform: translate(-50%, 0); width: 100%; height: 3px; background-color: var(--gray5); transition: all 0.3s; border-radius: 10px;}
 #header a.menu span {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; height: 3px; background-color: var(--gray5); 
@@ -47,20 +52,20 @@ text-indent: -999px; transition: all 0.3s; border-radius: 10px;}
 
 /* menu */
 /* gnb */
-#gnb { overflow: auto; position: absolute; width: 700px; height: 100vh; top: calc(100% + 1px); left: 200px; visibility: hidden; transition: left .5s ease-in-out; background-color: var(--c-bg);}
+#gnb { overflow: auto; position: absolute; height: 100vh; top: calc(100% + 1px); visibility: hidden; transition: left .5s ease-in-out; background-color: var(--c-bg); padding: 20px; right: 0;}
 #gnb.open { visibility: visible; left: 0;}
-#gnb .gnb-box { padding-top: 20px; box-sizing: border-box; width: 400px; margin: 0 auto; height: 100%;}
-#gnb .gnb-box > li { font-size: 16px; font-weight: 700; position: relative;}
-#gnb .gnb-box > li > a { display: inline-block; width: 100%; padding-top: 20px;}
-#gnb .gnb-box > li:not(.not) a { padding: 15px 0;}
-#gnb .gnb-box > li:not a { padding-bottom: 10px;}
+#gnb .gnb-box { padding-top: 10px; box-sizing: border-box; width: 400px; margin: 0 auto; height: 100%;}
+#gnb .gnb-box > li { font-size: 20px; font-weight: 700; position: relative;}
+#gnb .gnb-box > li > a { display: inline-block; width: 100%; padding-top: 30px;}
+#gnb .gnb-box > li:not(.not) a { padding: 20px 0;}
+#gnb .gnb-box > li:not a { padding-bottom: 20px;}
 #gnb .gnb-box > li:not(.not)::before { content: ''; position: absolute; width: 0; transition: all .3s; height: 2px; background-color: var(--c-tour); bottom: 0;}
 #gnb .gnb-box > li:not(.not):hover::before { width: 100%;}
 #gnb .gnb-box > li:not(.not) a:hover,
 #gnb .gnb-box > li > ul > li > a:hover { color: var(--c-tour); font-weight: 700;}
-#gnb .gnb-box > li > ul > li:first-child{ padding-top: 15px;}
-#gnb .gnb-box > li > ul > li { font-size: 14px; font-weight: 400;}
-#gnb .gnb-box > li > ul > li > a { display: block; padding-left: 10px; padding-bottom: 10px; position: relative;} 
+#gnb .gnb-box > li > ul > li:first-child{ padding-top: 30px;}
+#gnb .gnb-box > li > ul > li { font-size: 18px; font-weight: 400;}
+#gnb .gnb-box > li > ul > li > a { display: block; padding-left: 10px; padding-bottom: 20px; position: relative;} 
 .menu-bg { position: absolute; top: calc(100% + 1px); width: 100vw; height: 100vh; background-color: var(--c-bg);  display: none;}
 .menu-bg.show { display: block;}
 
