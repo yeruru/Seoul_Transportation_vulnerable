@@ -54,5 +54,10 @@ public class BoardServiceImpl implements BoardService {
     public List<Article> searchBoardList(String search) throws Exception {
         return boardDAO.selectBoardListBySearch(search);
     }
+	//조회수 관리용
+	@Override
+    public void incrementViewCount(Integer post_id) throws Exception {
+        boardDAO.incrementViewCount(post_id);
+    }
 	
 }
