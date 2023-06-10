@@ -8,3 +8,13 @@
     overflow: hidden;
 	
 }
+
+.form-box {
+	display: flex;
+    justify-content: center;
+}
+
+li {
+ 	display: flex;
+    justify-content: flex-start;
+ }

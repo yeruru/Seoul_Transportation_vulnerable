@@ -30,6 +30,7 @@ public class BoardController {
 		return "test";
 	}
 	
+
 	//검색기능 추가
 	@RequestMapping(value = "/storyreview", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView tourReview(@RequestParam(value = "search", required = false) String search) {

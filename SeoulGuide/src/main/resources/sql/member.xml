@@ -3,42 +3,61 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="MemberMapper">
-	<insert id="memberAdd" parameterType="com.seoul.guide.member.DTO.MemberDTO">
+	<insert id="memberAdd"
+		parameterType="com.seoul.guide.member.DTO.MemberDTO">
 		<![CDATA[
 	     insert into member(nickname,username,email,password, phone1, phone2, phone3, birthday) values(#{nickname},#{username},#{email},#{password},#{phone1},#{phone2},#{phone3},#{birthday})
 	     ]]>
 	</insert>
-	
-	<select id = "memberselect" parameterType = "String" resultType = "com.seoul.guide.member.DTO.MemberDTO"> 
+
+	<select id="memberselect" parameterType="String"
+		resultType="com.seoul.guide.member.DTO.MemberDTO"> 
 		<![CDATA[
 	     	select * from member where email=#{email}
 	     ]]>
 	</select>
-	
-	<select id="nicknameCheck" parameterType="String" resultType="Integer">
+
+	<select id="nicknameCheck" parameterType="String"
+		resultType="Integer">
 		 <![CDATA[
 	     	select count(*) from member where nickname = #{nickname}
 	     ]]>
 	</select>
-	
-	
-	<!-- 여기서부터 마이페이지 -->
-	 <select id = "selectMemberWithImg" parameterType="Integer" resultType="com.seoul.guide.member.DTO.MemberDTO">
-		<![CDATA[
-			select m.nickname, m.username, m.email, m.birthday, f.name, f.directory
-			from member m join filevo f
-							on  m.userId = f.id where userId=#{userId}
-	     ]]>
-	 </select>
-	
-	
-	
 
-	<select id="selectuserid" parameterType="String" resultType="Integer">
+	<select id="selectuserid" parameterType="String"
+		resultType="Integer">
 		<![CDATA[
 	     	select userId from member where email = #{email}
 	     ]]>
 	</select>
-	
 
+	<!-- 여기서부터 마이페이지 -->
+	<select id="selectMemberWithImg" parameterType="Integer"
+		resultType="com.seoul.guide.member.DTO.MemberDTO">
+		<![CDATA[
+			select m.nickname, m.username, m.email, m.password, m.birthday, f.name
+			from member m join filevo f
+							on  m.userId = f.id where userId=#{userId}
+	     ]]>
+	</select>
+
+	<!-- 마이페이지 수정 -->
+
+	<update id="updateMember" parameterType="java.util.Map">
+		<![CDATA[
+			update member set nickname=#{nickname} where userId=#{userId}
+	     ]]>
+	</update>
+	
+	<update id="updateImg" parameterType="com.seoul.guide.member.DTO.FileVO">
+		<![CDATA[
+			update FileVO set name=#{name}, size=#{size}, contenttype=#{contenttype}, data=#{data}  where id=#{id}
+	     ]]>
+	</update>
+	
+	<delete id= "deleteMember" parameterType="Integer">
+		<![CDATA[
+			delete from member where userId=#{userId};
+	     ]]>
+	</delete>
 </mapper>

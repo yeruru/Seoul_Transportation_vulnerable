@@ -1,6 +1,6 @@
 package com.seoul.guide.member.DAO;
 
-import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,19 +47,27 @@ public class MemberDAOImpl implements MemberDAO {
 		return sqlSession.selectOne("file.mapper.selectFile", id);
 	}
 	
+	@Override
+	public Integer selectID(String email) throws Exception {
+		return sqlSession.selectOne("MemberMapper.selectuserid", email);
+	}
 	
 	//profile
 	@Override
-	public MemberDTO selectMemberWithImg(Integer userId) {
+	public MemberDTO selectMemberWithImg(Integer userId) throws Exception {
 		return sqlSession.selectOne("MemberMapper.selectMemberWithImg", userId);
 		
 	}
 
-	
-	
 	@Override
-	public Integer selectID(String email) throws Exception {
-		return sqlSession.selectOne("MemberMapper.selectuserid", email);
+	public void updateMemberWithImg(Map<String,Object> map,FileVO file ) throws Exception {
+		sqlSession.update("MemberMapper.updateMember", map);
+		sqlSession.update("MemberMapper.updateImg", file); 
+	}
+
+	@Override
+	public void deleteMember(Integer userId) throws Exception {
+		sqlSession.delete("MemberMapper.deleteMember", userId);
 	}
 
 
