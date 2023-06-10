@@ -43,7 +43,7 @@
 			<div class="footer-nav">
 				<ul>
 					<li>
-						<em>지하철</em>
+						<em>교통정보</em>
 						<ul>
 							<li><a href="./subway">지하철 간편 검색</a></li>
 							<li><a href="./density">실시간교통</a></li>

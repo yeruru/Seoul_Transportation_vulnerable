@@ -2,6 +2,7 @@ package com.seoul.guide.board.DTO;
 
 import java.util.Date;
 
+//Article
 public class Article {
 	private int post_id;
 	private int user_id;
@@ -9,7 +10,8 @@ public class Article {
 	private String post_content;
 	private Date post_regdate;
 	private Date post_edit_date;
-	
+	private int view_count; // 추가된 속성
+
 	public int getPost_id() {
 		return post_id;
 	}
@@ -45,6 +47,12 @@ public class Article {
 	}
 	public void setPost_edit_date(Date post_edit_date) {
 		this.post_edit_date = post_edit_date;
+	}
+	public int getView_count() { // 조회수 getter
+		return view_count;
+	}
+	public void setView_count(int view_count) { // 조회수 setter
+		this.view_count = view_count;
 	}
 	
 }

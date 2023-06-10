@@ -1,19 +1,44 @@
 @charset "UTF-8";
 
 /* tourreview  */
-#story-review  h4 { font-size: 30px; padding-bottom: 30px; }
+.story-bg { height: 300px; width: 100%;}
+.story-box { position: relative;}
+.story-box p { font-family: 'TheJamsil2Light'; font-size: 18px;}
+.story-box h4 { font-family: 'TheJamsil5Bold'; font-size: 45px; padding: 15px 0;}
+.story-box img { position: absolute; right: 0; width: 300px; top: 60%;}
+.story-box img:nth-of-type(2) { position: absolute; right: -150px; width: 600px; top: 10%;}
+.img-dark { opacity: 0;}
 #story-review .review-tumb { margin-top: 40px;}
-#story-review .write-btn-box { display: flex; align-items: center; border-bottom: 3px solid var(--c-tour); width: 80%; margin: 0 auto; justify-content: space-between;}
-#story-review .write-btn { width:35px; height: 35px; border: 1px solid var(--c-tour); background: var(--c-bg); box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 50%; display: flex; justify-content: center; align-items: center;  align-items: center; transition: all .3s;}
-#story-review .write-btn span { color: var(--c-tour);} 
-#story-review .write-btn:hover { background-color: var(--c-tour);}
-#story-review .write-btn:hover span { color: #fff;}
-#story-review .review-tumb ul {display: flex; flex-wrap: wrap;}
-#story-review .review-tumb ul li:first-child { margin-top: 40px;}
-#story-review .review-tumb ul li { width: 400px; margin: 20px auto;}
-#story-review .tumb { width: 400px; height: 240px; overflow: hidden; position: relative; box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 10px;}
+
+.body.dark .img-dark { opacity: 1;}
+.body.dark .story-box img:nth-of-type(1) { opacity: 0;}
+
+
+#story-review .menu { display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 10px;}
+#story-review .lists__item { width: 45%;}
+#story-review .tumb { height: 180px; overflow: hidden; position: relative; box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 10px;}
 #story-review .tumb-title { display: flex; width: 100%; justify-content: space-between; padding: 13px 0;}
-#story-review .tumb-title em { font-size: 18px; font-weight: 700;}
+#story-review .tumb-title em { font-size: 14px; font-weight: 700; font-family: 'TheJamsil2Light'; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;}
+
+
+@media (max-width: 600px) {
+	#story-review .menu { flex-direction: column; align-items: center;}
+	#story-review .lists__item { width: 80%;}
+	.story-box h4, .story-box p { padding-left: 8px;}
+	.story-box img { position: absolute; right: 0; width: 200px; top: 80%;}
+}
+
+
+
+.write-btn-box { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 30px;}
+.serch { position: relative; width: 46%;}
+.serch input {/* 기본 박스 모델 설정 */ box-sizing: border-box; font-family: inherit; font-size: 12px; width: 100%; padding: 12px 40px 12px 10px; line-height: inherit; color: inherit; background-color: transparent; border: 1px solid #ccc; border-radius: 10px; outline: none; }
+.serch button { font-size: 20px;  position: absolute; right: 14px; top: 55%; transform: translate(0, -50%); z-index: 1; background: #fff; border: 0; color: gray;}
+.serch button span { font-size: 20px; opacity: .5;}
+.serch input:hover { box-shadow: 0px 0px 0px 5px rgba(13, 153, 255, 0.1);}
+.serch input:focus { border: 1px solid var(--c-tour);}
+.filter a { font-size: 14px; color: var(--c-gray); padding-left: 10px;}
+
 #story-review .js-load { display: none;}
 #story-review .js-load.active { display: block;}
 #story-review .js-load:after { display: none;}
@@ -24,23 +49,58 @@
 #story-review .viewer-box img:first-of-type{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
 
 
+
+
+
+
+
+
+
 /* writeform  */
 #writeform .title input { width: 100%; height: 50px; font-size: 30px; box-sizing: border-box; outline: none; border-bottom: 4px solid rgba(209,214,231,1); border-top: none; border-left: none; border-right: none; margin-bottom: 10px;}
 #writeform .title input::placeholder { font-size: 30px; color: rgba(209,214,231,1);}
 #writeform .submit-btn { margin: 40px auto; display: block; width: 300px; height: 50px; border-radius: 40px; background-color: var(--c-tour); color: #fff; border: 0; font-weight: 700; cursor: pointer;}
 #writeform .tumb-container { margin-top: 20px; border: 1px solid rgba(209,214,231,1); border-radius: 20px; overflow: hidden;}
 #writeform .plus-text { text-align: center; line-height: 20px; color: rgba(157 161 173);}
-#writeform .plus-box span { display: flex; justify-content: center; align-items: center; padding: 30px; font-size: 30px; cursor: pointer; color: rgba(209,214,231,1);}
+#writeform .plus-box span { display: flex; justify-content: center; align-items: center; padding: 30px; font-size: 30px; cursor: pointer; color: rgba(209,214,231,1); }
 #writeform .plus-box span a { display: flex; width: 60px; height: 60px; background-color: var(--c-tour); justify-content: center; align-items: center; color: #fff; border-radius: 10px;}
     
     
 /* storydetail */    
-.storydetail h3 { font-size: 30px; margin-bottom: 40px;}
+.storydetail h3 { font-size: 30px; margin-bottom: 40px; }
 .storydetail .viewer-box { box-sizing: border-box; padding: 30px; margin-top: 30px; box-shadow: 0px 0px 5px 1px rgb(237, 238, 243); border-radius: 10px;}    
-.storydetail .sub-title { display: flex; padding-bottom: 20px; align-items: flex-end; align-items: center; border-bottom: 1px solid #cfcfcf;}  
+.storydetail .sub-title { display: flex; align-items:center; padding-bottom: 5px; border-bottom: 1px solid #cfcfcf;}  
+.session-box {margin-left: 10px; flex-grow: 2; justify-content: flex-end;}
+.storydetail .sub-title button,
+.storydetail .sub-title input { border: 0; background-color: inherit; color: var(--gray); font-size: 14px; font-family: inherit; padding: 0 2px 2px 10px; cursor: pointer;}
+.storydetail .sub-title button:hover,
+.storydetail .sub-title input:hover { color: var(--c-tour);}
+.storydetail .sub-title div { display: flex; align-items: center;}
+.modi-btn { transition: all 0.3s; padding: 13px 15px; border-radius: 10px; border: 1px solid var(--c-tour); margin-right: 15px; color: var(--c-tour); font-size: 12px;}
+.modi-btn:hover { background-color: var(--c-tour); color: #fff;}
 .storydetail .name { padding-right: 10px;}    
 .storydetail .date { font-size: 12px; color: #999faa;}
 #copyButton { flex-grow: 3; display: flex; justify-content: flex-end; color: rgb(191 191 191); font-size: 14px;}
+
+
+/* 댓글창 */
+.write-title { padding: 4px 0px 12px 0; margin: 60px 0 0; font-size: 18px;}
+.write { position: relative; background: #f7f7f7; border: 1px solid #e5e5e5;}
+.form { float: none; margin: 0 20px;}
+.writeForm { display: block; height: 100px; position: relative;}
+textarea { font-family: inherit; height: 75px; margin-top: 15px; line-height: 20px; border: 1px solid #e5e5e5; word-break: keep-all; width: 100%; float: none; padding: 5px 5px 35px 5px; box-sizing: border-box;}
+.btn-st-box {display: flex; justify-content: flex-end;}
+.btn-st{display: flex; justify-content: flex-end; border: 0px; padding: 10px 12px; margin-bottom: 10px; border-radius: 10px; background-color: var(--c-tour); color: #fff; font-size: 12px;}
+.btn-st:hover {box-shadow: 0px 0px 0px 5px rgba(13, 153, 255, 0.1); }
+.list .modify-box { display: flex; justify-content: flex-end;}
+.profile {position: relative; float: left; width: 40px; height: 40px; background-color: pink; border-radius: 50%; overflow: hidden; margin-right: 13px;} 
+.list span {color: #d2d2d2; font-size: 12px; margin-top: 7px; display: inline-block;}
+.list span:nth-of-type(1) { padding-right: 6px;}
+.list span:nth-of-type(2) {position: relative; padding-left: 10px;}
+.list span:nth-of-type(2)::before { content:""; position: absolute; height: 10px; background-color: #d2d2d2; top: 50%; transform: translate(0, -50%); width: 1px; left:0;}
+.list li { position: relative; width: 100%; padding: 20px 10px; border-bottom: 1px solid #e6e6e6; box-sizing: border-box;}
+.text p { overflow: overlay; overflow-x: hidden; overflow-y: hidden; font-size: 14px; padding-top: 5px;}
+.modify-box button { border: 0; background-color: inherit; color: var(--gray); font-size: 14px; font-family: inherit; padding: 0 2px 2px 10px; cursor: pointer;}
 
 /* storymodify */
 .storydetail h3 input { font-size: 30px; margin-bottom: 40px; width: 100%; height: 50px; font-size: 30px; box-sizing: border-box; outline: none; border-bottom: 4px solid rgba(209,214,231,1); border-top: none; border-left: none; border-right: none; margin-bottom: 10px;}

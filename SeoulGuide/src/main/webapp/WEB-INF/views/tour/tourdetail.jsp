@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
 <script src="<c:url value="/resources/js/comment.js"/>"></script>
+<script src="<c:url value="/resources/js/tour.js"/>"></script>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 <body class="body">
@@ -163,25 +164,25 @@
 			</div>
 
 			<c:choose>
-				<c:when test="${sessionScope.email eq null }">
+				<c:when test="${sessionScope.id eq null }">
 					<div class="comment">
 						<p class="commenttitle">
 							관광후기 <span>* 로그인 후 댓글 작성이 가능합니다.</span>
 						</p>
 						<div class="line2"></div>
-						<div>
+						<div id="commenttext">
 							<textarea id="comment" name="commentmain" class="commentmain"
 								title="여행경험 입력" placeholder="로그인 후에 진행해주세요." style="resize: none;"></textarea>
 						</div>
 						<div class="commentbutton">
-							<button class="buttonComment">등록하기</button>
+							<button id = "login" class="buttonComment">로그인하기</button>
 						</div>
 					</div>
 				</c:when>
 				<c:otherwise>
 					<div class="comment">
 						<p class="commenttitle">
-							관광후기 <span>* 로그인 후 댓글 작성이 가능합니다.</span>
+							관광후기 <span>* 후기를 작성해주세요</span>
 						</p>
 						<div class="line2"></div>
 						<div>
@@ -189,18 +190,18 @@
 								title="여행경험 입력" placeholder="관광후기를 남겨주세요." style="resize: none;"></textarea>
 						</div>
 						<div class="commentbutton">
-							<button class = "buttonComment" id="Comment">등록하기</button>
+							<button id="Comment">등록하기</button>
 						</div>
 					</div>
 				</c:otherwise>
 			</c:choose>
 			
 			<div class="login-popup">
-			    <div class="shadow-bg"></div>
-			    <div class="login-popup-content ">
+			    <div class="shadow-bg" id="shadow-bg"></div>
+			    <div class="login-popup-content" id="login-popup-content">
 			      <em>로그인이 필요한<br>서비스 입니다.</em>
 			      <p>로그인 하시겠습니까?</p>
-			      <a href="#">로그인</a>
+			      <a href="./loginform">로그인</a>
 			      <span class="material-symbols-outlined">close</span>
 			    </div>
 			 </div>
@@ -232,18 +233,17 @@
 						</div>
 
 					</div>
-					<div class="subbutton">
-						<form action="delete" method="post">
+			 	<div class="subbutton">
+						<form action="delete" method="GET">
 						<input type="hidden" id = "comment_id" name="${comment.comment_id }" value="${comment.comment_id }"/>
 							<c:choose>
-								<c:when test="${sessionScope.email eq comment.member_email }">
+								<c:when test="${sessionScope.id == comment.user_id }">	 
 									<p>
 										<a href="delete?id=${comment.comment_id }">삭제</a>
 									</p>
 								</c:when>
-	
 								<c:otherwise>
-	
+									<a></a>
 								</c:otherwise>
 							</c:choose>
 						</form>

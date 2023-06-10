@@ -18,76 +18,78 @@
 
 	<jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
 	<div class="sub-header-box">
+	
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
+		<div class="story-bg">
+			<div class="content-wrap story-box">
+				<p>관광지에 다녀온 후 당신의 경험을 공유해주세요.</p>
+				<h4>관광스토리</h4>
+				<img src="<c:url value="/resources/img/test-main.svg"/>" alt="메인이미지">
+				<img class="img-dark" src="<c:url value="/resources/img/story-dark.svg"/>" alt="메인이미지">
+			</div>
+		</div>
 		<section id="story-review" class="box-wrap">
-			
-			
 	  		<div class="review-tumb">
 	  			
 	  			<div class="write-btn-box">
-	  				<h4>방문자 리뷰</h4>
-	  				<a href="writeform" class="write-btn" title="리뷰 글쓰기">
-	  					<span class="material-symbols-outlined">edit</span>
-	  				</a>
+					<div class="serch">
+						<input type="text" id="search-input" placeholder="작성자/제목">
+   				 		<button id="search-button">
+   				 			<span class="material-symbols-outlined">search</span>
+						</button>
+					</div>
+					<div class="filter">
+						<a href="#">인기순</a>
+						<a href="#">최신순</a>
+					</div>
 	  			</div>
-	  			
-
 	  			<div id="js-load" class="main">
 			        <ul class="menu">
 			            
 			          <c:forEach items="${boards}" var="article">
 			            <li class="lists__item js-load">
+
 			                <a href="storydetail?post_id=${article.post_id}">
-			                    <div class="tumb-box" <%-- style="background-image: url('<c:url value="/resources/img/logo.png"/>');" --%>>
-
-			                        <div class="tumb">
-			                            <!-- TOAST UI Viewer -->
-										<div id="viewer"><div class="viewer-box">${article.post_content}</div></div>
-										<!-- TOAST UI Viewer CDN URL(JS) -->
-										<script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
-										<script>
-										    const viewer = toastui.Editor.factory({
-									            el: document.querySelector('#viewer'),
-									            viewer: true,
-									            height: '500px',
-									            initialValue: content,
-									            
-									        }); 
-										</script>
-			                        </div>
-			                        <div class="tumb-title">
-
-			                            <em>${article.post_title }</em>
-			                        </div>
-			                        <a href="storydelete?num=${article.post_id}">삭제</a>
-			                            
-				                </a>
-				            </li>
-			            	</c:forEach>
-
-
+			                    <div class="tumb-box">
+			                       <div class="tumb">
+			                          <!-- TOAST UI Viewer -->
+									  <div id="viewer"><div class="viewer-box">${article.post_content}</div></div>
+			                       </div>
+			                       <div class="tumb-title">
+			                          <em>${article.post_title }</em>
+			                       </div>
+			                      </div>
+				               </a>
+				           </li>
+			            </c:forEach>
 			        </ul>
 			    </div>
 			    
 			    <div style="padding-top:20px;">
 				  <button type="button" id="js-btn-wrap" class="more">리뷰 더보기</button>
 				</div>	
-				
-	  		<%-- 
-				<tr>
-					<td>${article.num }</td>
-					<td><a href="boarddetail?num=${article.num}">${article.title }</a></td>
-					<td>${article.writer }</td>
-					<td>
-						<c:if test="${sessionScope.id eq article.writer }">
-							<a href="boarddelete?num=${article.num }">삭제</a>
-						</c:if>
-					</td>
-				</tr>
-			</c:forEach> --%>
 
 		</section>
 	</div>
 	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
+<script>
+window.addEventListener('load', function() {
+	  var darkModeCookie = getCookie('darkMode');
+	  if (darkModeCookie === 'true') {
+	    bodyEl.classList.add('dark');
+	  }
+	});
+
+	function getCookie(name) {
+	  var cookies = document.cookie.split(';');
+	  for (var i = 0; i < cookies.length; i++) {
+	    var cookie = cookies[i].trim();
+	    if (cookie.startsWith(name + '=')) {
+	      return cookie.substring(name.length + 1);
+	    }
+	  }
+	  return '';
+	}
+</script>
 </html>

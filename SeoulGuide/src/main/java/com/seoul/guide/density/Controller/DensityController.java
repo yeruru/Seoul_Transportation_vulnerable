@@ -32,24 +32,35 @@ import com.seoul.guide.density.Service.DensityService;
 @Controller
 public class DensityController {
 	@Autowired
-	DensityService densityService;
+    DensityService densityService;
 
-	private ExecutorService executorService = Executors.newFixedThreadPool(100);
+    private ExecutorService executorService = Executors.newFixedThreadPool(100);
 
-	@RequestMapping("/density")
-	public String getDensityInfo(Model model, @RequestParam(value = "sort", defaultValue = "default") String sort) throws Exception {
-	    List<DensityDTO> densityList;
-	    if ("dense_lvl".equals(sort)) {
-	        densityList = densityService.selectAllDensityOrderByDenseLvl();
-	    } else if ("name".equals(sort)) {
-	        densityList = densityService.selectAllDensityOrderByName();
-	    } else {
-	        densityList = densityService.selectAllDensity();
-	    }
-	    model.addAttribute("densityList", densityList);
-	    model.addAttribute("sort", sort); // 현재 선택된 정렬 옵션을 모델에 추가
-	    return "density/density";
-	}
+    @RequestMapping("/density")
+    public String getDensityInfo(Model model, 
+                                 @RequestParam(value = "page", defaultValue = "1") int page,
+                                 @RequestParam(value = "sort", defaultValue = "default") String sort) throws Exception {
+        final int rowsPerPage = 10;  // 한 페이지에 보여줄 아이템의 수
+
+        List<DensityDTO> densityList;
+        if ("dense_lvl".equals(sort)) {
+            densityList = densityService.selectAllDensityOrderByDenseLvl(page, rowsPerPage);
+        } else if ("name".equals(sort)) {
+            densityList = densityService.selectAllDensityOrderByName(page, rowsPerPage);
+        } else {
+            densityList = densityService.selectAllDensity(page, rowsPerPage);
+        }
+
+        int totalDensityCount = densityService.getTotalDensityCount();
+        int totalPages = (int) Math.ceil((double) totalDensityCount / rowsPerPage);
+
+        model.addAttribute("densityList", densityList);
+        model.addAttribute("currentPage", page);
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("sort", sort); // 현재 선택된 정렬 옵션을 모델에 추가
+
+        return "density/density";
+    }
 
 
     @Scheduled(fixedRate = 600000) // 10분마다 실행
@@ -59,7 +70,7 @@ public class DensityController {
         LocalTime now = LocalTime.now();
         
     	System.out.println("업데이트 완료! DB갱신 " + now);
-        List<DensityDTO> densityList = densityService.selectAllDensity();
+        List<DensityDTO> densityList = densityService.selectAllDensityForUpdate();
 
         List<CompletableFuture<Void>> futureList = new ArrayList<>();
 

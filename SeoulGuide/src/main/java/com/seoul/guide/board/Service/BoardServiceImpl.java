@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.seoul.guide.board.DAO.BoardDAO;
 import com.seoul.guide.board.DTO.Article;
 
+//BoardServiceImpl
 @Service
 public class BoardServiceImpl implements BoardService {
 	@Autowired
@@ -47,4 +48,16 @@ public class BoardServiceImpl implements BoardService {
 	public void delete(Integer user_id) throws Exception {
 		boardDAO.deleteBoard(user_id);
 	}
+	
+	//검색기능용 코드
+	@Override
+    public List<Article> searchBoardList(String search) throws Exception {
+        return boardDAO.selectBoardListBySearch(search);
+    }
+	//조회수 관리용
+	@Override
+    public void incrementViewCount(Integer post_id) throws Exception {
+        boardDAO.incrementViewCount(post_id);
+    }
+	
 }

@@ -42,18 +42,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 
 	<!-- 마이페이지 수정 -->
-	<!-- <update id="updateMemberWithImg" parameterType="java.util.Map">
-		UPDATE member m
-		JOIN FileVO f ON m.userId = f.id
-		SET m.name = #{name},
-		f.size = #{size},
-		f.contentType = #{contentType},
-		f.uploadDate = #{uploadDate},
-		f.data =#{data},
-		m.nickName = #{nickName},
-		m.password = #{password}
-		WHERE m.userId = #{userId};
-	</update> -->
+
 	<update id="updateMember" parameterType="java.util.Map">
 		<![CDATA[
 			update member set nickname=#{nickname} where userId=#{userId}
