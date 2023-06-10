@@ -3,11 +3,13 @@ package com.seoul.guide.member.Service;
 import java.io.File;
 import java.io.OutputStream;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletContext;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -42,11 +44,11 @@ public class MemberServiceImpl implements MemberService {
 			memberDAO.insertFile(fileVO);
 
 			File dfile = new File(fileVO.getDirectory()+fileVO.getName());
-			System.out.println(fileVO.getId());
+//			System.out.println(fileVO.getId());
 			file.transferTo(dfile); 
 
 
-			member.setUserid(fileVO.getId());
+			member.setUserId(fileVO.getId());
 
 		}
 		memberDAO.insertMember(member);
@@ -75,15 +77,32 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
-	public MemberDTO getMemberWithImg(String userId) {
+	public MemberDTO getMemberWithImg(Integer userId) throws Exception {
 		return memberDAO.selectMemberWithImg(userId);
 	}
 
 	
 	//myPage
-
+	
+	@Override
 	public Integer selectuserid(String email) throws Exception {
 		return memberDAO.selectID(email);
+	}
+
+	@Override
+	public void updateMemberWithImg(Map<String,Object> map, FileVO file) throws Exception {
+		memberDAO.updateMemberWithImg(map, file);
+	}
+
+	@Override
+	public FileVO getFile(Integer id) throws Exception {  
+		return memberDAO.selectFile(id);
+	}
+
+	@Override
+	@Transactional
+	public void deleteMemberId(Integer userId) throws Exception {
+		memberDAO.deleteMember(userId);
 	}
 	
 	

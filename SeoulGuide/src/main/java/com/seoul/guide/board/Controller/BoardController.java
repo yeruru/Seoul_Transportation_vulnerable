@@ -22,7 +22,7 @@ public class BoardController {
 		return "test";
 	}
 	
-	
+
 	@RequestMapping(value = "/storyreview", method= {RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView tourReview() {
 		ModelAndView mav = new ModelAndView();
