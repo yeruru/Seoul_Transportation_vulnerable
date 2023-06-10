@@ -48,6 +48,7 @@
 			            
 			          <c:forEach items="${boards}" var="article">
 			            <li class="lists__item js-load">
+
 			                <a href="storydetail?post_id=${article.post_id}">
 			                    <div class="tumb-box">
 			                       <div class="tumb">
@@ -58,9 +59,6 @@
 			                          <em>${article.post_title }</em>
 			                       </div>
 			                      </div>
-			                      <c:if test="${sessionScope.id eq article.user_id }">
-										<a href="storydelete?num=${article.user_id}">삭제</a>
-									</c:if>
 				               </a>
 				           </li>
 			            </c:forEach>
@@ -70,19 +68,6 @@
 			    <div style="padding-top:20px;">
 				  <button type="button" id="js-btn-wrap" class="more">리뷰 더보기</button>
 				</div>	
-				
-	  		<%-- 
-				<tr>
-					<td>${article.num }</td>
-					<td><a href="boarddetail?num=${article.num}">${article.title }</a></td>
-					<td>${article.writer }</td>
-					<td>
-						<c:if test="${sessionScope.id eq article.writer }">
-							<a href="boarddelete?num=${article.num }">삭제</a>
-						</c:if>
-					</td>
-				</tr>
-			</c:forEach> --%>
 
 		</section>
 	</div>

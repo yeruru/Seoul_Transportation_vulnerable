@@ -2,6 +2,8 @@ package com.seoul.guide.board.Controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -16,6 +18,9 @@ import com.seoul.guide.board.Service.BoardService;
 //BoardController
 @Controller
 public class BoardController {
+	
+	@Autowired
+	private HttpSession session;
 	
 	@Autowired
 	private BoardService boardService;
@@ -72,8 +77,9 @@ public class BoardController {
 	@RequestMapping(value="/storywrite", method=RequestMethod.POST)
 	public ModelAndView storyWrite(@ModelAttribute Article article) {
 		ModelAndView mav = new ModelAndView();
-
+		Integer userId = (Integer)session.getAttribute("id");
 		try {
+			article.setUser_id(userId);
 			Integer result = boardService.writeBoard(article);
 			System.out.println(result);
 			if(result == 0) {
@@ -90,12 +96,18 @@ public class BoardController {
 	
 
 	@RequestMapping(value = "/storymodify", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView storyModify(@RequestParam("post_id") Integer num) {
+	public ModelAndView storyModify(@RequestParam("post_id") Integer post_id) {
+		Integer userId = (Integer)session.getAttribute("id");
 	    ModelAndView mav = new ModelAndView();
 	    try {
-	        Article article = boardService.getBoard(num);
-	        mav.addObject("article", article);
-	        mav.setViewName("story/storyModify");
+	        Article article =  boardService.getBoard(post_id);
+	        if (userId != null && userId.equals(article.getUser_id())) {
+	            mav.addObject("article", article);
+	            mav.setViewName("story/storyModify");
+	        } else {
+	            mav.addObject("err", "해당 글을 수정할 권한이 없습니다.");
+	            mav.setViewName("err");
+	        }
 	    } catch(Exception e) {
 	        e.printStackTrace();
 	        mav.addObject("err", "글 수정 폼 조회 실패");
@@ -103,6 +115,9 @@ public class BoardController {
 	    }
 	    return mav;
 	}
+	
+
+
 	
 	@RequestMapping(value = "/storyModifyAction", method = RequestMethod.POST)
 	public ModelAndView storyModifyAction(@RequestParam("post_id") Integer post_id, @RequestParam("title") String post_title,
@@ -123,13 +138,18 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value = "storydelete", method = RequestMethod.POST)
-	public ModelAndView storyDelete(@RequestParam("post_id") Integer post_id) {
-		 ModelAndView mav = new ModelAndView();
+	public String storyDelete(@RequestParam("post_id") Integer post_id) {
 		 try {
-			 boardService.delete(post_id);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		 return mav;
+			 	System.out.println(post_id);
+                boardService.delete(post_id);
+                System.out.println("게시글이 삭제되었습니다.");
+                // 삭제 후 목록 페이지로 리다이렉트
+		    } catch (Exception e) {
+		        e.printStackTrace();
+		        System.out.println("게시글 삭제에 실패했습니다: " + e.getMessage());
+		    }
+		    return "redirect:/storyreview";
   }
+	
+
 }
