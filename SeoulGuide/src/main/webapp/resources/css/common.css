@@ -111,7 +111,7 @@ body.he { height: 1000px;}
  
 /* banner 글씨체 */
 .banner-sub {padding-top: 50px; font-family: 'TheJamsil2Light'; line-height: 17px; font-size: 14px; color: rgb(235 235 235);}
-.banner-title {font-family: 'TheJamsil5Bold'; font-size: 40px; padding-bottom: 20px;}
+.banner-title {font-family: 'TheJamsil5Bold'; font-size: 40px; padding-bottom: 20px; padding-top: 10px;}
  
 /* 검색결과 없음 */
 .none-result { width: 500px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; flex-direction: column; align-content: center; align-items: center;}

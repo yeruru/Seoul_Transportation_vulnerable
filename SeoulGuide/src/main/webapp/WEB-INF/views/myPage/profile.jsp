@@ -13,9 +13,9 @@
 <!-- <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
 <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
 	
-	<link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
+
 	<script src="<c:url value="/resources//js/jquery-3.3.1.js"/>"></script>
 
 <meta charset="UTF-8">
