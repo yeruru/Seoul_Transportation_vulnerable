@@ -233,6 +233,13 @@ html {
 	width: 50px;
     height: 50px;
     border-radius: 50%;
+    object-fit : cover;
+}
+
+.commentimg{
+	width: 50px;
+    height: 50px;
+    overflow:hidden;
 }
 .usercomment{
     display: flex;
@@ -325,6 +332,34 @@ html {
     display: block;
     margin-left: 404px;
 }
+.bookmark{
+	width: 60px;
+    text-align: left;
+}
+
+.fa-bookmark{
+	font-size : 25px;
+    cursor: pointer;
+     border: 0;
+     background-color: transparent;
+}
+
+.buttonicon{
+	display : flex;
+	justify-content: flex-end;
+	margin-top : 20px;
+	margin-bottom : -20px;
+}
+
+.heart{
+	width : 50px;
+	text-align: left;
+}
 
 
-
+.fa-heart{
+	font-size: 25px;
+    cursor: pointer;
+    border: 0;
+    background-color: transparent;
+}
