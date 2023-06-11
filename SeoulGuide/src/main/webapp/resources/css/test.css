@@ -50,6 +50,7 @@ body.dark .question-btn { color: #fff;}
 #kakao-link-btn { border-radius: 50%; overflow: hidden; width: 50px; margin: 10px 20px;}
        
     
-    
-    
+.link-tour { position: relative;}
+.link-tour-btn {position: absolute; transition: all .3s; bottom: 0; right: 0; padding: 20px; background-color: #363636; color: #fff; border-radius: 10px;}     
+.link-tour:hover .link-tour-btn { background-color: var(--c-tour);}
     

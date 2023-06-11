@@ -46,7 +46,11 @@
 	 <section class="result">
 	 	<h2 id="mbtiResult">${result[mbti]["mbtiResult"]}</h2>
 	 	<h3 id="subTitle">${result[mbti]["subTitle"]}</h3>
-	    <img id="imgResult" src="<c:url value='/resources/img/test/${result[mbti]["img"]}'/>" alt="관광지테스트 이미지">
+	 	<a href="<c:url value='/guide/detail?${result[mbti]["url"]}'/>" class="link-tour">
+	 	  <em class="link-tour-btn">교통약자 정보 보기</em>
+		  <img id="imgResult" src="<c:url value='/resources/img/test/${result[mbti]["img"]}'/>" alt="관광지테스트 이미지">
+		</a>
+
 	    <p id="explain">${result[mbti]["explain"]}</p>
 	    <div>
 	    	<div class="sh">
