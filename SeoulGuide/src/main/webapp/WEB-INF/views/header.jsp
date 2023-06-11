@@ -76,7 +76,7 @@
 				<c:choose>
 					<c:when test="${sessionScope.id eq null }">
 						<li><a href="./loginform">로그인</a></li>
-						<li><a href="./joinform">회원가입</a></li>
+						<li><a href="./joinagreeform">회원가입</a></li>
 					</c:when>
 					<c:otherwise>
             <li><a href="./profile">마이페이지</a></li>

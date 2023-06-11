@@ -22,10 +22,31 @@
 		<p class="title">${tourdetail.tourist_name }</p>
 		<p class="subtitle">${tourdetail.tourist_subtitle }</p>
 		<input id="tourid" type="hidden" value="${tourdetail.tourist_id }">
+		
 		<div class="buttonicon">
-			<div class="heart">
-				<button class="fa-solid fa-heart"></button>
-			</div>
+		<c:choose>
+				<c:when test="${sessionScope.id eq null}">
+						<div class="heart">
+							<button id = "heart" class="fa-regular fa-heart"></button>
+						</div>
+				</c:when>
+				<c:when test="${like == sessionScope.id}">
+					<form action="deletelike" method="POST">
+						<input id="tourid" type="hidden" name="touristId" value="${tourdetail.tourist_id }">
+						<div class="heart">
+							<button type="submit" class="fa-solid fa-heart"></button>
+						</div>
+					</form>
+				</c:when>
+				<c:when test="${like != sessionScope.id}">
+					<form action="insertlike" method="POST">
+						<input id="tourid" type="hidden" name="touristId" value="${tourdetail.tourist_id }">
+						<div class="heart">
+							<button class="fa-regular fa-heart"></button>
+						</div>
+					</form>
+				</c:when>
+			</c:choose>
 			<c:choose>
 				<c:when test="${sessionScope.id eq null}">
 						<div class="bookmark">
@@ -242,7 +263,7 @@
 
 
 				<div class="usercomment">
-					<div class="commentimg" background-image = >
+					<div class="commentimg" >
 						<img src="<c:url value='/resources/upload/${comment.name}'/>"
 							alt="프로필 이미지">
 					</div>

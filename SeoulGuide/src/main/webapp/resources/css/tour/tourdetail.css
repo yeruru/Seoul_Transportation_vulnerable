@@ -14,7 +14,7 @@ html {
 	color : gray;
 	font-weight: 400;
 	text-align: center;
-	margin-top : 20px;
+	margin-top : 20px !important;
 }
 .sidebar {
 	display : flex;
@@ -164,7 +164,7 @@ html {
 	font-size : 15px;
 	color : gray;
 	font-weight: 400;
-	margin-top : 10px;
+	margin-top : 10px !important;
 }
 .titletour{
 	font-size : 20px;

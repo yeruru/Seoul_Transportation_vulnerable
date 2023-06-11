@@ -38,7 +38,7 @@
 				
 				<c:choose>
 					<c:when test="${sessionScope.id eq null }">
-						<a href="./joinform">계정이 없으신가요?</a>
+						<a href="./joinagreeform">계정이 없으신가요?</a>
 					</c:when>
 					<c:otherwise>
 

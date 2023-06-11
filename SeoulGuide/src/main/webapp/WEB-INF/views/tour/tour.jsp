@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
 <script src="<c:url value="/resources/js/tour.js"/>"></script>
+<script src="https://kit.fontawesome.com/15fcf63df7.js" crossorigin="anonymous"></script>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 <body class="body">
@@ -78,7 +79,17 @@
 				</div>
 			</form>
 		</div>
+		<!-- <div>
+		<form action="totalrank" method="GET">
+			<select class="rank">
+			  <option value="좋아요">좋아요순</option>
+			  <option value="기본" selected>기본</option>
+			</select>
+		</form>
+		</div> -->
+
 		<div class="tourresult" id="js-load">
+		
 			<c:forEach items="${tourlist}" var="tour">	
 				
 					<div class="tourlist lists__item js-load">
@@ -87,6 +98,10 @@
 							<div class="tourtext">
 								<p class="text1">${tour.tourist_title}</p>
 								<p class="text2">${tour.tourist_subtitle}</p>
+								<div>
+									<i class="fa-sharp fa-solid fa-heart" style="color : red;"></i>
+									<p>${tour.like_count }</p>
+								</div>
 							</div>
 						<div class="menu_icon">
 							<c:if

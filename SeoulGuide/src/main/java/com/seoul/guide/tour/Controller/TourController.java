@@ -17,6 +17,8 @@ import com.seoul.guide.bookmark.DTO.bookmarkDTO;
 import com.seoul.guide.bookmark.Service.bookmarkService;
 import com.seoul.guide.comment.DTO.CommentDTO;
 import com.seoul.guide.comment.Service.CommentService;
+import com.seoul.guide.like.DTO.likeDTO;
+import com.seoul.guide.like.Service.likeService;
 import com.seoul.guide.tour.DTO.TourDTO;
 import com.seoul.guide.tour.Service.TourService;
 
@@ -31,6 +33,9 @@ public class TourController {
 	
 	@Inject
 	private bookmarkService bookmarkservice;
+	
+	@Inject
+	private likeService likeservice;
 	
 	@Autowired
 	private HttpSession session;
@@ -90,6 +95,12 @@ public class TourController {
 			Integer book = bookmarkservice.selectbookmark(bookmarkdto);
 			
 			model.addAttribute("bookmark", book);
+			
+			likeDTO likedto = new likeDTO();
+			likedto.setUserId(userId);
+			likedto.setTouristId(id);
+			Integer like = likeservice.selectlike(likedto);
+			model.addAttribute("like", like);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}

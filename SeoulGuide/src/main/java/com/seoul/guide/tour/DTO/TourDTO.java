@@ -24,6 +24,8 @@ public class TourDTO {
 	private Integer menu_icon6;
 	private Integer menu_icon7;
 	
+	private Integer like_count;
+	
 	
 	public Integer getTourist_id() {
 		return tourist_id;
@@ -139,10 +141,11 @@ public class TourDTO {
 	public void setMenu_icon7(Integer menu_icon7) {
 		this.menu_icon7 = menu_icon7;
 	}
-	
-	
-	
-	
-	
+	public Integer getLike_count() {
+		return like_count;
+	}
+	public void setLike_count(Integer like_count) {
+		this.like_count = like_count;
+	}
 	
 }
