@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+						"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mapper.bookmark">
+	<insert id="insertbookmark" parameterType ="com.seoul.guide.bookmark.DTO.bookmarkDTO">
+		<![CDATA[
+			insert into bookmark (user_id, tourist_id) values (#{userId}, #{touristId})
+		 ]]>
+	</insert>
+	<select id="selectbookmark" parameterType="com.seoul.guide.bookmark.DTO.bookmarkDTO" resultType="Integer">
+		<![CDATA[
+			select user_id from bookmark where user_id=#{userId} and tourist_id=#{touristId}
+		 ]]>
+	</select>
+	<delete id="deletebookmark" parameterType="com.seoul.guide.bookmark.DTO.bookmarkDTO">
+		<![CDATA[
+			delete from bookmark where user_id=#{userId} and tourist_id=#{touristId}
+		 ]]>
+	</delete>
+</mapper>
