@@ -4,12 +4,26 @@
 <mapper namespace="mapper.tour">
 	<select id="selecttourlist" resultType="com.seoul.guide.tour.DTO.TourDTO">
     <![CDATA[
-        select * from tourist
+        SELECT t.tourist_id, t.tourist_name, t.tourist_title, t.tourist_subtitle, t.tourist_content, t.tourist_restdate, t.tourist_time, t.tourist_phonenumber, t.tourist_site, t.lati, t.logi, t.local, t.menu_icon1, t.menu_icon2, t.menu_icon3, t.menu_icon4, t.menu_icon5, t.menu_icon6, t.menu_icon7, COALESCE(l.like_count, 0) AS like_count
+		FROM tourist t
+		LEFT JOIN (
+		    SELECT tourist_id, COUNT(like_id) AS like_count
+		    FROM Likemark
+		    GROUP BY tourist_id
+		) l ON l.tourist_id = t.tourist_id;
     ]]>
 	</select>
 	
+	
+	
 	<select id="searchdetail" parameterType = "java.util.Map" resultType="com.seoul.guide.tour.DTO.TourDTO">
-         select * from tourist 
+         SELECT t.tourist_id, t.tourist_name, t.tourist_title, t.tourist_subtitle, t.tourist_content, t.tourist_restdate, t.tourist_time, t.tourist_phonenumber, t.tourist_site, t.lati, t.logi, t.local, t.menu_icon1, t.menu_icon2, t.menu_icon3, t.menu_icon4, t.menu_icon5, t.menu_icon6, t.menu_icon7, COALESCE(l.like_count, 0) AS like_count
+		FROM tourist t
+		LEFT JOIN (
+		    SELECT tourist_id, COUNT(like_id) AS like_count
+		    FROM Likemark
+		    GROUP BY tourist_id
+		) l ON l.tourist_id = t.tourist_id
          	where
           <choose>
           	<when test="menu_icon!=null">
@@ -46,7 +60,13 @@
 	
 	<select id="search" parameterType="String" resultType="com.seoul.guide.tour.DTO.TourDTO">
 	  <![CDATA[
-		select * from tourist where tourist_name like concat('%', #{word}, '%') or tourist_subtitle like concat('%', #{word}, '%') 
+		SELECT t.tourist_id, t.tourist_name, t.tourist_title, t.tourist_subtitle, t.tourist_content, t.tourist_restdate, t.tourist_time, t.tourist_phonenumber, t.tourist_site, t.lati, t.logi, t.local, t.menu_icon1, t.menu_icon2, t.menu_icon3, t.menu_icon4, t.menu_icon5, t.menu_icon6, t.menu_icon7, COALESCE(l.like_count, 0) AS like_count
+		FROM tourist t
+		LEFT JOIN (
+		    SELECT tourist_id, COUNT(like_id) AS like_count
+		    FROM Likemark
+		    GROUP BY tourist_id
+		) l ON l.tourist_id = t.tourist_id where tourist_name like concat('%', #{word}, '%') or tourist_subtitle like concat('%', #{word}, '%') 
 		]]>
 	</select>
 	

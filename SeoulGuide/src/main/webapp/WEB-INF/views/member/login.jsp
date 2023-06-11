@@ -22,7 +22,7 @@
 		        </div>
 			</div>
 		</form>
-		<form action = 'joinform'>
+		<form action = 'joinagreeform'>
 			<div>
 		      <input  class="button2" type="submit" value="회원가입">
 			</div>
