@@ -12,21 +12,18 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/mypage/modifyMember.css"/>">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <meta charset="UTF-8">
-<title>ModifyMemeber</title>
+<title>내정보 수정</title>
 </head>
 
-<body>
+<body class="body">
 	<jsp:include page="/WEB-INF/views/header.jsp" />
 
 	<section class="content-wrap">
 
 		<div class="container">
-			<h2>내정보 수정</h2>
+			<h2 class="banner-title">내정보 수정</h2>
 			<hr>
 			<form id="memberForm" action="modifyMember/update" method="POST"
 				enctype="multipart/form-data">
@@ -34,27 +31,30 @@
 				<div class="form-box">
 					<ul>
 						<li>
-							<div class="img-box">
-								<img id="updateImg"
-									src="<c:url value='/resources/upload/${member.name}'/>"
-									alt="프로필 이미지">
-							</div> <!-- <input id="profileImage" type="file" class="" name="file" />-->
-							<!-- 아이콘을 클릭할 수 있는 버튼으로 변경 --> <label for="profileImage"
-							class="material-symbols-outlined"> add_a_photo </label> <!-- 파일 업로드 인풋 (숨겨진 상태로 유지) -->
-							<input id="profileImage" type="file" class="" name="file"
-							style="display: none;">
+							<div class="img-wrap">
+								<div class="img-box" style="background-image: url(./resources/img/default-profile.png);">
+									<img id="updateImg" src="<c:url value='/resources/upload/${member.name}'/>" alt="프로필 이미지">
+								</div> 
+								<!-- <input id="profileImage" type="file" class="" name="file" />-->
+								<!-- 아이콘을 클릭할 수 있는 버튼으로 변경 --> 
+								<label for="profileImage" class="material-symbols-outlined"> add_a_photo </label> <!-- 파일 업로드 인풋 (숨겨진 상태로 유지) -->
+								<input id="profileImage" type="file" class="" name="file" style="display: none;">
+							</div>
 						</li>
 						<li>
 							<p>이름</p>
-							<div>${member.username}</div>
+							<p>${member.username}</p>
 						</li>
 						<li>
 						    <p>닉네임</p>
 						    <input type="text" value="${member.nickname}" name="nickName" id="nickName" />
-						    <button type="button" value="중복확인" onclick="checkNickname()">중복확인</button>
-						    <div id="nicknameCheck"></div>
+						    <button type="button" value="중복확인" onclick="checkNickname()" class="nick-btn">확인</button>
+						    
 						</li>
-						<li><strong>이메일</strong>
+						<li>
+						<div id="nicknameCheck"></div>
+						</li>
+						<li><p>이메일</p>
 							<p>${member.email}</p></li>
 						<li>
 							<p>생년월일</p>
@@ -62,7 +62,7 @@
 						</li>
 					</ul>
 				</div>
-				<div>
+				<div class="btn-box">
 					<input class="withdraw-btn" type="submit" value="회원탈퇴"
 						onclick="confirmWithdrawal()" />
 					<button class="" type="submit" value="save" id="modifyButton">저장하기</button>
@@ -122,6 +122,7 @@
 	});  
 		
 	</script>
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
 <script>
 window.addEventListener('load', function() {

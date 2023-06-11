@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>관광지 간편 검색</title>
 <link rel="stylesheet"href="<c:url value="/resources/css/tour/tour.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
@@ -15,13 +16,15 @@
 	<form action="toursearch" method="POST">
 		<div class="totalSearch">
 			<div class="title">
-				<h3>서울 관광을 고민중이신가요?</h3>
-				<h3>'서울 함께 가는 길'을 따라 편안하고 안전한 관광하세요.</h3>
-				<h1>관광지 검색</h1>
+				<p class="banner-sub">
+					서울 관광을 고민중이신가요?<br>
+					'서울 함께 가는 길'을 따라 편안하고 안전한 관광하세요.
+				</p>
+				<h2 class="banner-title">관광지 검색</h2>
 				<div class="searchbox">
 					<input type="text" class="bar" id="word" name="word"
-						style="color: gray;" required size="30">
-					<button type="submit">검색</button>
+						style="color: gray;" required size="30" placeholder="원하시는 관광지를 검색해 보세요.">
+					<button type="submit" class="search-btn"><span class="material-symbols-outlined">search</span></button>
 				</div>
 			</div>
 		</div>
@@ -77,8 +80,9 @@
 		</div>
 		<div class="tourresult" id="js-load">
 			<c:forEach items="${tourlist}" var="tour">	
-				<a href="${path}/guide/detail?id=${tour.tourist_id}">
+				
 					<div class="tourlist lists__item js-load">
+					<a href="${path}/guide/detail?id=${tour.tourist_id}" class="result-box">
 						<div class="tourimg" style="background-image: url(./resources/img/tour/tour${tour.tourist_id}.jpg);"></div>
 							<div class="tourtext">
 								<p class="text1">${tour.tourist_title}</p>
@@ -108,15 +112,17 @@
 							</c:if>
 
 						</div>
+						</a>
 					</div>
-				</a>
+				
 			</c:forEach>
 			   
-			
+			<div style="padding-top:20px;">
+              <button class="reviewbutton" type="button" id="js-btn-wrap" class="more">관광지 더보기 +</button>
+       		</div>
 		</div>
-		<div style="padding-top:20px;">
-              <button class="reviewbutton" type="button" id="js-btn-wrap" class="more">리뷰 더보기</button>
-        </div>
+		
 	</div>
+	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
 </html>

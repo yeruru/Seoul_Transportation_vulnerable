@@ -66,7 +66,7 @@
 			    </div>
 			    
 			    <div style="padding-top:20px;">
-				  <button type="button" id="js-btn-wrap" class="more">리뷰 더보기</button>
+				  <button type="button" id="js-btn-wrap" class="more">리뷰 더보기 +</button>
 				</div>	
 
 		</section>
