@@ -8,15 +8,8 @@
 <jsp:include page="/WEB-INF/views/head.jsp" />
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/mypage/profile.css"/>">
-<!-- <link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> -->
-	
-
-	<script src="<c:url value="/resources//js/jquery-3.3.1.js"/>"></script>
+<link rel="stylesheet" href="<c:url value="/resources/css/mypage/profile.css"/>">
+<script src="<c:url value="/resources//js/jquery-3.3.1.js"/>"></script>
 
 <meta charset="UTF-8">
 <title>마이페이지</title>
@@ -28,47 +21,47 @@
 	<section class="content-wrap profile">
 		<div class="profile-wrap">
 			<div class="profile-head">
-				<h2>마이페이지</h2>
-				<div class="grid-box">
-					<a href="./modifyMember">내정보수정하기 </a>
-				</div>
+				<h2 class="banner-title">마이페이지</h2>
 				<hr>
 			</div>
 			<div class="profile-content">
 				<ul>
 					<li>
-					<img id="profileImage"
-						src="<c:url value='/resources/upload/${member.name}'/>"
-						alt="프로필 이미지">
-						</li>
-					<li>닉네임: ${member.nickname}</li>
-					<li>이메일: ${member.email}</li>
+						<div class="img-box" style="background-image: url(./resources/img/default-profile.png);">
+							<img id="profileImage" src="<c:url value='/resources/upload/${member.name}'/>" alt="프로필 이미지">
+						</div>
+					</li>
+					<li><p>반가워요!</p></li>
+					<li><em>${member.nickname} 님</em></li>
+					<%-- <li>이메일: ${member.email}</li> --%>
 					<li>${member.directory }</li>
+					<li><a href="./modifyMember">내정보수정하기  ></a></li>
 				</ul>
 			</div>
 			
 			<div class="tab">
 				<div class="tab-list">
 					<div class="list">
-						<a href="#;" class="ho"> <span
-							class="material-symbols-outlined">bookmark</span>즐겨찾기
-						</a> <a href="#;" class="ho on"> 
-						<span class="material-symbols-outlined">edit</span>내가 쓴 게시물
+						<a href="#;" class="ho on"> 
+							<span class="material-symbols-outlined">bookmark</span>즐겨찾기
+						</a> 
+						<a href="#;" class="ho"> 
+							<span class="material-symbols-outlined">edit</span>내가 쓴 게시물
 						</a>
 					</div>
 				</div>
 				<div class="tab-content">
-					<div class="content">
+					<div class="content on">
 						<div>즐겨찾기</div>
 					</div>
-					<div class="content on">
+					<div class="content">
 						<p>ㅎㅇ</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
-
+<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
 <script>
 	// tab-list
