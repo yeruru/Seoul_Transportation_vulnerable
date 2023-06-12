@@ -26,7 +26,10 @@
 				<h3>${article.post_title }</h3>
 
 				<div class="sub-title">
-					<p class="name">닉네임</p>
+					<p class="profile">
+					  <img id="profileImage" src="<c:url value='/resources/upload/${article.name}'/>" alt="프로필 이미지">
+					</p>
+					<p class="name">${article.nickname }</p>
 					<p class="date">
 						<fmt:formatDate value="${article.post_edit_date}" pattern="yyyy-MM-dd hh:mm" />
 					</p>
@@ -121,7 +124,7 @@
 								<div class="modify-box">
 							 		<c:if test="${sessionScope.id eq comment.user_id}">
 										<a href="storydetail/modify?post_id=${comment.post_id }&comment_id=${comment.comment_id}">수정</a>
-										<form action="<c:url value='/storydetail/delete'/>" method="post" id="deleteForm" style="display: inline;">
+										<form action="<c:url value='/storydetail/delete'/>" method="post" id="deleteForm2" style="display: inline;">
 									          <input type="hidden" name="comment_id" value="${comment.comment_id}">
 									          <input type="hidden" name="post_id" value="${comment.post_id}">
 									          <button type="button" onclick="conmmentDelete()">삭제</button>
@@ -186,7 +189,7 @@
 <script>
 	function conmmentDelete() {
 		if (confirm("댓글을 삭제하시겠습니까?")) {
-			document.getElementById("deleteForm").submit();
+			document.getElementById("deleteForm2").submit();
 		}
 	}
 </script>

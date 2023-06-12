@@ -11,7 +11,38 @@ public class Article {
 	private Date post_regdate;
 	private Date post_edit_date;
 	private int view_count; // 추가된 속성
+	private String nickname;
+	private String name;
+	
+	public Article() {}
+	
+	public Article(int post_id, int user_id, String post_title, String post_content, Date post_regdate,
+			Date post_edit_date, int view_count, String nickname, String name) {
+		this.post_id = post_id;
+		this.user_id = user_id;
+		this.post_title = post_title;
+		this.post_content = post_content;
+		this.post_regdate = post_regdate;
+		this.post_edit_date = post_edit_date;
+		this.view_count = view_count;
+		this.nickname = nickname;
+		this.name = name;
+	}
 
+
+
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	public int getPost_id() {
 		return post_id;
 	}
