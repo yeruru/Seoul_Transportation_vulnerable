@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -173,9 +172,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="passwordfail" ,method=RequestMethod.GET)
+
    public String false2() {
       return "member/passwordfail";
    }
+
+
 }
 
 	
