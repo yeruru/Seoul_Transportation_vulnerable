@@ -27,6 +27,7 @@
 		      <input  class="button2" type="submit" value="회원가입">
 			</div>
 		</form>
+		<a href="./passwordcheckform">비밀번호를 잊어버리셨나요?</a>
 	
 	</section>
 </body>

@@ -61,9 +61,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	     ]]>
 	</delete>
 	
+	<select id="passwordsearch" parameterType="String" resultType="Integer">
+		<![CDATA[
+			SELECT COUNT(*) FROM member where email=#{email}
+	     ]]>
+	</select>
+	
+	<update id="updatepassword" parameterType="com.seoul.guide.member.DTO.MemberDTO">
+		<![CDATA[
+			update member set password=#{password} where email=#{email}
+	     ]]>
+	</update>
+
 	<select id= "selectBoardList"  parameterType="Integer" resultType="com.seoul.guide.board.DTO.Article">
 		<![CDATA[
 			select * from board where user_id=#{user_id}
 		 ]]>
 	</select>
+
 </mapper>

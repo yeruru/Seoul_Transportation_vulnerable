@@ -73,11 +73,20 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
+
+	public Integer passwordsearch(String email) throws Exception {
+		return sqlSession.selectOne("MemberMapper.passwordsearch",email);
+	}
+  
+  @Override
 	public List<Article> selectBoardList(Integer userId) throws Exception {
 		return sqlSession.selectList("MemberMapper.selectBoardList", userId);
 	}
 
 
-	
+	@Override
+	public void passwordretry(MemberDTO member) throws Exception {
+		sqlSession.update("MemberMapper.updatepassword", member);
+	}
 	
 }

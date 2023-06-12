@@ -2,7 +2,6 @@ package com.seoul.guide.member.Service;
 
 import java.io.File;
 import java.io.OutputStream;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
@@ -108,8 +107,19 @@ public class MemberServiceImpl implements MemberService {
 	}
 
 	@Override
+	public Integer passwordsearch(String email) throws Exception {
+		return memberDAO.passwordsearch(email);
+	}
+
+	@Override
+	public void passwordretry(MemberDTO member) throws Exception {
+		memberDAO.passwordretry(member);
+  }
+    
+  @Override
 	public List<Article> boardListByUserId(Integer userId) throws Exception {
 		return memberDAO.selectBoardList(userId);
+
 	}
 	
 	

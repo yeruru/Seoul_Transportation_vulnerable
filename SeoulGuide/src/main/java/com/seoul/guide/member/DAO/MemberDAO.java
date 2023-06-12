@@ -16,6 +16,8 @@ public interface MemberDAO {
 	public Integer newUserId() throws Exception;
 	public FileVO selectFile(Integer id) throws Exception;
 	public Integer selectID(String email) throws Exception;
+	public Integer passwordsearch(String email) throws Exception;
+	public void passwordretry(MemberDTO member) throws Exception;
 	
 	//마이페이지 부분
 	 // 회원 정보와 이미지정보 join해서 출력
