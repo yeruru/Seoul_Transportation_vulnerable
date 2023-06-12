@@ -69,21 +69,28 @@
 .storydetail .sub-title div { display: flex; align-items: center;}
 .modi-btn { transition: all 0.3s; padding: 13px 15px; border-radius: 10px; border: 1px solid var(--c-tour); margin-right: 15px; color: var(--c-tour); font-size: 12px;}
 .modi-btn:hover { background-color: var(--c-tour); color: #fff;}
-.storydetail .name { padding-right: 10px;}    
+.storydetail .name {  font-family: 'TheJamsil2Light'; font-size: 12px; padding: 10px 20px 10px 5px;}    
 .storydetail .date { font-size: 12px; color: #999faa;}
 #copyButton { flex-grow: 3; display: flex; justify-content: flex-end; color: rgb(191 191 191); font-size: 14px;}
 
 /* 댓글창 */
 .write-title { padding: 4px 0px 12px 0; margin: 60px 0 0; font-size: 18px;}
-.write { position: relative; background: #f7f7f7; border: 1px solid #e5e5e5;}
+.write { margin-top: 20px; position: relative; background: #f7f7f7; border: 1px solid #e5e5e5;}
 .form { float: none; margin: 0 20px;}
 .writeForm { display: block; height: 100px; position: relative;}
-textarea { font-family: inherit; height: 75px; margin-top: 15px; line-height: 20px; border: 1px solid #e5e5e5; word-break: keep-all; width: 100%; float: none; padding: 5px 5px 35px 5px; box-sizing: border-box;}
+textarea { resize: none; font-family: inherit; height: 75px; margin-top: 15px; line-height: 20px; border: 1px solid #e5e5e5; word-break: keep-all; width: 100%; float: none; padding: 5px 5px 35px 5px; box-sizing: border-box;}
 .btn-st-box {display: flex; justify-content: flex-end;}
 .btn-st{display: flex; justify-content: flex-end; border: 0px; padding: 10px 12px; margin-bottom: 10px; border-radius: 10px; background-color: var(--c-tour); color: #fff; font-size: 12px;}
 .btn-st:hover {box-shadow: 0px 0px 0px 5px rgba(13, 153, 255, 0.1); }
-.list .modify-box { display: flex; justify-content: flex-end;}
-.profile {position: relative; float: left; width: 40px; height: 40px; background-color: pink; border-radius: 50%; overflow: hidden; margin-right: 13px;} 
+.list .modify-box { display: flex; justify-content: flex-end; align-items: center;}
+.list .modify-box a {font-size: 14px; padding-top: 2px; transition: all .3s;}
+.list .modify-box a:hover { color: var(--c-tour);}
+
+
+
+
+
+.profile { width: 30px; height: 30px; background-color: pink; border-radius: 50%; overflow: hidden; margin-right: 13px;} 
 .list span {color: #d2d2d2; font-size: 12px; margin-top: 7px; display: inline-block;}
 .list span:nth-of-type(1) { padding-right: 6px;}
 .list span:nth-of-type(2) {position: relative; padding-left: 10px;}
@@ -101,8 +108,13 @@ textarea { font-family: inherit; height: 75px; margin-top: 15px; line-height: 20
    
 
    
-   
-   
-   
+#profileImage { object-fit: cover; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+ .nick-modi { padding-top: 10px;
+    display: block; font-family: 'TheJamsil2Light';}
+ .back-btn { display: flex;
+    justify-content: flex-end;
+    padding-bottom: 15px;align-items: center;} 
+    
+.back-btn span { font-size: 12px; padding-right: 5px;}
    
     
