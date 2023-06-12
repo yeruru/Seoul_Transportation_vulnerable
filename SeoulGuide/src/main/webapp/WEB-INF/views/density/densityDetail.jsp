@@ -31,19 +31,20 @@
 
 <!-- head -->
 <jsp:include page="/WEB-INF/views/header.jsp"></jsp:include>
+
 <div class="content-wrap">
 
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-12">
+	<div>
+		<div>
+			<div>
 				<h2 class="my-4">${cityDataResponse.getCityData().getAreaName()}</h2>
 			</div>
 		</div>
 
 
 		<!-- 혼잡도 출력 코드 -->
-		<div class="row">
-			<div class="col-lg-12">
+		<div>
+			<div>
 				<h4>인구혼잡도</h4>
 				<c:choose>
 					<c:when
@@ -57,15 +58,18 @@
 					<c:when
 						test="${cityDataResponse.getCityData().getOuterLivePopulationStatus().getInnerLivePopulationStatus().getAreaCongestLevel() eq '보통'}">
 						<div class="progress">
-							<div class="progress-bar bg-warning" role="progressbar"
-								style="width: 50%;" aria-valuenow="50" aria-valuemin="0"
+						
+							<!-- 보통색상 파랑으로 강제변경함,, -->
+							<div class="progress-bar " role="progressbar"
+								style="width: 50%;" aria-valuenow="50" aria-valuemin="0" 
+								background-color="rgba(13, 153, 255, 1); color: white;"
 								aria-valuemax="100">보통</div>
 						</div>
 					</c:when>
 					<c:when
 						test="${cityDataResponse.getCityData().getOuterLivePopulationStatus().getInnerLivePopulationStatus().getAreaCongestLevel() eq '약간 붐빔'}">
 						<div class="progress">
-							<div class="progress-bar bg-orange" role="progressbar"
+							<div class="progress-bar bg-orange" role="progressbar"							
 								style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
 								aria-valuemax="100">약간 붐빔</div>
 						</div>
@@ -80,8 +84,8 @@
 				</c:choose>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col-lg-12">
+		<div>
+			<div>
 				<h4 class="my-4"></h4>
 				<p>${cityDataResponse.getCityData().getOuterLivePopulationStatus().getInnerLivePopulationStatus().getAreaCongestMessage()}</p>
 			</div>
@@ -89,17 +93,17 @@
 
 
 		<!-- 도로 교통 상황 출력 코드 -->
-		<div class="row">
-			<div class="col-lg-12">
+		<div>
+			<div>
 				<h4 class="my-4">도로소통 단계</h4>
 
 				<div class="progress">
 					<c:choose>
 						<c:when
-							test="${cityDataResponse.getCityData().getRoadTrafficStts().getAvgRoadData().getRoadTrafficIdx() eq '원활'}">
-							<div class="progress-bar bg-success" role="progressbar"
+							test="${cityDataResponse.getCityData().getRoadTrafficStts().getAvgRoadData().getRoadTrafficIdx() eq '정체'}">
+							<div class="progress-bar  bg-danger" role="progressbar"
 								style="width: 100%" aria-valuenow="100" aria-valuemin="0"
-								aria-valuemax="100">원활</div>
+								aria-valuemax="100">정체</div>
 						</c:when>
 						<c:when
 							test="${cityDataResponse.getCityData().getRoadTrafficStts().getAvgRoadData().getRoadTrafficIdx() eq '서행'}">
@@ -108,9 +112,9 @@
 								aria-valuemax="100">서행</div>
 						</c:when>
 						<c:otherwise>
-							<div class="progress-bar bg-danger" role="progressbar"
+							<div class="progress-bar bg-success" role="progressbar"
 								style="width: 33%" aria-valuenow="33" aria-valuemin="0"
-								aria-valuemax="100">정체</div>
+								aria-valuemax="100">원활</div>
 						</c:otherwise>
 					</c:choose>
 				</div>

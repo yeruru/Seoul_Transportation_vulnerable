@@ -63,7 +63,7 @@ public class DensityController {
     }
 
 
-    @Scheduled(fixedRate = 600000) // 10분마다 실행
+    @Scheduled(fixedRate = 600000) // 1분마다 실행
     public void updateData() throws Exception {
     	
     	// 현재 시간
