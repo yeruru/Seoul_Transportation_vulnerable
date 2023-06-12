@@ -12,6 +12,7 @@ import com.seoul.guide.board.DTO.Article;
 //BoardDAOImpl
 @Repository
 public class BoardDAOImpl implements BoardDAO {
+	
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 	
@@ -22,13 +23,11 @@ public class BoardDAOImpl implements BoardDAO {
 
 	@Override
 	public List<Article> selectBoardList() throws Exception {
-
 		return sqlSession.selectList("mapper.board.selectBoardList");
 	}
 
 	@Override
 	public Article selectBoard(Integer post_id) throws Exception {
-
 		return sqlSession.selectOne("mapper.board.selectBoard", post_id);
 	}
 

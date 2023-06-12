@@ -53,7 +53,7 @@ public class MypageController {
 	}
 
 	
-	@RequestMapping(value = "/modifyMember", method=RequestMethod.GET)
+	@RequestMapping(value = "modifyMember", method=RequestMethod.GET)
 	public String modifyMemberView(Model model) {
 		// HttpSession에서 로그인된 사용자 정보 가져오기
 		Integer userId = (Integer) session.getAttribute("id");

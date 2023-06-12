@@ -10,8 +10,8 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/mypage/profile.css"/>">
-
 	<script src="<c:url value="/resources//js/jquery-3.3.1.js"/>"></script>
+
 
 <meta charset="UTF-8">
 <title>마이페이지</title>

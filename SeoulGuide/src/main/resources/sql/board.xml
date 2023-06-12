@@ -53,6 +53,44 @@
     ]]>
 </update>
 
+    <!-- 댓글 -->
+    <select id="selectCommentList" parameterType="Integer" resultType="com.seoul.guide.board.DTO.BoardCommentVO">
+    	<![CDATA[
+    		SELECT b.comment_id, b.post_id, b.user_id, b.comment_content, b.b_comment_reg, b.b_comment_chg, f.name, m.nickname 
+        	FROM board_comment b  JOIN member m 
+        						    ON b.user_id = m.userId
+       						   	  JOIN FileVO f 
+       						   	  	ON m.userId = f.id 
+     		WHERE post_id=#{post_id}
+     		order by b_comment_reg desc
+    	]]>
+    </select>
     
+    <insert id="insertComment" parameterType="com.seoul.guide.board.DTO.BoardCommentVO">
+    	 <![CDATA[
+        	insert into board_comment(post_id,user_id,comment_content,b_comment_reg) values(#{post_id},#{user_id},#{comment_content},#{b_comment_reg})
+   		 ]]>
+    </insert>
     
+    <update id="updateComment" parameterType="com.seoul.guide.board.DTO.BoardCommentVO">
+    	<![CDATA[
+    		update board_comment set comment_content = #{comment_content}, b_comment_chg=#{b_comment_chg}
+    		where comment_id = #{comment_id} and post_id= #{post_id}
+    	]]>
+    </update>
+    
+    <delete id="deleteComment" parameterType="Integer">
+    	<![CDATA[
+    		delete from board_comment where comment_id = #{comment_id}
+   		]]>
+    </delete>
+    
+    <select id="selectComment" parameterType="com.seoul.guide.board.DTO.BoardCommentVO" resultType="com.seoul.guide.board.DTO.BoardCommentVO">
+    	<![CDATA[
+		    select b.comment_id, b.post_id, b.user_id, b.comment_content, b.b_comment_reg, b.b_comment_chg, m.nickname 
+			from board_comment b join member m
+					   on b.user_id = m.userId
+                       where post_id =#{post_id} and comment_id = #{comment_id}
+         ]]>              
+    </select>
 </mapper>
