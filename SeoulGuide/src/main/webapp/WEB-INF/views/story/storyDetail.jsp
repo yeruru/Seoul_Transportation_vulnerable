@@ -158,9 +158,7 @@
 
 		alert("URL이 복사되었습니다.");
 	}
-</script>
 
-<script>
 	window.addEventListener('load', function() {
 		var darkModeCookie = getCookie('darkMode');
 		if (darkModeCookie === 'true') {
@@ -178,20 +176,20 @@
 		}
 		return '';
 	}
-</script>
-<script>
+
 	function confirmDelete() {
 		if (confirm("게시글을 삭제하시겠습니까?")) {
 			document.getElementById("deleteForm").submit();
 		}
 	}
-</script>
-<script>
+
 	function conmmentDelete() {
+
 		if (confirm("댓글을 삭제하시겠습니까?")) {
 			document.getElementById("deleteForm2").submit();
 		}
 	}
+
 </script>
 
 
