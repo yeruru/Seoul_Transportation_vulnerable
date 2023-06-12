@@ -59,7 +59,7 @@
 			                          <em>${article.post_title }</em>
 			                       </div>
 			                      </div>
-			                      <p>${article.nickname }</p>
+			                      <%-- <p>${article.nickname }</p> --%>
 				               </a>
 				           </li>
 			            </c:forEach>
