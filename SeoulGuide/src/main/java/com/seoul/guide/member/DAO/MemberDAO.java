@@ -6,6 +6,7 @@ import java.util.Map;
 import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
+import com.seoul.guide.tour.DTO.TourDTO;
 
 public interface MemberDAO {
 	MemberDTO selectmember(String email) throws Exception;
@@ -25,5 +26,6 @@ public interface MemberDAO {
 	public void updateMemberWithImg(Map<String, Object> map,FileVO file) throws Exception;
 	public void deleteMember(Integer userId) throws Exception;
 	public List<Article> selectBoardList(Integer userId) throws Exception;
+	public List<TourDTO> selectTourList(Integer userId) throws Exception;
 	
 }

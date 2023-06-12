@@ -9,6 +9,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
+import com.seoul.guide.tour.DTO.TourDTO;
 
 public interface MemberService {
 	void join(MemberDTO member, MultipartFile file) throws Exception;
@@ -28,5 +29,6 @@ public interface MemberService {
     public FileVO getFile(Integer id) throws Exception;
     public void deleteMemberId(Integer userId) throws Exception;
     public List<Article> boardListByUserId(Integer userId) throws Exception;
+    public List<TourDTO> tourListByUserId(Integer userId) throws Exception;
     
 }

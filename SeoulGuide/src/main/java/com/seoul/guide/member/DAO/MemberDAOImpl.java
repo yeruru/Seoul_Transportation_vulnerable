@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
+import com.seoul.guide.tour.DTO.TourDTO;
 @Repository
 public class MemberDAOImpl implements MemberDAO {
 	@Autowired
@@ -87,6 +88,11 @@ public class MemberDAOImpl implements MemberDAO {
 	@Override
 	public void passwordretry(MemberDTO member) throws Exception {
 		sqlSession.update("MemberMapper.updatepassword", member);
+	}
+
+	@Override
+	public List<TourDTO> selectTourList(Integer userId) throws Exception {
+		return sqlSession.selectList("MemberMapper.selectTourList", userId);
 	}
 	
 }

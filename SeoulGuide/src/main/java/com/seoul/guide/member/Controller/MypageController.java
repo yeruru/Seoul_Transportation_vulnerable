@@ -23,49 +23,53 @@ import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
 import com.seoul.guide.member.Service.MemberService;
+import com.seoul.guide.tour.DTO.TourDTO;
 
 @Controller
 public class MypageController {
-	
+
 	@Autowired
 	MemberService memberService;
-	
+
 	@Autowired
 	private HttpSession session;
-	
+
 	@Autowired
 	private ServletContext servletContext;
-		
 
-	@RequestMapping(value= "/profile", method=RequestMethod.GET)
+	@RequestMapping(value = "/profile", method = RequestMethod.GET)
 	public String myPage(HttpSession session, Model model) {
-		
+
 		// HttpSession에서 로그인된 사용자 정보 가져오기
-        Integer userId = (Integer) session.getAttribute("id");
-        // 로그인된 사용자의 회원 정보와 파일 정보 조회
-        MemberDTO member;
-        List<Article> article = new ArrayList<Article>();
+		Integer userId = (Integer) session.getAttribute("id");
+		// 로그인된 사용자의 회원 정보와 파일 정보 조회
+		MemberDTO member;
+		List<Article> article = new ArrayList<Article>();
+		List<TourDTO> tour = new ArrayList<TourDTO>();
+
 		try {
 			member = memberService.getMemberWithImg(userId);
-			article =memberService.boardListByUserId(userId); 
-			System.out.println(article.get(0).getPost_title());
+			article = memberService.boardListByUserId(userId);
+			tour = memberService.tourListByUserId(userId);
+			System.out.println(tour.get(0).getTourist_subtitle());
 			model.addAttribute("member", member);
 			model.addAttribute("article", article);
+			model.addAttribute("tour", tour);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("profile ERR");
 		}
-        
+
 		return "myPage/profile";
 	}
 
-	
-	@RequestMapping(value = "modifyMember", method=RequestMethod.GET)
+	@RequestMapping(value = "modifyMember", method = RequestMethod.GET)
 	public String modifyMemberView(Model model) {
 		// HttpSession에서 로그인된 사용자 정보 가져오기
 		Integer userId = (Integer) session.getAttribute("id");
-     // 로그인된 사용자의 회원 정보와 파일 정보 조회
-        MemberDTO member = new MemberDTO();
+		// 로그인된 사용자의 회원 정보와 파일 정보 조회
+		MemberDTO member = new MemberDTO();
 		try {
 			member = memberService.getMemberWithImg(userId);
 			model.addAttribute("member", member);
@@ -73,84 +77,81 @@ public class MypageController {
 			e.printStackTrace();
 			System.out.println("modify ERR");
 		}
-        
-        
+
 		return "myPage/modifyMember";
 	}
-	
-	
- 	
-	@RequestMapping(value = "/modifyMember/update", method=RequestMethod.POST)
-	public String updateMember(Model model, @RequestParam(value="nickName")String nickName, @RequestPart(value="file",required=false) MultipartFile file) {
+
+	@RequestMapping(value = "/modifyMember/update", method = RequestMethod.POST)
+	public String updateMember(Model model, @RequestParam(value = "nickName") String nickName,
+			@RequestPart(value = "file", required = false) MultipartFile file) {
 		Integer userId = (Integer) session.getAttribute("id");
 		Map<String, Object> map = new HashMap<>();
 		FileVO fileVO = new FileVO();
 		try {
-		    // 회원 정보 업데이트
-			map.put("userId",userId);
-			map.put("nickname",nickName);
+			// 회원 정보 업데이트
+			map.put("userId", userId);
+			map.put("nickname", nickName);
 			System.out.println(file.isEmpty());
-		    // 이미지 업데이트
-		    if (file != null && !file.isEmpty()) {
-		    	String dir = servletContext.getRealPath("/resources/upload/");
+			// 이미지 업데이트
+			if (file != null && !file.isEmpty()) {
+				String dir = servletContext.getRealPath("/resources/upload/");
 				fileVO.setDirectory(dir);
-		    	fileVO.setId(userId);
+				fileVO.setId(userId);
 				fileVO.setName(file.getOriginalFilename());
 				fileVO.setSize(file.getSize());
 				fileVO.setContenttype(file.getContentType());
 				fileVO.setData(file.getBytes());
-				
-				File dfile = new File(fileVO.getDirectory()+fileVO.getName());
+
+				File dfile = new File(fileVO.getDirectory() + fileVO.getName());
 				file.transferTo(dfile);
-				
-		    }else {
-		    	fileVO = memberService.getFile(userId);
-		    }
-		    memberService.updateMemberWithImg(map, fileVO);
-		    return "redirect:/";
-		}catch (Exception e) {
+
+			} else {
+				fileVO = memberService.getFile(userId);
+			}
+			memberService.updateMemberWithImg(map, fileVO);
+			return "redirect:/";
+		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("POST Err");
 		}
-	    
+
 		return "myPage/modifyMember";
 	}
-	
-    @RequestMapping(value = "/modifyMember/delete", method = RequestMethod.POST)
-    public String deleteMember() {
-        Integer userId = (Integer) session.getAttribute("id");
-        try {
-            memberService.deleteMemberId(userId);
-            session.removeAttribute("id");
-        } catch (Exception e) {
-            e.printStackTrace();
-            System.out.println("Delete Member Error");
-        }
-        return "redirect:/";
-    }
-    
-    @RequestMapping(value = "/modifyMember/nicknameCheck", produces = "text/plain;charset=UTF-8")
-    @ResponseBody
-    public String nicknameCheck(@RequestParam("nickname") String nickname) {
-        int result = 0;
-        try {
-            if (nickname.equals("")) {
-                result = 2;
-            } else {
-                result = memberService.nicknameCheck(nickname); // 닉네임으로 중복 체크
-            }
-            System.out.println(result);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        String message = "사용가능";
-        if (result == 1) {
-            message = "사용불가";
-        } else if (result == 2) {
-            message = "닉네임을 입력해주세요";
-        }
-        return message;
-    }
-		
+
+	@RequestMapping(value = "/modifyMember/delete", method = RequestMethod.POST)
+	public String deleteMember() {
+		Integer userId = (Integer) session.getAttribute("id");
+		try {
+			memberService.deleteMemberId(userId);
+			session.removeAttribute("id");
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Delete Member Error");
+		}
+		return "redirect:/";
+	}
+
+	@RequestMapping(value = "/modifyMember/nicknameCheck", produces = "text/plain;charset=UTF-8")
+	@ResponseBody
+	public String nicknameCheck(@RequestParam("nickname") String nickname) {
+		int result = 0;
+		try {
+			if (nickname.equals("")) {
+				result = 2;
+			} else {
+				result = memberService.nicknameCheck(nickname); // 닉네임으로 중복 체크
+			}
+			System.out.println(result);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		String message = "사용가능";
+		if (result == 1) {
+			message = "사용불가";
+		} else if (result == 2) {
+			message = "닉네임을 입력해주세요";
+		}
+		return message;
+	}
 
 }
