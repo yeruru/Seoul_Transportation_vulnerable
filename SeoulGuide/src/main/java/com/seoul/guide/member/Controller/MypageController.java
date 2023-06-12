@@ -1,7 +1,9 @@
 package com.seoul.guide.member.Controller;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
@@ -17,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
 import com.seoul.guide.member.Service.MemberService;
@@ -41,9 +44,13 @@ public class MypageController {
         Integer userId = (Integer) session.getAttribute("id");
         // 로그인된 사용자의 회원 정보와 파일 정보 조회
         MemberDTO member;
+        List<Article> article = new ArrayList<Article>();
 		try {
 			member = memberService.getMemberWithImg(userId);
+			article =memberService.boardListByUserId(userId); 
+			System.out.println(article.get(0).getPost_title());
 			model.addAttribute("member", member);
+			model.addAttribute("article", article);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("profile ERR");
