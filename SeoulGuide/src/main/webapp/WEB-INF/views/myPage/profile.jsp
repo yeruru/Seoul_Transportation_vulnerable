@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -52,19 +53,22 @@
 						</a>
 					</div>
 				</div>
-				<c:forEach var="article" items="${article}">
+				
 				<div class="tab-content">
 					<div class="content on">
 						<div>즐겨찾기</div>
 					</div>
 					<div class="content">
 						<p>왜안될까요</p>
-						<p>${article.post_title}</p>
+						<c:forEach var="article" items="${article}">
 						<!-- TOAST UI Viewer -->
-						<div>${article.post_content}</div>
+						<div id="viewer"><div class="viewer-box">${article.post_content}</div></div>
+						<p>${article.post_title}</p>
+					 	<fmt:formatDate value="${article.post_regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+						</c:forEach>
 					</div>
 				</div>
-				</c:forEach>
+				
 			</div>
 		</div>
 	</section>
