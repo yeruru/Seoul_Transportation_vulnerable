@@ -75,7 +75,17 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	<select id= "selectBoardList"  parameterType="Integer" resultType="com.seoul.guide.board.DTO.Article">
 		<![CDATA[
-			select * from board where user_id=#{user_id}
+			select * from board where user_id=#{user_id} order by post_regdate desc   
+						
+		 ]]>
+	</select>
+	
+	<select id= "selectTourList"  parameterType="Integer" resultType="com.seoul.guide.tour.DTO.TourDTO">
+		<![CDATA[
+				select t.tourist_id, t.tourist_title, t.tourist_subtitle
+				from tourist t join bookmark b
+								on t.tourist_id = b.tourist_id
+				where user_id = #{user_id};
 		 ]]>
 	</select>
 
