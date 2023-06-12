@@ -56,20 +56,34 @@
 				
 				<div class="tab-content">
 					<div class="content on">
-					 	<c:forEach var="tour" items="${tour}">
-						<!-- TOAST UI Viewer -->
-						<a href="detail?id=${tour.tourist_id}"><img src="<c:url value="/resources/img/tour/tour${tour.tourist_id}.jpg"/>"></a>
-						<p>${tour.tourist_title}</p>
-						<p>${tour.tourist_subtitle}</p>
-						</c:forEach> 
+						<ul class="viewer-list">
+						 	<c:forEach var="tour" items="${tour}">
+						 		<li class="tourli">
+						 		<div class="tumb-tour">
+									<a href="detail?id=${tour.tourist_id}">
+										<img src="<c:url value="/resources/img/tour/tour${tour.tourist_id}.jpg"/>">
+									</a>
+								</div>
+									<p>${tour.tourist_title}</p>
+									<p class="tour-sub">${tour.tourist_subtitle}</p>
+								</li>
+							</c:forEach> 
+						</ul>
 					</div>
 					<div class="content">
+					<ul class="viewer-list">
 						<c:forEach var="article" items="${article}">
-						<!-- TOAST UI Viewer -->
-						<a href="storydetail?post_id=${article.post_id }"><div id="viewer"><div class="viewer-box">${article.post_content}</div></div></a>
-						<p>${article.post_title}</p>
-					 	<fmt:formatDate value="${article.post_regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+						<li>
+							<div class="tumb">
+								<!-- TOAST UI Viewer -->
+								<a href="storydetail?post_id=${article.post_id }">
+									<div id="viewer"><div class="viewer-box">${article.post_content}</div></div>
+								</a>
+							</div>
+							<p>${article.post_title}</p>
+					 	</li>
 						</c:forEach>
+					</ul>
 					</div>
 				</div>
 				

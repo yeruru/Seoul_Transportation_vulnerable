@@ -171,6 +171,11 @@ public class MemberController {
 	public String sucess() {
 		return "member/password";
 	}
+	
+	@RequestMapping(value="passwordfail" ,method=RequestMethod.GET)
+   public String false2() {
+      return "member/passwordfail";
+   }
 }
 
 	
