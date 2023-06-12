@@ -70,7 +70,14 @@ public class MemberDAOImpl implements MemberDAO {
 		sqlSession.delete("MemberMapper.deleteMember", userId);
 	}
 
+	@Override
+	public Integer passwordsearch(String email) throws Exception {
+		return sqlSession.selectOne("MemberMapper.passwordsearch",email);
+	}
 
-	
+	@Override
+	public void passwordretry(MemberDTO member) throws Exception {
+		sqlSession.update("MemberMapper.updatepassword", member);
+	}
 	
 }

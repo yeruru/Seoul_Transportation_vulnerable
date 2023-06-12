@@ -15,6 +15,8 @@ public interface MemberService {
 	public Integer selectuserid(String email) throws Exception;
 	
 	public void fileView(Integer id, OutputStream out) throws Exception;
+	public Integer passwordsearch(String email) throws Exception;
+	public void passwordretry(MemberDTO member) throws Exception;
 	
 	//마이페이지
 	//회원 정보와 파일 정보를 함께 조회하는 메서드

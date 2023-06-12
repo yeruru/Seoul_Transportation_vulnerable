@@ -2,7 +2,6 @@ package com.seoul.guide.member.Service;
 
 import java.io.File;
 import java.io.OutputStream;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.ServletContext;
@@ -104,6 +103,16 @@ public class MemberServiceImpl implements MemberService {
 	@Transactional
 	public void deleteMemberId(Integer userId) throws Exception {
 		memberDAO.deleteMember(userId);
+	}
+
+	@Override
+	public Integer passwordsearch(String email) throws Exception {
+		return memberDAO.passwordsearch(email);
+	}
+
+	@Override
+	public void passwordretry(MemberDTO member) throws Exception {
+		memberDAO.passwordretry(member);
 	}
 	
 	

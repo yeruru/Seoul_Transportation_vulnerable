@@ -60,4 +60,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			delete from member where userId=#{userId};
 	     ]]>
 	</delete>
+	
+	<select id="passwordsearch" parameterType="String" resultType="Integer">
+		<![CDATA[
+			SELECT COUNT(*) FROM member where email=#{email}
+	     ]]>
+	</select>
+	
+	<update id="updatepassword" parameterType="com.seoul.guide.member.DTO.MemberDTO">
+		<![CDATA[
+			update member set password=#{password} where email=#{email}
+	     ]]>
+	</update>
 </mapper>

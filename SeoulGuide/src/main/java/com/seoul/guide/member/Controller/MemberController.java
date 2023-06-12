@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -63,7 +64,6 @@ public class MemberController {
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public ModelAndView login(@RequestParam("email") String email, @RequestParam("password") String password) {
 		ModelAndView mav = new ModelAndView();
-
 		try {
 			memeberservice.login(email, password);
 		    Integer id = memeberservice.selectuserid(email);
@@ -130,6 +130,46 @@ public class MemberController {
 	        num = "error";
 	    }
 	    return num;
+	}
+	
+	@RequestMapping(value="/passwordcheckform", method= RequestMethod.GET)
+	public String passwordcheckform() {
+		return "member/passwordcheck";
+	}
+	
+	@RequestMapping(value="passwordsearch", method=RequestMethod.POST)
+	public ModelAndView passwordsearch(@RequestParam("email") String email) throws Exception {
+		Integer count = memeberservice.passwordsearch(email);
+		ModelAndView mav = new ModelAndView();
+		
+		if(count == 1) { 
+			mav.addObject("email", email);
+			mav.setViewName("member/passwordretry"); 
+		}else {
+			mav.setViewName("member/passwordfail"); 
+		}
+		return mav;
+		
+	}
+	
+	@RequestMapping(value="/passwordretry", method= RequestMethod.GET)
+	public String passwordretry() {
+		return "member/passwordretry";
+	}
+	
+	@RequestMapping(value="passworupdate", method=RequestMethod.POST)
+	public ModelAndView update(@RequestParam("email") String email, @RequestParam("password") String password, @ModelAttribute MemberDTO member ) throws Exception {
+		ModelAndView mav = new ModelAndView();
+		member.setEmail(email);
+		member.setPassword(password);
+		memeberservice.passwordretry(member);
+		mav.setViewName("member/password");
+		return mav;
+	}
+	
+	@RequestMapping(value="password", method=RequestMethod.GET)
+	public String sucess() {
+		return "member/password";
 	}
 }
 
