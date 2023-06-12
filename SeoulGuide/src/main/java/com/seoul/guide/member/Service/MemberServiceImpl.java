@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.FileCopyUtils;
 import org.springframework.web.multipart.MultipartFile;
 
+import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DAO.MemberDAO;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
@@ -104,6 +105,11 @@ public class MemberServiceImpl implements MemberService {
 	@Transactional
 	public void deleteMemberId(Integer userId) throws Exception {
 		memberDAO.deleteMember(userId);
+	}
+
+	@Override
+	public List<Article> boardListByUserId(Integer userId) throws Exception {
+		return memberDAO.selectBoardList(userId);
 	}
 	
 	

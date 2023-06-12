@@ -1,10 +1,12 @@
 package com.seoul.guide.member.Service;
 
 import java.io.OutputStream;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
 
@@ -23,4 +25,6 @@ public interface MemberService {
     
     public FileVO getFile(Integer id) throws Exception;
     public void deleteMemberId(Integer userId) throws Exception;
+    public List<Article> boardListByUserId(Integer userId) throws Exception;
+    
 }

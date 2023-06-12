@@ -26,7 +26,10 @@
 				<h3>${article.post_title }</h3>
 
 				<div class="sub-title">
-					<p class="name">닉네임</p>
+					<p class="profile">
+					  <img id="profileImage" src="<c:url value='/resources/upload/${article.name}'/>" alt="프로필 이미지">
+					</p>
+					<p class="name">${article.nickname }</p>
 					<p class="date">
 						<fmt:formatDate value="${article.post_edit_date}" pattern="yyyy-MM-dd hh:mm" />
 					</p>
@@ -181,10 +184,12 @@
 	}
 
 	function conmmentDelete() {
-	    if (confirm("댓글을 삭제하시겠습니까?")) {
-	       document.getElementById("deleteForm2").submit();
-	    }
-	 }
+
+		if (confirm("댓글을 삭제하시겠습니까?")) {
+			document.getElementById("deleteForm2").submit();
+		}
+	}
+
 </script>
 
 

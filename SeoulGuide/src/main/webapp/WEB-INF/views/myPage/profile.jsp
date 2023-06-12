@@ -52,14 +52,19 @@
 						</a>
 					</div>
 				</div>
+				<c:forEach var="article" items="${article}">
 				<div class="tab-content">
 					<div class="content on">
 						<div>즐겨찾기</div>
 					</div>
 					<div class="content">
-						<p>ㅎㅇ</p>
+						<p>왜안될까요</p>
+						<p>${article.post_title}</p>
+						<!-- TOAST UI Viewer -->
+						<div>${article.post_content}</div>
 					</div>
 				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</section>

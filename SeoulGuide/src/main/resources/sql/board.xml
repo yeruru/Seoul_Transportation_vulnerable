@@ -6,13 +6,22 @@
 
 	<select id="selectBoardList" resultType ="com.seoul.guide.board.DTO.Article">
 		<![CDATA[
-			select*from board order by post_regdate desc
+			select *  from board b join member m 
+								  on b.user_id = m.userId
+								join FileVO f 
+								  on m.userId = f.id
+							  	 order by post_regdate desc;
 		 ]]>
 	</select>
 	
 	<select id="selectBoard" resultType ="com.seoul.guide.board.DTO.Article" parameterType="Integer">
 		<![CDATA[
-			select*from board where post_id = #{post_id} 
+			select *  from board b join member m 
+								  on b.user_id = m.userId
+								join FileVO f 
+								  on m.userId = f.id
+							  	 where post_id = #{post_id} 
+							  	 order by post_regdate desc 
 		]]>
 	</select>
 	
