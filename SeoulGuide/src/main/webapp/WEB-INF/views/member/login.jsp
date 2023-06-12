@@ -15,7 +15,7 @@
 		<form action = "./login" method = "POST">
 			<div class = "loginbackground">
 				<p>로그인</p>
-				<div><input type="text" class = "email" name="email" placeholder=" Email"></div>
+				<div><input type="text" class="email" name="email" placeholder=" Email"></div>
 				<div><input type="password" class = "password" name="password" placeholder=" password"></div>
 				<div >
 		             <input  class="button1" type="submit" value="로그인">
@@ -23,12 +23,11 @@
 			</div>
 		</form>
 		<form action = 'joinagreeform'>
-			<div>
-		      <input  class="button2" type="submit" value="회원가입">
+			<div class="join-wrap-box">
+				<a href="./passwordcheckform" class="password-find">비밀번호 찾기</a>
+		     	<input  class="button2" type="submit" value="회원가입">
 			</div>
 		</form>
-		<a href="./passwordcheckform">비밀번호를 잊어버리셨나요?</a>
-	
 	</section>
 </body>
 <script>
