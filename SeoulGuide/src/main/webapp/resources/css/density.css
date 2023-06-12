@@ -27,3 +27,7 @@ body.dark .page-item.active .page-link { color: #fff; background-color: #515151;
 body.dark .page-item .page-link { color: #fff; background-color: #a6a3a3; border-color: #5c5c5c;}
 body.dark .card-body { background-color: #000 !important;}
 body.dark .card { border: 1px solid rgba(0,0,0,.125);}
+
+.density-wrap {
+    max-width:510px;
+}

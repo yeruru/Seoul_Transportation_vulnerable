@@ -22,7 +22,7 @@
 			<img src="<c:url value="/resources/img/density.svg"/>" alt="실시간교통정보 이미지">
 		</div>
 	</div>
-<div class="content-wrap">
+<div class="content-wrap density-wrap">
 	<!-- Sort By -->
 	<form id="sortForm" method="get">
 		<select id="sortSelect" name="sort">
