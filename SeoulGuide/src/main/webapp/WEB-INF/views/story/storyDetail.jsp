@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,12 +69,13 @@
 				</script>
 				
 				<h4 class="write-title">댓글</h4>
+				<hr/>
 				<!-- 댓글작성창 -->
 				<div class="write">
 					<div class="form">
-						<form name="tform" id="tform">
+						<form name="tform" id="tform" action="storydetail" method="POST">
 							<span class="writeForm">
-								<textarea name rows id="comment" placeholder="로그인 후 소중한 댓글을 남겨주세요."></textarea>
+								<textarea name="comment_content" rows="5" cols="50" id="comment" placeholder="로그인 후 소중한 댓글을 남겨주세요."></textarea>
 							</span>
 							<div class="wrap">
 								<c:choose>
@@ -81,7 +83,8 @@
 						         	    <li class="btn-st-box"><a href="./loginform" class="btn-st">로그인</a></li>
 						         	</c:when>
 						         	<c:otherwise>
-						         		<li class="btn-st-box"><button type="button" class="btn-st">등록하기</button></li>
+						         		<input type="hidden" name="post_id" value="${article.post_id}">
+						         		<li class="btn-st-box"><button type="submit" class="btn-st" >등록하기</button></li>
 						         	</c:otherwise>
 					         	</c:choose>
 							</div>
@@ -91,21 +94,43 @@
 				
 			
 				<!-- 댓글창 -->
+				
 				<div>
 					<div class="list">
 						<ul>
+							<c:forEach items="${comment}" var="comment">
 							<li>
-								<div class="profile"></div>
+								<div class="profile">
+									<img id="profileImage"
+									src="<c:url value='/resources/upload/${comment.name}'/>"
+									alt="프로필 이미지">
+								</div>
 								<div class="text">
-									<p>댓글입니다~</p>
-									<span>닉네임</span>
-									<span>2023.2.28</span>
+									<span>${comment.nickname}</span>
+									<p>${comment.comment_content}</p>
+									 <span>
+						               <c:choose>
+						                <c:when test="${not empty comment.b_comment_chg}">
+						                  <fmt:formatDate value="${comment.b_comment_chg}" pattern="yyyy-MM-dd HH:mm:ss" />
+						                </c:when>
+						                <c:otherwise>
+						                  <fmt:formatDate value="${comment.b_comment_reg}" pattern="yyyy-MM-dd HH:mm:ss" />
+						                </c:otherwise>
+						              </c:choose>
+						            </span>
 								</div>
 								<div class="modify-box">
-									<button type="button">수정</button>
-									<button type="button">삭제</button>
+							 		<c:if test="${sessionScope.id eq comment.user_id}">
+										<a href="storydetail/modify?post_id=${comment.post_id }&comment_id=${comment.comment_id}">수정</a>
+										<form action="<c:url value='/storydetail/delete'/>" method="post" id="deleteForm" style="display: inline;">
+									          <input type="hidden" name="comment_id" value="${comment.comment_id}">
+									          <input type="hidden" name="post_id" value="${comment.post_id}">
+									          <button type="button" onclick="conmmentDelete()">삭제</button>
+										</form>          
+									</c:if>
 								</div>
 							</li>
+							</c:forEach>
 						</ul>
 					</div>
 				</div>
@@ -159,4 +184,13 @@
 		}
 	}
 </script>
+<script>
+	function conmmentDelete() {
+		if (confirm("댓글을 삭제하시겠습니까?")) {
+			document.getElementById("deleteForm").submit();
+		}
+	}
+</script>
+
+
 </html>
