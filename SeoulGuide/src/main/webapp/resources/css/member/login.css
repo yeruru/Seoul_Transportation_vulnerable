@@ -25,15 +25,49 @@ body.dark .button1 { color: #fff;}
 .join-wrap-box input { align-items: center; border: 0; background-color: inherit; font-size: inherit; font-family: inherit; font-size: 14px;}
 .button2{ cursor: pointer;}
 .password{ font-size : 4px;}
-
 .successEmailChk { font-size: 12px; display:block; margin: 30px 0 10px 0; opacity: .6;}
-
 .email-style,
 .email2-style { border: 1px solid #000 !important;}
-
-
-
 .doubleChk {line-height: 37px; font-size: 12px; padding: 0 10px; width: 100px; background-color: #3f3f3fdd; border-radius: 5px; color: #fff; font-size: 12px; font-family: inherit; border: 0;}
+
+
+.pa-wrap { display: flex; flex-direction: column; align-items: center; text-align: center;}
+.pa-wrap p { font-size: 20px; line-height: 30px; font-family: 'TheJamsil2Light';}
+.pa-login { transition: all .3s; padding: 20px 30px; display: block; background-color: rgb(0 53 91); color: #fff; border-radius: 13px; margin-top: 20px; font-size: 16px;}
+.pa-login:hover { background-color: var(--c-tour);}
+.main-img { width: 150px; margin-top: 20px; opacity: .4;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

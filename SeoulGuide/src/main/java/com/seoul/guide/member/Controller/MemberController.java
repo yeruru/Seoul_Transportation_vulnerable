@@ -172,9 +172,12 @@ public class MemberController {
 	}
 	
 	@RequestMapping(value="passwordfail" ,method=RequestMethod.GET)
-	public String false2() {
-		return "member/passwordfail";
-	}
+
+   public String false2() {
+      return "member/passwordfail";
+   }
+
+
 }
 
 	
