@@ -39,8 +39,8 @@
 						</button>
 					</div>
 					<div class="filter">
-						<a href="#">인기순</a>
-						<a href="#">최신순</a>
+						<a href="javascript:void(0);">인기순</a>
+						<a href="javascript:void(0);" class="on">최신순</a>
 					</div>
 	  			</div>
 	  			<div id="js-load" class="main">

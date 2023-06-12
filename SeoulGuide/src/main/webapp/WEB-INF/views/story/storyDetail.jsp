@@ -20,9 +20,8 @@
 		<jsp:include page="/WEB-INF/views/story/storyHeader.jsp"></jsp:include>
 
 		<section id="./writeForm" class="content-wrap storydetail">
-				<input type="hidden" name="num" value="${article.post_id }" /> <input
-					type="hidden" name="writer" id="writer" readonly="readonly"
-					value="${article.user_id }" />
+				<input type="hidden" name="num" value="${article.post_id }" /> 
+				<input type="hidden" name="writer" id="writer" readonly="readonly" value="${article.user_id }" />
 				<h3>${article.post_title }</h3>
 
 				<div class="sub-title">

@@ -25,12 +25,6 @@
 				
 				<h3><input name="title" type="text" id="title" value="${article.post_title}" placeholder="제목: "/></h3>
 				
-				<div class="sub-title">
-						<p class="name">닉네임</p>
-						<p class="date"><fmt:formatDate value="${article.post_edit_date}" pattern="yyyy-MM-dd hh:mm"/></p>
-						<a href="#;" id="copyButton" onclick="copyUrl()">URL 복사</a>
-				</div>
-				
 				<!-- TOAST UI Editor API -->
 				
 				<input name="content" type="hidden" value="" class="form"/>
@@ -48,8 +42,8 @@
 				</script>
 			
 				<section id="commandCell">
-					<input type="submit" value="수정" class="s-btn">&nbsp;&nbsp;
-					<a href="storyreview">목록</a>
+					<a href="storyreview">취소하기</a>
+					<input type="submit" value="저장하기" class="s-btn">&nbsp;&nbsp;
 				</section>
 			</form>
 		</section>
