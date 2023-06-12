@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.seoul.guide.board.DTO.Article;
+import com.seoul.guide.board.DTO.BoardCommentVO;
+import com.seoul.guide.board.Service.BoardCommentService;
 import com.seoul.guide.board.Service.BoardService;
 
 //BoardController
@@ -24,6 +26,9 @@ public class BoardController {
 	
 	@Autowired
 	private BoardService boardService;
+	
+	@Autowired
+	private BoardCommentService boardCommentService;
 	
 	@RequestMapping(value="/test", method=RequestMethod.GET)
 	public String test() {
@@ -54,10 +59,15 @@ public class BoardController {
 	//조회수 관리로직  추가함!
 	@RequestMapping(value = "storydetail", method = RequestMethod.GET)
 	public ModelAndView storyDetail(@RequestParam("post_id") Integer num) {
+		List<BoardCommentVO> comment =null;
 		ModelAndView mav = new ModelAndView();
 		try {
 			Article article = boardService.getBoard(num);
 			boardService.incrementViewCount(num); // 추가된 부분
+			//댓글 
+			comment = boardCommentService.commentList(num);
+			
+			mav.addObject("comment", comment);
 			mav.addObject("article", article);
 			mav.setViewName("story/storyDetail");
 		} catch(Exception e) {
@@ -82,7 +92,6 @@ public class BoardController {
 		try {
 			article.setUser_id(userId);
 			Integer result = boardService.writeBoard(article);
-			System.out.println(result);
 			if(result == 0) {
 				throw new Exception("실패");
 			}
@@ -151,6 +160,8 @@ public class BoardController {
 		    }
 		    return "redirect:/storyreview";
   }
+	
+	
 	
 
 }

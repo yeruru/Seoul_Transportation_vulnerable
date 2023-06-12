@@ -1,11 +1,13 @@
 package com.seoul.guide.member.DAO;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
 @Repository
@@ -71,9 +73,16 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
+
 	public Integer passwordsearch(String email) throws Exception {
 		return sqlSession.selectOne("MemberMapper.passwordsearch",email);
 	}
+  
+  @Override
+	public List<Article> selectBoardList(Integer userId) throws Exception {
+		return sqlSession.selectList("MemberMapper.selectBoardList", userId);
+	}
+
 
 	@Override
 	public void passwordretry(MemberDTO member) throws Exception {

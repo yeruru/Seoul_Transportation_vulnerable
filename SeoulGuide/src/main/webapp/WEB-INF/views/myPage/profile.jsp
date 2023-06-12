@@ -10,13 +10,8 @@
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
 <link rel="stylesheet"
 	href="<c:url value="/resources/css/mypage/profile.css"/>">
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-<script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-	
-	<link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
 	<script src="<c:url value="/resources//js/jquery-3.3.1.js"/>"></script>
+
 
 <meta charset="UTF-8">
 <title>마이페이지</title>
@@ -57,14 +52,19 @@
 						</a>
 					</div>
 				</div>
+				<c:forEach var="article" items="${article}">
 				<div class="tab-content">
 					<div class="content on">
 						<div>즐겨찾기</div>
 					</div>
 					<div class="content">
-						<p>ㅎㅇ</p>
+						<p>왜안될까요</p>
+						<p>${article.post_title}</p>
+						<!-- TOAST UI Viewer -->
+						<div>${article.post_content}</div>
 					</div>
 				</div>
+				</c:forEach>
 			</div>
 		</div>
 	</section>

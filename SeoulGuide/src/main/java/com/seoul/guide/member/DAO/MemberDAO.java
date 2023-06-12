@@ -1,7 +1,9 @@
 package com.seoul.guide.member.DAO;
 
+import java.util.List;
 import java.util.Map;
 
+import com.seoul.guide.board.DTO.Article;
 import com.seoul.guide.member.DTO.FileVO;
 import com.seoul.guide.member.DTO.MemberDTO;
 
@@ -22,4 +24,6 @@ public interface MemberDAO {
 	public MemberDTO selectMemberWithImg(Integer map) throws Exception;
 	public void updateMemberWithImg(Map<String, Object> map,FileVO file) throws Exception;
 	public void deleteMember(Integer userId) throws Exception;
+	public List<Article> selectBoardList(Integer userId) throws Exception;
+	
 }

@@ -43,3 +43,17 @@ $(document).ready(function() {
         }
     });
 });
+
+// 인기순 최신순
+const popularButton = document.querySelector('.filter a[href="javascript:void(0);"]');
+const latestButton = document.querySelector('.filter a[href="javascript:void(0);"].on');
+
+popularButton.addEventListener('click', function() {
+  popularButton.classList.add('on');
+  latestButton.classList.remove('on');
+});
+
+latestButton.addEventListener('click', function() {
+  latestButton.classList.add('on');
+  popularButton.classList.remove('on');
+});
