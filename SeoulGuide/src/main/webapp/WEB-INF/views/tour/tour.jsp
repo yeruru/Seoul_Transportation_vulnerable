@@ -94,14 +94,15 @@
 				
 					<div class="tourlist lists__item js-load">
 					<a href="${path}/guide/detail?id=${tour.tourist_id}" class="result-box">
-						<div class="tourimg" style="background-image: url(./resources/img/tour/tour${tour.tourist_id}.jpg);"></div>
+						<div class="tourimg" style="background-image: url(./resources/img/tour/tour${tour.tourist_id}.jpg);">
+							<div class="heart-box">
+								<span class="material-symbols-outlined">favorite</span>
+								<p>${tour.like_count }</p>
+							</div>
+						</div>
 							<div class="tourtext">
 								<p class="text1">${tour.tourist_title}</p>
 								<p class="text2">${tour.tourist_subtitle}</p>
-								<div>
-									<i class="fa-sharp fa-solid fa-heart" style="color : red;"></i>
-									<p>${tour.like_count }</p>
-								</div>
 							</div>
 						<div class="menu_icon">
 							<c:if
