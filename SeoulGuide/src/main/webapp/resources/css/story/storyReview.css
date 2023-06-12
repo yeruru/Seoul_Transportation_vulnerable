@@ -9,17 +9,13 @@
 .story-box img:nth-of-type(2) { position: absolute; right: -150px; width: 600px; top: 10%;}
 .img-dark { opacity: 0;}
 #story-review .review-tumb { margin-top: 40px;}
-
 .body.dark .img-dark { opacity: 1;}
 .body.dark .story-box img:nth-of-type(1) { opacity: 0;}
-
-
 #story-review .menu { display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 10px;}
 #story-review .lists__item { width: 45%;}
 #story-review .tumb { height: 180px; overflow: hidden; position: relative; box-shadow: 0px 0px 4px rgba(45, 54, 61, 0.25); border-radius: 10px;}
 #story-review .tumb-title { display: flex; width: 100%; justify-content: space-between; padding: 13px 0;}
 #story-review .tumb-title em { font-size: 14px; font-weight: 700; font-family: 'TheJamsil2Light'; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 100%;}
-
 
 @media (max-width: 600px) {
 	#story-review .menu { flex-direction: column; align-items: center;}
@@ -27,7 +23,6 @@
 	.story-box h4, .story-box p { padding-left: 8px;}
 	.story-box img { position: absolute; right: 0; width: 200px; top: 80%;}
 }
-
 
 
 .write-btn-box { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 30px;}
@@ -44,14 +39,11 @@
 #story-review .js-load:after { display: none;}
 #story-review .btn-wrap { display: block;}
 #story-review ul li { list-style:none;  position:relative; float:left; width:calc(100%/3 - 12px); margin:12px 6px 0; }
-#story-review .more { background-color: var(--c-tour); width: 80%; display: flex; justify-content: center; align-items: center; margin: 0 auto; color: #fff; height: 50px; margin-bottom: 50px; border-radius: 20px; border: 0; font-size: 16px;}
 #story-review .viewer-box { box-sizing: border-box; padding: 30px;}    
-#story-review .viewer-box img:first-of-type{ position: absolute; left: 0; top: 0; width: 100%; height: 100%;}
+#story-review .viewer-box img:first-of-type { position: absolute; left: 50%; top: 50%; width: 100%; height: 100%; object-fit: cover; transform: translate(-50%, -50%);}
+#story-review .more{ display: block; margin: 0 auto; max-width : 500px; height : 40px; border : 0; background-color: inherit; font-size: 14px; transition: all 03s;}
 
-
-
-
-
+.filter a.on { color: var(--c-tour);}
 
 
 
@@ -64,7 +56,6 @@
 #writeform .plus-text { text-align: center; line-height: 20px; color: rgba(157 161 173);}
 #writeform .plus-box span { display: flex; justify-content: center; align-items: center; padding: 30px; font-size: 30px; cursor: pointer; color: rgba(209,214,231,1); }
 #writeform .plus-box span a { display: flex; width: 60px; height: 60px; background-color: var(--c-tour); justify-content: center; align-items: center; color: #fff; border-radius: 10px;}
-    
     
 /* storydetail */    
 .storydetail h3 { font-size: 30px; margin-bottom: 40px; }
@@ -81,7 +72,6 @@
 .storydetail .name { padding-right: 10px;}    
 .storydetail .date { font-size: 12px; color: #999faa;}
 #copyButton { flex-grow: 3; display: flex; justify-content: flex-end; color: rgb(191 191 191); font-size: 14px;}
-
 
 /* 댓글창 */
 .write-title { padding: 4px 0px 12px 0; margin: 60px 0 0; font-size: 18px;}
@@ -104,7 +94,15 @@ textarea { font-family: inherit; height: 75px; margin-top: 15px; line-height: 20
 
 /* storymodify */
 .storydetail h3 input { font-size: 30px; margin-bottom: 40px; width: 100%; height: 50px; font-size: 30px; box-sizing: border-box; outline: none; border-bottom: 4px solid rgba(209,214,231,1); border-top: none; border-left: none; border-right: none; margin-bottom: 10px;}
+.storydetail #commandCell { justify-content: center; display: flex; align-items: center;}    
+.storydetail #commandCell input { margin-left: 40px; background-color: var(--c-tour); font-weight: inherit; font-family: inherit; font-size: inherit; cursor: pointer;}   
+.storydetail #commandCell * { color: #fff; padding: 10px; padding: 20px 40px; margin-top: 30px; border: 0; border-radius: 13px;} 
+.storydetail #commandCell a { background-color: #363636; }
+   
 
-    
-    
+   
+   
+   
+   
+   
     

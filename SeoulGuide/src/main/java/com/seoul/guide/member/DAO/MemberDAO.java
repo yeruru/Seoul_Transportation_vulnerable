@@ -20,5 +20,4 @@ public interface MemberDAO {
 	public MemberDTO selectMemberWithImg(Integer map) throws Exception;
 	public void updateMemberWithImg(Map<String, Object> map,FileVO file) throws Exception;
 	public void deleteMember(Integer userId) throws Exception;
-	
 }

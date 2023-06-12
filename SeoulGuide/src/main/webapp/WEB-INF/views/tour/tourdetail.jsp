@@ -11,6 +11,7 @@
 <script src="<c:url value="/resources/js/jquery-3.3.1.js"/>"></script>
 <script src="<c:url value="/resources/js/comment.js"/>"></script>
 <script src="<c:url value="/resources/js/tour.js"/>"></script>
+<script src="https://kit.fontawesome.com/15fcf63df7.js" crossorigin="anonymous"></script>
 <jsp:include page="/WEB-INF/views/head.jsp"></jsp:include>
 </head>
 <body class="body">
@@ -21,14 +22,66 @@
 		<p class="title">${tourdetail.tourist_name }</p>
 		<p class="subtitle">${tourdetail.tourist_subtitle }</p>
 		<input id="tourid" type="hidden" value="${tourdetail.tourist_id }">
+		
+		<div class="buttonicon">
+		<c:choose>
+				<c:when test="${sessionScope.id eq null}">
+						<div class="heart">
+							<button id = "heart" class="fa-regular fa-heart"></button>
+						</div>
+				</c:when>
+				<c:when test="${like == sessionScope.id}">
+					<form action="deletelike" method="POST">
+						<input id="tourid" type="hidden" name="touristId" value="${tourdetail.tourist_id }">
+						<div class="heart">
+							<button type="submit" class="fa-solid fa-heart"></button>
+						</div>
+					</form>
+				</c:when>
+				<c:when test="${like != sessionScope.id}">
+					<form action="insertlike" method="POST">
+						<input id="tourid" type="hidden" name="touristId" value="${tourdetail.tourist_id }">
+						<div class="heart">
+							<button class="fa-regular fa-heart"></button>
+						</div>
+					</form>
+				</c:when>
+			</c:choose>
+			<c:choose>
+				<c:when test="${sessionScope.id eq null}">
+						<div class="bookmark">
+							<button id="book" class="fa-sharp fa-regular fa-bookmark"></button>
+						</div>
+				</c:when>
+				<c:when test="${bookmark == sessionScope.id}">
+					<form action="deletebookmark" method="POST">
+						<input id="tourid" type="hidden" name="touristId" value="${tourdetail.tourist_id }">
+						<div class="bookmark">
+							<button type="submit" id="bookmark" class="fa-solid fa-bookmark"></button>
+						</div>
+					</form>
+				</c:when>
+				<c:when test="${bookmark != sessionScope.id}">
+					<form action="insertbookmark" method="POST">
+						<input id="tourid" type="hidden" name="touristId" value="${tourdetail.tourist_id }">
+						<div class="bookmark">
+							<button type="submit" id="bookmark" class="fa-sharp fa-regular fa-bookmark"></button>
+						</div>
+					</form>
+				</c:when>
+			</c:choose>
+		</div>
+		
+
+
 
 		<ul class="sidebar">
 			<li><a href="#detail2">상세정보</a></li>
-			<li><a href="">댓글보기</a></li>
+			<li><a href="#detail3">댓글보기</a></li>
 			<li><a href="">주변 지하철역 편의시설</a></li>
 			<li><a href="">관광스토리</a></li>
 		</ul>
-
+		
 		<section id="detail">
 			<div>
 				<div class="tourimg"
@@ -210,7 +263,7 @@
 
 
 				<div class="usercomment">
-					<div class="commentimg">
+					<div class="commentimg" >
 						<img src="<c:url value='/resources/upload/${comment.name}'/>"
 							alt="프로필 이미지">
 					</div>
@@ -252,50 +305,62 @@
 			</c:forEach>
 		</section>
 		<script>
-					mapContainer = document.getElementById('map${tourdetail.tourist_id}'), // 지도를 표시할 div 
-					mapOption = {
-						center : new kakao.maps.LatLng(${tourdetail.lati}, ${tourdetail.logi}), // 지도의 중심좌표
-						level : 3
-					// 지도의 확대 레벨
-					};
+	mapContainer = document.getElementById('map${tourdetail.tourist_id}'), // 지도를 표시할 div 
+	mapOption = {
+		center : new kakao.maps.LatLng(${tourdetail.lati}, ${tourdetail.logi}), // 지도의 중심좌표
+		level : 3
+	// 지도의 확대 레벨
+	};
 
-					// 지도를 생성합니다    
-					var map = new kakao.maps.Map(mapContainer, mapOption);
+	// 지도를 생성합니다    
+	var map = new kakao.maps.Map(mapContainer, mapOption);
 
-					// 주소-좌표 변환 객체를 생성합니다
-					var geocoder = new kakao.maps.services.Geocoder();
+	// 주소-좌표 변환 객체를 생성합니다
+	var geocoder = new kakao.maps.services.Geocoder();
 
-					// 주소로 좌표를 검색합니다
-					geocoder.addressSearch('${tourdetail.local}',function(result, status) {
+	// 주소로 좌표를 검색합니다
+	geocoder.addressSearch('${tourdetail.local}',function(result, status) {
 
-										// 정상적으로 검색이 완료됐으면 
-										if (status === kakao.maps.services.Status.OK) {
+						// 정상적으로 검색이 완료됐으면 
+						if (status === kakao.maps.services.Status.OK) {
 
-											var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
-											console.log(coords);
+							var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+							console.log(coords);
 
-											// 결과값으로 받은 위치를 마커로 표시합니다
-											var marker = new kakao.maps.Marker(
-													{
-														map : map,
-														position : coords
-													});
-
-											// 인포윈도우로 장소에 대한 설명을 표시합니다
-											var infowindow = new kakao.maps.InfoWindow(
-													{
-														content : '<div style="width:150px;text-align:center;padding:6px 0;"><a href = "https://map.kakao.com/link/to/${tourdetail.local},${tourdetail.lati},${tourdetail.logi}">길찾기</a></div>'
-													});
-											infowindow.open(map, marker);
-
-											// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-											map.setCenter(coords);
-										}
+							// 결과값으로 받은 위치를 마커로 표시합니다
+							var marker = new kakao.maps.Marker(
+									{
+										map : map,
+										position : coords
 									});
+
+							// 인포윈도우로 장소에 대한 설명을 표시합니다
+							var infowindow = new kakao.maps.InfoWindow(
+									{
+										content : '<div style="width:150px;text-align:center;padding:6px 0;"><a href = "https://map.kakao.com/link/to/${tourdetail.local},${tourdetail.lati},${tourdetail.logi}">길찾기</a></div>'
+									});
+							infowindow.open(map, marker);
+
+							// 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+							map.setCenter(coords);
+						}
+					});
 				</script>
 	</section>
+<!-- 	<script type="text/javascript">
+	const bookmark = document.getElementById("bookmark");
+	bookmark.addEventListener("click", function() {
+		if(bookmark.classList.contains("fa-reqular")){
+		  bookmark.classList.remove("fa-reqular");
+		  bookmark.classList.add("fa-solid");
+		}else{
+		  bookmark.classList.remove("fa-solid");
+		  bookmark.classList.add("fa-reqular");
+		}
+	});
+	</script> -->
 
-
+<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>
 </body>
 
 </html>

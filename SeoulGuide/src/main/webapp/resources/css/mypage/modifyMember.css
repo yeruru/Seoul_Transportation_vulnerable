@@ -1,20 +1,26 @@
 @charset "UTF-8";
 
-  
-.img-box {
-	width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    overflow: hidden;
-	
-}
+h2.banner-title { font-size: 30px;}
 
-.form-box {
-	display: flex;
-    justify-content: center;
-}
+/* 프로필 사진 수정 */
+.img-wrap { width: 200px; height: 200px; position: relative; margin: 30px 0;} 
+.img-box { width: 200px; height: 200px; border-radius: 50%; overflow: hidden; background-repeat: no-repeat; background-size: cover; background-size: 150%; background-position: center;}
+.img-wrap label { position: absolute; background-color: #ffffff; width: 50px; border-radius: 50%; text-align: center; line-height: 50px; border: 1px solid gray; font-size: 28px; cursor: pointer; bottom: 0; right: 0%; color: gray; transition: all .3s;}
+.img-wrap label:hover { border: 1px solid var(--c-tour); color: var(--c-tour);}
+.img-box img { object-fit: cover; width: 200px; height: 200px;}
 
-li {
- 	display: flex;
-    justify-content: flex-start;
- }
+.form-box { display: flex; justify-content: center;}
+.form-box li { display: flex; justify-content: space-between; margin-bottom: 10px;}
+.form-box li:nth-child(1) { justify-content:center;}
+.form-box li > p { font-size: 18px; padding: 10px;}
+.form-box li > p:nth-of-type(1) { opacity: .6;}
+
+#nickName { padding: 0 10px; font-size: 16px; width: 140px; margin-left: 27px; border: 1px solid #e5e5e5;} 
+.nick-btn { border: 0; font-size: 16px; padding: 10px; background-color: var(--c-tour); border-radius: 0 7px 7px 0; color: #fff;}
+#nicknameCheck {display: flex; justify-content: flex-end; width: 100%;}
+ 
+.btn-box { display: flex; justify-content: center;}
+.btn-box input,
+.btn-box button { border: 0; font-size: 16px; margin-top: 20px; padding: 10px 20px; border-radius: 10px; color: #fff;}
+.btn-box button { margin-left: 20px; background-color: var(--c-tour);}
+.btn-box input { margin-left: 20px; background-color: #363636;}

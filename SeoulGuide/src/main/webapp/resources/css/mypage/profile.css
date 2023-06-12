@@ -1,4 +1,6 @@
 @charset "UTF-8";
+h2.banner-title { font-size: 30px;}
+hr { margin-bottom: 30px;}
 /*tab*/
 .tab .tab-list {
 	position: relative;
@@ -25,6 +27,13 @@
 	border-bottom: 3px solid var( --c-tour);
 } 
 
+.tab .list > a > span {
+	position: relative;
+    top: 4px;
+    font-size: 20px;
+    padding-right: 5px;
+}
+
 .tab-content {
 	margin-top: 10px;
 	height: 100px;
@@ -39,3 +48,82 @@
 	
 	display: block;
 }
+
+
+
+
+
+.profile-content {
+	max-width: 250px;
+	margin: 30px auto;
+	height: 300px;
+	border-radius: 10px;
+	background-color:  #022C6C;
+	color: #fff;
+	display: flex;
+    justify-content: center;
+    padding: 20px 0;
+    box-sizing: border-box;
+}
+
+.img-box {
+	width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    overflow: hidden;
+}
+
+.img-box img {object-fit: cover; width: 100px; height: 100px;}
+
+.profile-content ul {
+	display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-content ul li p {
+	font-family: 'TheJamsil2Light';
+}
+
+.profile-content ul li em {
+	font-family: 'TheJamsil5Bold';
+	font-size: 30px;
+	padding: 10px 0;
+	display: block;
+}
+
+.profile-content ul li a {
+	color: #fff;
+	display: block;
+	padding-top: 30px;
+	transition: all .3s;
+}
+
+.profile-content ul li a:hover {
+	color: var(--c-subway);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

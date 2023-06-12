@@ -31,6 +31,16 @@ $(document).ready(function(){
 		$(".login-popup-content").addClass("show");
 	});
 	
+	$("#book").click(function(){
+		$(".shadow-bg").addClass("show");
+		$(".login-popup-content").addClass("show");
+	});
+	
+	$("#heart").click(function(){
+		$(".shadow-bg").addClass("show");
+		$(".login-popup-content").addClass("show");
+	});
+	
 	$(".material-symbols-outlined").click(function(){
 		$(".shadow-bg").removeClass("show");
 		$(".login-popup-content").removeClass("show");
@@ -39,5 +49,13 @@ $(document).ready(function(){
 		$(".shadow-bg").removeClass("show");
 		$(".login-popup-content").removeClass("show");
 	});
-	
 });
+
+
+
+
+
+
+
+
+

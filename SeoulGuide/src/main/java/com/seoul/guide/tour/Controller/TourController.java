@@ -3,6 +3,7 @@ package com.seoul.guide.tour.Controller;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,8 +13,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.seoul.guide.bookmark.DTO.bookmarkDTO;
+import com.seoul.guide.bookmark.Service.bookmarkService;
 import com.seoul.guide.comment.DTO.CommentDTO;
 import com.seoul.guide.comment.Service.CommentService;
+import com.seoul.guide.like.DTO.likeDTO;
+import com.seoul.guide.like.Service.likeService;
 import com.seoul.guide.tour.DTO.TourDTO;
 import com.seoul.guide.tour.Service.TourService;
 
@@ -25,6 +30,15 @@ public class TourController {
 	
 	@Inject
 	private CommentService commentService;
+	
+	@Inject
+	private bookmarkService bookmarkservice;
+	
+	@Inject
+	private likeService likeservice;
+	
+	@Autowired
+	private HttpSession session;
 	
 	@RequestMapping(value = "tourlist", method = RequestMethod.GET)
 	public ModelAndView tour() {
@@ -72,6 +86,21 @@ public class TourController {
 			model.addAttribute("tourdetail", tourDTO);
 			List<CommentDTO> comments = commentService.selectComment(id);
 			model.addAttribute("comments", comments);
+			
+			Integer userId = (Integer) session.getAttribute("id");
+			bookmarkDTO bookmarkdto = new bookmarkDTO();
+			bookmarkdto.setUserId(userId);
+			bookmarkdto.setTouristId(id);
+			
+			Integer book = bookmarkservice.selectbookmark(bookmarkdto);
+			
+			model.addAttribute("bookmark", book);
+			
+			likeDTO likedto = new likeDTO();
+			likedto.setUserId(userId);
+			likedto.setTouristId(id);
+			Integer like = likeservice.selectlike(likedto);
+			model.addAttribute("like", like);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
