@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>게시글 수정</title>
 
 <link rel="stylesheet" href="<c:url value="/resources/css/story/storyReview.css"/>">
 <link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">

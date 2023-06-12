@@ -5,16 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<jsp:include page="/WEB-INF/views/head.jsp" />
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
-<link rel="stylesheet"
-	href="<c:url value="/resources/css/mypage/modifyMember.css"/>">
-
-<meta charset="UTF-8">
-<title>내정보 수정</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<jsp:include page="/WEB-INF/views/head.jsp" />
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="<c:url value="/resources/css/common.css"/>">
+	<link rel="stylesheet" href="<c:url value="/resources/css/mypage/modifyMember.css"/>">
+	<meta charset="UTF-8">
+	<title>내정보 수정</title>
 </head>
 
 <body class="body">
