@@ -28,7 +28,7 @@
 .write-btn-box { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding-top: 30px;}
 .serch { position: relative; width: 46%;}
 .serch input {/* 기본 박스 모델 설정 */ box-sizing: border-box; font-family: inherit; font-size: 12px; width: 100%; padding: 12px 40px 12px 10px; line-height: inherit; color: inherit; background-color: transparent; border: 1px solid #ccc; border-radius: 10px; outline: none; }
-.serch button { font-size: 20px;  position: absolute; right: 14px; top: 55%; transform: translate(0, -50%); z-index: 1; background: #fff; border: 0; color: gray;}
+.serch button { font-size: 20px;  position: absolute; right: 14px; top: 55%; transform: translate(0, -50%); z-index: 1; background: inherit; border: 0; color: gray;}
 .serch button span { font-size: 20px; opacity: .5;}
 .serch input:hover { box-shadow: 0px 0px 0px 5px rgba(13, 153, 255, 0.1);}
 .serch input:focus { border: 1px solid var(--c-tour);}
