@@ -78,8 +78,8 @@
 		<ul class="sidebar">
 			<li><a href="#detail2">상세정보</a></li>
 			<li><a href="#detail3">댓글보기</a></li>
-			<li><a href="">주변 지하철역 편의시설</a></li>
-			<li><a href="">관광스토리</a></li>
+			<li><a href="./subway">주변 지하철역 편의시설</a></li>
+			<li><a href="./storyreview">관광스토리</a></li>
 		</ul>
 		
 		<section id="detail">

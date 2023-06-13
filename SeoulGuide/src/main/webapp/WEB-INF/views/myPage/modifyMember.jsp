@@ -44,7 +44,7 @@
 						</li>
 						<li>
 						    <p>닉네임</p>
-						    <input type="text" value="${member.nickname}" name="nickName" id="nickName" />
+						    <input type="text" value="${member.nickname}" name="nickName" id="nickName" maxlength="6" oninput="handleInputLength(this, 6)"/>
 						    <button type="button" value="중복확인" onclick="checkNickname()" class="nick-btn">확인</button>
 						    
 						</li>
@@ -117,6 +117,12 @@
 	reader.readAsDataURL(file); // 파일을 Data URL로 읽기
 
 	});  
+	 
+	function handleInputLength(el, max) {
+		  if(el.value.length > max) {
+		    el.value = el.value.substr(0, max);
+		  }
+		}
 		
 	</script>
 	<jsp:include page="/WEB-INF/views/footer.jsp"></jsp:include>

@@ -275,6 +275,10 @@ html {
 .subbutton {
     margin-top: 32px;
     font-size: 12px;
+    display: flex;
+    flex-grow: 2;
+    justify-content: flex-end;
+    padding-right: 20px
 }
 
 

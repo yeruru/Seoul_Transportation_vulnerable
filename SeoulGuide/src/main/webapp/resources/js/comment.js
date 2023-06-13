@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	$("#Comment").click(function(){
-		alert("insert 들어오기 성공");
 		tourist_id = $("#tourid").val();
 		comment = $("#comment").val();
 		$.ajax({

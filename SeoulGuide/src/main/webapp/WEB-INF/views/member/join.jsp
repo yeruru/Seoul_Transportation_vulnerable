@@ -38,7 +38,7 @@
 						<tbody class="signupform">
 							<tr>
 								<td class="nickname"><input type="text" name="nickname"
-									id="nickname" placeholder=" 닉네임" required>
+									id="nickname" placeholder=" 닉네임" required maxlength="6" oninput="handleInputLength(this, 6)">
 									<button type="button" id="checknickname">중복확인</button></td>
 							</tr>
 							<tr>
@@ -125,6 +125,13 @@ window.addEventListener('load', function() {
 	    }
 	  }
 	  return '';
+	}
+</script>
+<script type="text/javascript">
+function handleInputLength(el, max) {
+	  if(el.value.length > max) {
+	    el.value = el.value.substr(0, max);
+	  }
 	}
 </script>
 </html>
