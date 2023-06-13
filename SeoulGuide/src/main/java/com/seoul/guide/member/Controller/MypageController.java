@@ -58,7 +58,6 @@ public class MypageController {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("profile ERR");
 		}
 
 		return "myPage/profile";
@@ -91,7 +90,6 @@ public class MypageController {
 			// 회원 정보 업데이트
 			map.put("userId", userId);
 			map.put("nickname", nickName);
-			System.out.println(file.isEmpty());
 			// 이미지 업데이트
 			if (file != null && !file.isEmpty()) {
 				String dir = servletContext.getRealPath("/resources/upload/");
@@ -109,7 +107,7 @@ public class MypageController {
 				fileVO = memberService.getFile(userId);
 			}
 			memberService.updateMemberWithImg(map, fileVO);
-			return "redirect:/";
+			return "redirect:/profile";
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("POST Err");

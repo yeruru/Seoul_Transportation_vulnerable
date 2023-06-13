@@ -13,7 +13,7 @@
     <jsp:include page="/WEB-INF/views/header.jsp" />
     <section class="content-wrap subway-detail">
         <div class= "subway-title">
-            <h1>${name} 출입구 이동경로</h1>
+            <h1>${station} 출입구 이동경로</h1>
             <p>*교통약자 경로를 알려드립니다.</p>
             <hr class="subway-hr">
             <div class="image-wrapper">
@@ -30,7 +30,6 @@
                     </c:forEach>
                 </tbody>
             </table>
-            <a href="subwaydetail?station=${station}&line='4호선'">ㅁㅁㅁ</a>
         </div>
     </section>
 </body>
